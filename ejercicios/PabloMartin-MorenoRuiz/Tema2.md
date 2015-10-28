@@ -23,18 +23,30 @@ Los errores fueron:
 
 En Django se suele tener un archio dónde se tienen todos los paquetes usados en el proyecto (entorno de desarrollo) en un archivo llamado requeriments.text. El procedimiento para crearlo, su utilidad y como comprobar que funciona se mostrará a continuacion
 Forma de usarlos y comprobarlo:
+
  1) En el proyecto funcionando pip freeze > requirements.txt que sirve para almacenar en requeriments todos los paquetes instalados en el entorno.
+ 
  2) Salirse del entorno virtual y creais otro fuera en la versión que se este usando. En mi caso he probado con python3:
     virtualenv -p python3 <nombre_entorno>   //si es version2 virualenv <nombre>
+    
  3) ahora copias el proyecto (Sólo el proyecto no el entorno entero que es todas las librerias y asi os funcina si o si pero asi no probais nada) 
+ 
     cp -r <carpeta del proyecto> <carpeta del entorno> 
+    
     En mi caso me pongo en la carpeta donde tengo los entornos y pongo:
+    
     cp -r PRACTICA2/venv/Empresas/ FINAL/
+    
 4) ahora os meteis en el nuevo entorno y probais a ejecutarlo con python3 manage.py runserver  // o python en version2
+
     DEBERÁ SALIR ERROR PUES NO TENEIS LAS LIBRERIAS INSTALADAS
+    
 5) Instalamos las dependecias: os meteis en la carpeta del nuevo proyecto que tendreís requeriments.txt y ejecutais :
+
     pip install -r requeriments.txt
+    
     ahora se os instala todo de forma recursiva (dependencias de los paquetes)
+    
 6) Ejecutais y funciona :D
 
 
