@@ -5,9 +5,19 @@ En mi caso voy a usar python por la tanto he elegido virtualenv cómo entorno vi
 
 # Ejercicio 2. Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.
 # Se trata de hacer una aplicación simple que se pueda crear rápidamente con un generador de aplicaciones como los que incluyen diferentes marcos MVC. Si cuesta mucho trabajo, simplemente prepara una aplicación que puedas usar más adelante en el resto de los ejercicios. 
-
+En el siguiente repositoria tengo hecha la web que se nos pedía [Programa de calificaciones de empresas ](https://github.com/pmmre/CalificacionEmpresas.git)
 
 # Ejercicio 3. Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
+
+Para desarrolla este ejercicio he creado un entorno virtual en la versión 3.2.3 de Python con el comando virtualenv -p python <nombre entorno>. Al principio me daban errores de ejecución por falta de librerías y después error de sintáxis entre
+las dos versiones del lenguaje que corregí.
+
+Los errores fueron:
+
+ 1) Los print  en la versión 2.7.3 son print <contenido> y en la versión 3.2.3 son print(<contenido>). Cómo solo lo estaba
+ usando para probar en el terminal los pasos de elementos de una página a otra lo eliminé.
+ 
+ 2) El otro error fué en un if que el dato calificaciones que era un entero en python 3.2.3 me lo detectaba cómo string, así que simplemente tuve que indicarle que me lo tomara como un entero de la siguiente manera int(calificacion)
 
 # Ejercicio 4 Crear una descripción del módulo usando package.json o el equivalente en otro lenguaje. 
 
