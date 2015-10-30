@@ -71,3 +71,8 @@ He podido comprobar que Django utiliza la misma herramienta y nada más que con 
 todos los test y ejecutando "python3 manage.py test <nombre_test>" se ejecuta el nombre del test seleccionado
 
 # Ejercicio 8. Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
+
+Para realizar la integración continua hay que darse de alta en TRAVIS a traves de la github o de TRAVIS. Una vez realizado eso debemos de configurar TRAVIS indicando que repositorios vamos a seguirle una integración continua. Una vez hecho esto 
+debemos de crear en el inicio del repositorio .travis.yml bien configurado. Es importante mantener el archivo de requirements.txt en la misma carpeta.
+
+
