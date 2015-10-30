@@ -53,8 +53,21 @@ Forma de usarlos y comprobarlo:
 
 # Ejercicio 5 Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
+Para documentar en python se utilizan """ comentario de varias líneas """. Una vez comentado se usar la herramienta "pycco <nombre de archivo a comentar> -p", Para generar la documentación en html que se guarda en la carpeta docs. Con la opción -p
+se crea la misma estructura de archivos que tiene el proyecto (que viene bien en proyectos grandes).
+
 # Ejercicio 6. Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD). 
 
+Con Django los test se programana en el archivo test.py que está almacenado en la carpeta apps/<nombre app>/. Se utiliza la librería Django unittest. Puede verse los test en el proyecto y los tengo comentados en el archivo.
+
+Aquí os dejo el enlace directo al archivo [test.py](https://github.com/pmmre/CalificacionEmpresas/blob/master/Empresas/apps/empresas/tests.py)
+
+
 # Ejercicio 7. Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante. 
+
+Para poder ejecitar todos los test junsto podemos usar la herramienta de python nosetest que se instala poniendo "pip install nose"  y se ejecuta simplemente ejecutando "nosetests".
+
+He podido comprobar que Django utiliza la misma herramienta y nada más que con ejecutar "python3 manage.py test" se ejecutan
+todos los test y ejecutando "python3 manage.py test <nombre_test>" se ejecuta el nombre del test seleccionado
 
 # Ejercicio 8. Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
