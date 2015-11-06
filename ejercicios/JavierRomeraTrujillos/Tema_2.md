@@ -24,7 +24,6 @@ Ejercicio 3
 
 3. Comprobamos que en ambas versiones funciona la aplicación:
 ![Imagen 3.3](https://www.dropbox.com/s/gxkh9d9r9qp7w92/3.3.png?dl=1)
-
 ![Imagen 3.4](https://www.dropbox.com/s/f0usplmbtnnr4gx/3.4.png?dl=1)
 
 
