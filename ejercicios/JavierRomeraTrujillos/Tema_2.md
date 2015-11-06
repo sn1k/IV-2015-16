@@ -16,7 +16,7 @@ Se ha creado una aplicación sobre porras de fútbol con Django.
 
 Ejercicio 3
 -------
-1.Creamos dos entornos con dos versiones distintas de Python :
+1. Creamos dos entornos con dos versiones distintas de Python :
 ![Imagen 3.1](https://www.dropbox.com/s/mosujdmoi55ge31/3.1.png?dl=1)
 
 2. Activamos ambos entornos para instalar Django mediante : *pip install django*
@@ -48,6 +48,7 @@ Ejercicio 5
 3. Abrimos el fichero generado:
 ![Imagen 5.3](https://www.dropbox.com/s/mge60gktfdz4vrt/5.3.png?dl=1)
 
+
 Ejercicio 6
 -------
 1. Creamos el test para nuestra aplicación:
@@ -70,7 +71,7 @@ Ejercicio 7
 
 Ejercicio 8
 -------
-1. Nos registramos en [Travis-CI](https://travis-ci.org) con nuestra cuenta de GiyHub.
+1. Nos registramos en [Travis-CI](https://travis-ci.org) con nuestra cuenta de GitHub.
 
 2. Seleccionamos el respositorio que queremos usar:
 ![Imagen 8.1](https://www.dropbox.com/s/anoygn3xtd75vgt/8.1.png?dl=1)
