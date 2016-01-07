@@ -112,5 +112,20 @@ Y nos aparece una ventana donde podemos acceder a nuestra máquina virtual.
 
 ![Máquina virtual a través del cliente de VNC vinagre](cap13)
 
+Para conectar por SSH a la máquina virtual solo hay que indicar, al lanzarlo, el nombre de usuario que usaremos con la opción **-name** y definir un puerto con la opción **-redir**, que no sea el que hay por defecto.
 
+Para conectarnos desde el sistema anfitrión tan solo sería como normalmente lo haríamos a otro sitio por SSH.
+
+`$ ssh -p <puerto> <usuario>@localhost`
+
+
+###Ejercicio 5:
+
+Para realizar operaciones con Azure mediante la línea de comandos necesitamos el *azure cli*, podemos seguir los pasos que se indican [aquí](https://azure.microsoft.com/es-es/documentation/articles/xplat-cli-install/) para instalarlo.
+
+
+
+###Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Desde la página web de [Linux Mint](http://www.linuxmint.com) podemos bajarnos la imagen ISO de la versión que vamos a usar. Yo voy a usar en este caso la versión [17.3 Cinnamon 32bits](http://www.linuxmint.com/edition.php?id=203).
 
