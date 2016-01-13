@@ -400,3 +400,8 @@ Podemos comprobar que efectivamente el despliegue de la aplicación similar a la
 	http://maquinahugoej8-service-tvvyo.cloudapp.net/bares/
 
 ![imagen](https://www.dropbox.com/s/c972prq1ej67xhz/ej8_2.png?dl=1)
+
+
+Si queremos eliminar todo lo creado por vagrant podemos hacerlo con 
+
+	vagrant box remove <nombre_maquina> 
