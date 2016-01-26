@@ -4,23 +4,12 @@ Lo podemos descargar e instalar introduciendo en la terminal:
 ```
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
 ```
-
-![instalación_chef](img1_1)
-
 Podemos comprobar que se ha instalado con:
 ```
 chef-solo -v
 ```
 
-![instalación_chef](img1_2)
-
-**Nota**: ubuntu ya me permitía instalarlo usando **apt**:
-
-```
-
-sudo apt-get install chef
-
-```
+![instalación_chef](img1)
 
 ### Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
 
@@ -69,20 +58,69 @@ Para la realización del ejercicio realizaremos los siguientes pasos:
 
 ###	Ejercicio 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
+Para realizar el ejercicio realizamos los siguientes pasos:
 
-### Ejercicio 5:
-### 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+- Instalo Ansible:
+
+```
+$ sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+
+```
+- Añado la máquina de Amazon al inventario:
+```
+$ echo "ec2-52-11-219-71.us-west-2.compute.amazonaws.com" > ~/ansible_hosts
+```
+- Defino la variable de entorno que indica la localización del fichero:
+```
+$ export ANSIBLE_HOSTS=~/ansible_hosts
+```
+
+- Configuro ssh para la conexión con Amazon.
+
+![img2](img2)
+
+- El archivo **.pem** descargado debo añadirlo a la configuración ssh:
+
+```
+ssh-add "ruta-archivo-.pem"
+
+```
+
+- Compruebo la conexión con Ansible:
+```
+ansible all -u ubuntu -i ansible_hosts -m ping
+```
+
+![img3](img3)
+
+- Instalo librerías en la máquina:
+```
+ansible all -u ubuntu -m command -a "sudo apt-get install python-setuptools python-dev build-essential git -y"
+ansible all -u ubuntu -m command -a "sudo easy_install pip"
+```
+
+- Descargo la aplicación:
+```
+ansible all -u ubuntu -m git -a "repo=https://github.com/lorenmanu/prueba_dai.git  dest=~/pruebaDAI version=HEAD"
+```
+
+- Instalo los requisitos:
+
+```
+ansible all -u ubuntu -m command -a "sudo pip install -r prueba_dai/requirements.txt"
+
+```
+
+- Ejecuto la aplicación:
 
 
-### 2.¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
+```
+ansible all -u ubuntu -m command -a "sudo python prueba_dai/manage.py runserver 0.0.0.0:80"
+```
+
+- Mi aplicación con los siguientes pasos funcionando:
+
+![img4](img4)
 
 
-### Ejercicio 6:Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
-
-
-
-
-### Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
-
-
-### Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible.
+**Nota**: Antes deberíamos haber creado nuestra instancia en Amazon, se puede ver [aquí](https://github.com/lorenmanu/submodulo-lorenzo/blob/master/documentacion/ec2.md).
