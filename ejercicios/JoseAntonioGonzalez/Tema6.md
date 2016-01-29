@@ -80,6 +80,19 @@ Y si todo va bien, debemos ver en pantalla algo como lo indicado en las imagenes
 ![](Ejercicio2-1)
 ![](Ejercicio2-2)
 
+#Ejercicio 3
+```
+--- 
+- uno: "dos" 
+  tres: 
+    - 4 
+    - 5 
+    - "Seis" 
+    - 
+      - siete: 8 
+        nueve: 
+          - 10 
+          - 11 
+```
 
-sdfa
     
