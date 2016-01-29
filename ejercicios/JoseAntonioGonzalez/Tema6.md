@@ -54,6 +54,32 @@ file "/home/joseantonio/Documentos/nano/LEEME" do
     content "Directorio para nano"
 end
 ```
+Esto instalará los paquetes correspondientes, crea una carpeta para ubicar los archivos, y un documento LEEME donde se explica qué hace el paquete.
+
+Con las recetas creadas, debemos ahora crear un archivo json que será el que cheff utilizará para ejecutar las recetas. Dicho archivo tiene que ir en el directorio **chef**. El archivo se llamará **node.json**, y tendrá el siguiente contenido:
+
+```
+{
+    "run_list":["recipe[nginx]", "recipe[nano]"]
+}
+```
+
+Por último, debemos crear el fichero de configuración (que llamaremos **solo.rb**), para utilizar los ficheros anteriormente creados. Lo ubicaremos en el mismo sitio que **node.json**, es decir, dentro de la carpeta **chef**, y con el siguiente contenido:
+```
+file_cache_path "/home/joseantonio/chef" 
+cookbook_path "/home/joseantonio/chef/cookbooks" 
+json_attribs "/home/joseantonio/chef/node.json" 
+```
+
+Ya está todo listo. Sólo queda lanzar la instalación mediante la orden:
+
+	sudo chef-solo -c chef/solo.rb
+    
+Y si todo va bien, debemos ver en pantalla algo como lo indicado en las imagenes
+
+![](Ejercicio2-1)
+![](Ejercicio2-2)
+
 
 sdfa
     
