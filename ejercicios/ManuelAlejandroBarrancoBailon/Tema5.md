@@ -77,7 +77,7 @@ Una vez finalizada la instalación, ya tenemos la interfaz lista para su uso:
 
 	* Creo la máquina virtual con la imagen de SliTaz:
 	~~~
-    $ qemu-system-x86_64 -hda slitaz.qcow2 -cdrom /home/alex/Escritorio/slitaz-4.0.iso
+    $ qemu-system-x86_64 -machine accel=kvm -hda slitaz.qcow2 -cdrom /home/alex/Escritorio/slitaz-4.0.iso -boot d
     ~~~
     ![slitaz_install](http://i1016.photobucket.com/albums/af281/raperaco/slitaz_install_zpse5npnmnb.png)
     ![slitaz_install_finish](http://i1016.photobucket.com/albums/af281/raperaco/coreos_install_finish_zpsjhgdmgxm.png)
@@ -90,7 +90,7 @@ Una vez finalizada la instalación, ya tenemos la interfaz lista para su uso:
     
     * Creo la máquina virtual con la imagen de CoreOS e indicarle que tiene una memoria de 1G:
 	~~~
-    $ qemu-system-x86_64 -hda coreos.qcow2 -cdrom /home/alex/Escritorio/coreos_production_iso_image.iso -m 1G
+    $ qemu-system-x86_64 -machine accel=kvm -hda coreos.qcow2 -cdrom /home/alex/Escritorio/coreos_production_iso_image.iso -m 1G -boot d
     ~~~
     ![coreos_install](http://i1016.photobucket.com/albums/af281/raperaco/coreos_install_zps8tfbnfmq.png)
     ![coreos_install_finish](http://i1016.photobucket.com/albums/af281/raperaco/coreos_install_finish_zpsjhgdmgxm.png)
