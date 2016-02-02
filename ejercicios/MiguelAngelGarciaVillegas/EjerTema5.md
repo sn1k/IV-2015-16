@@ -14,6 +14,7 @@ Podemos comprobar que nuestro sistema esta preparado para ejecutarlo mediante la
 ![kvm-ok](https://www.dropbox.com/s/dg3jvt3yzftdjow/01.2.png?dl=1)
 
 Para instalar los paquetes necesarios, podemos hacerlo mediante la orden ***sudo apt-get install qemu-kvm libvirt-bin virtinst kvm virt-viewer***
+
 ![sudo apt-get install qemu-kvm libvirt-bin virtinst kvm virt-viewer](https://www.dropbox.com/s/7tx0a1hh566szrq/01.3.png?dl=1)
 
 Una vez instalados, es necesario indicar el usuario que queremos que utilice la virtualización ***sudo adduser `id -un` libvirtd***
