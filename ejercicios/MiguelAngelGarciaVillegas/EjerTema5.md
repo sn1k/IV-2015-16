@@ -26,7 +26,31 @@ A continuación se tiene que añadir el usuario a los grupos libvirtd y kvm con 
 ## Ejercicio 2.1
 ### Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).
 
+Comenzamos activando KVM con: ***sudo modprobe kvm-intel***
 
+Primero vamos a crear una máquina virtual con SliTaz: Necesitamos una imagen Iso.
+
+Creamos un disco duro virtual en formato QCOW2:
+***qemu-img create -f qcow2 fichero-cow.qcow2 200M***
+
+![qemu-img create -f qcow2 fichero-cow.qcow2 200M](https://www.dropbox.com/s/9yoeeropfngufw2/2.01.png?dl=1)
+
+Instalamos el sistema con el fichero de almacenamiento virtual creado y la ISO descargada, usando KVM mediante: ***qemu-system-x86_64 -hda fichero-cow.qcow2 -cdrom slitaz-4.0.iso***
+
+![qemu-system-x86_64 -hda fichero-cow.qcow2 -cdrom slitaz-4.0.iso](https://www.dropbox.com/s/nglrj2pqfzj7yai/2.02.png?dl=1)
+
+![Qemu](https://www.dropbox.com/s/gu77jgm66ibccrn/02.3.png?dl=1)
+
+Ahora vamos a crear uno en Ubuntu
+
+Creamos un disco duro virtual en formato QCOW2:
+
+***qemu-img create -f qcow2 ubuntu.qcow2 8G***
+
+Instalamos el sistema con el fichero de almacenamiento virtual creado y la ISO descargada, usando KVM mediante:
+***qemu-system-x86_64 -machine accel=kvm -hda ubuntu.qcow2 -cdrom ubuntu-14.04.1-desktop-amd64.iso -m 1G -boot d***
+
+![Qemu Ubuntu](https://www.dropbox.com/s/y7mz9mbmptt9b9v/2.4.png?dl=1)
 
 
 ## Ejercicio 2.2
