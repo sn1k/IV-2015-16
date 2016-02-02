@@ -187,4 +187,4 @@ Me dispongo a instalarla usando VMWare.
 Para ello me descargo la [imagen de Linux Mint 17.3 64 bit](http://www.linuxmint.com/edition.php?id=204)
 
 La instalo en VMWare con el procedimiento habitual.
-![VMWareMint]()
+![VMWareMint](http://i1016.photobucket.com/albums/af281/raperaco/linuxMintVMWare_zps3ih4xhye.png)
