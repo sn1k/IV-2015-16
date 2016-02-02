@@ -133,3 +133,20 @@ Creamos la máquina virtual:
 	azure vm create ejercicio5-iv-jagonz b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB jagonz --location "West US" --ssh
 
 
+#Ejercicio 7
+
+Tenemos que descargarnos la imagen de LinuxMint. En mi caso, descargamos la imagen de 32 bit de [aqui](http://www.linuxmint.com/edition.php?id=203) (Se ubicará en la carpeta de descargas de la carpeta personal).
+
+Ahora, creamos la imagen del disco duro virtual:
+
+	qemu-img create -f qcow2 hdd_linuxmint.qcow2 6000M
+
+Acto seguido, iniciamos la instalación con la siguiente orden:
+	qemu-system-x86_64 -hda hdd_linuxmint.qcow2 -cdrom ./Descargas/linuxmint-17.1-cinnamon-32bit.iso 
+    
+
+![](Ejercicio7)
+
+También podríamos hacerlo desde VIrtualbox, configurando una nueva máquina (siguiendo el asistente), y añadiendo la imagen virtual del disco de instalación, tal y como se aprecia en la imagen:
+
+![](Ejercicio7.1)
