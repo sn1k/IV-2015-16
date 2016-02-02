@@ -6,8 +6,28 @@
 ## Ejercicio 1.
 ### Instalar los paquetes necesarios para usar KVM. Se pueden seguir estas instrucciones. Ya lo hicimos en el primer tema, pero volver a comprobar si nuestro sistema está preparado para ejecutarlo o hay que conformarse con la paravirtualización.
 
+Para instalarlo hay que ejecutar en el terminal la instrucción, ***sudo apt-get install cpu-checker***
+![sudo apt-get install cpu-checker](https://www.dropbox.com/s/j3vplffz19hl3iv/01.1.png?dl=1)
+
+Podemos comprobar que nuestro sistema esta preparado para ejecutarlo mediante la orden ***kvm-ok*** o la orden ***egrep -c '(vmx|svm)' /proc/cpuinfo*** si sale un número diferente a 0, indica que la virtualización está soportada.
+
+![kvm-ok](https://www.dropbox.com/s/dg3jvt3yzftdjow/01.2.png?dl=1)
+
+Para instalar los paquetes necesarios, podemos hacerlo mediante la orden ***sudo apt-get install qemu-kvm libvirt-bin virtinst kvm virt-viewer***
+![sudo apt-get install qemu-kvm libvirt-bin virtinst kvm virt-viewer](https://www.dropbox.com/s/7tx0a1hh566szrq/01.3.png?dl=1)
+
+Una vez instalados, es necesario indicar el usuario que queremos que utilice la virtualización ***sudo adduser `id -un` libvirtd***
+
+A continuación se tiene que añadir el usuario a los grupos libvirtd y kvm con los siguientes comandos, ***sudo adduser `id -un` libvirtd*** y  ***sudo adduser `id -un` kvm***
+
+![comandos](https://www.dropbox.com/s/coo1a4szqxl3i2i/01.4.png?dl=1)
+
+
 ## Ejercicio 2.1
 ### Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).
+
+
+
 
 ## Ejercicio 2.2
 ### Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
