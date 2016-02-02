@@ -254,7 +254,7 @@ end
 ### Ejercicio 8 : Configurar tu máquina virtual usando vagrant con el provisionador ansible.
 Para la realización del ejercicio voy a usar mi máquina de Amazon. Para ello, seguiré los siguientes pasos:
 
-- Debo instalar el cliente de **Command Line Interface** de Amazon, el cual me permitirá realizar tareas de gestión de mi perfil usuario. Los que hay que seguir para la instalación pueden verse el la documentación oficial, concretamente en el [apartado](http://docs.aws.amazon.com/es_es/cli/latest/userguide/installing.html).
+- Debo instalar el cliente de **Command Line Interface** de Amazon, el cual me permitirá realizar tareas de gestión de mi perfil de usuario. Se puede consultar la documentación oficial, concretamente en el [apartado](http://docs.aws.amazon.com/es_es/cli/latest/userguide/installing.html).
 
 - Una vez instalado en nuestro ordenador, procederemos a configurarlo, para ello debemos poner en la terminal:
 
@@ -263,11 +263,10 @@ aws configure
 
 ```
 
-Este comando nos permitirá que rellenemos una serie de primitivas, la cual permitirán a Command Line Interface conectarse a nuestro perfil de Amazon. A continuación mostramos un ejemplo de lo que muestra:
+Este comando nos permitirá que rellenemos una serie de primitivas, la cual permitirán a **Command Line Interface** conectarse a nuestro perfil de Amazon. No se muestra pantallazo, debido a razones de seguridad.
 
-![img14](https://www.dropbox.com/s/ill5rf25razkheg/img14.png?dl=1)
 
-De la siguiente imagen, pasamos a mostrar como rellenarlos:
+De la siguiente imagen, pasamos a mostrar como rellenar los campos que nos piden:
 
 - Nos dirigimos a nuestro perfil de Amazon( lo que viene siendo loguearse como en cualquier plataforma). Una vez dentro seleccionamos a nuestro nombre de perfil y le damos al apartado **Security Credentials**.
 
@@ -331,62 +330,62 @@ aws ec2 create-security-group --group-name my-sg --description "My security grou
 **Nota**: nos da un error, esto se debe a que lo hemos creado ya.
 
 
-- Una vez realizado esto, modificamos nuestro **Vangranfile**, tiendo en cuenta las siguientes directivas;
+- Una vez realizado esto, modificamos nuestro **Vangranfile**, tiendo en cuenta:
+
+- Los datos del archivo **.csv** anterior.:
 
 ```
 aws.access_key_id
 
-```
-La cual podemos ver en el archivo **.csv** que hemos descargado al crear el usuario.
-
-```
 aws.secret_access_key
 
 ```
 
-En el mismo archivo **.csv** anterior.
+- Localización de nuestro sistema operativo:
 
 ```
 aws.ami
 
 ```
 
-Donde indicamos la imagen del sistema operativo que queremos.
+- Regíon de nuestra instancia:
 
 ```
 aws.region
 
-```
-La región donde estará nuestra instancia.
+
 
 ```
-aws.region
+
+- El nombre de nuestro archivo **.pem**:
 
 ```
+
 keypair_name
 
 ```
-El cual creamos anteriormente, deberemos poner el nombre.
+
+- El **security_groups** que se encargará de atender nuestras peticiones:
 
 ```
 security_groups
 
 ```
 
-El cual creamos también anteriormente, deberemos poner el nombre.
+- El tipo de nuestra instancia, ** importante mirar las que son gratis o no**.
 
 ```
 instance_type
 
 ```
-Si la gratis, deberemos poner **t2.micro**.
+- El nombre del usuario de nuestra máquina:
 
 ```
 override.ssh.username
 
 ```
 
-Usuario por el cual se conectará por ssh, por defecto es **ubuntu**.
+**Nota**: Usuario por el cual se conectará por ssh, por defecto es **ubuntu**.
 
 
 - Por lo que podemos ver nuestro VangrantFile tendrá la siguiente estructura:
@@ -444,31 +443,33 @@ Si se tiene alguna duda, se puede consultar el siguiente [enlacen](https://githu
   remote_user: vagrant
   tasks:
   - name: Actualizar sistema
-    apt: update_cache=yes upgrade=dist    
-  - name: Instalar paquetes
+    apt: update_cache=yes upgrade=dist
+  - name: Instalar python-setuptools
     apt: name=python-setuptools state=present
+  - name: Instalar build-essential
     apt: name=build-essential state=present
-    apt: name=python-dev state=present
+  - name: Instalar pip
     apt: name=python-pip state=present
+  - name: Instalar git
     apt: name=git state=present
   - name: Ins Pyp
-    action: apt pkg=python-pip
+    apt: pkg=python-pip state=present
+  - name: Instalar python-dev
+    apt: pkg=python-dev state=present
+  - name: Instalar libpq-dev
+    apt: pkg=libpq-dev state=present
+  - name: Instalar python-psycopg2
+    apt: pkg=python-psycopg2 state=present
   - name: Obtener aplicacion de git
-    command: git clone https://github.com/lorenmanu/prueba_dai.git
+    git: repo=https://github.com/lorenmanu/prueba_dai.git  dest=prueba_dai clone=yes force=yes
   - name: Permisos de ejecucion
     command: chmod -R +x prueba_dai
-  - name: Instalar easy_maps
-    command: sudo pip install a
-  - name: Instalar libreria 3 para pillow
+  - name: Instalar libreria para pillow
     command: sudo apt-get -y build-dep python-imaging --fix-missing
   - name: Instalar pillow
     command: sudo easy_install Pillow
-  - name: Instalar base de datos
-    command: sudo apt-get install postgresql-server-dev-all
   - name: Instalar requisitos
     command: sudo pip install -r prueba_dai/requirements.txt
-  - name: Liberar puerto 80
-    command: sudo fuser -k 80/tcp
   - name: ejecutar
     command: nohup sudo python prueba_dai/manage.py runserver 0.0.0.0:80
 
