@@ -63,7 +63,7 @@ Abrimos VirtualBox y le damos a Nueva, ponemos el nombre, la configuración, tam
 ![VirtualBox Nueva](https://www.dropbox.com/s/szs3fexm0uqpkqy/3.1.png?dl=1)
 
 
-![VirtualBox Disco Duro y tipo archivo](https://www.dropbox.com/s/o2yj6pskd8uls2g/03.2.png?dl=1)
+![VirtualBox Disco Duro y tipo archivo](https://www.dropbox.com/s/g0522c6j3gzpyeq/3.02.png?dl=1)
 
 Ahora iniciamos
 
@@ -73,6 +73,21 @@ Ahora iniciamos
 
 ## Ejercicio 3.
 ### Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img
+
+Para realizar éste ejercicio vamos a hacer uso de ***sysbench*** que permite evaluar la potencia de I/O de los discos
+
+Para ello vamos a instalarlo.
+
+![instalación](https://www.dropbox.com/s/sbee7z2skl0c1j3/03.1.png?dl=1)
+
+Una vez instalado, en nuestro caso vamos a crear los ficheros para el test de 8GB (mayor que la RAM), ejecutando en la terminal el siguiente comando ***sysbench --test=fileio --file-total-size=8G prepare***
+
+![Creando ficheros de test ](https://www.dropbox.com/s/o2yj6pskd8uls2g/03.2.png?dl=1)
+
+
+
+
+Una vez creados, ya sólo nos queda ejecutar el test y esperar por lo resultados.
 
 ## Ejercicio 4.
 ### Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
@@ -85,3 +100,13 @@ Ahora iniciamos
 
 ## Ejercicio 7.
 ### Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Vamos a utiliza VirtualBox y vamos a volver a instalar Linux Mint.
+
+Abrimos VirtualBox y le damos a Nueva, ponemos el nombre, la configuración, tamaño en la memoria, disco duro, tipo de archivo de disco duro, almacenamiento, ubicación de archivo y tamaño.
+
+![VirtualBox Nueva](https://www.dropbox.com/s/f9a74wjonrsep9i/7.0.png?dl=1)
+
+Ahora iniciamos
+
+![Corriendo](https://www.dropbox.com/s/rtkapkwur0ei0z5/7.1.png?dl=1)
