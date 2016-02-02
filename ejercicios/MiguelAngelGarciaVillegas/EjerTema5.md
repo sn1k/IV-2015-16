@@ -93,8 +93,20 @@ Una vez creados, ya sólo nos queda ejecutar el test y esperar por lo resultados
 ## Ejercicio 4.
 ### Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
+Para llevar a cabo éste ejercicio vamos a instalar Lubuntu, así que:
+añadimos disco virtual: ***qemu-img create -f qcow2 lubuntu.qcow2 4G***
+Ejecutamos ***qemu-system-x86_64 -hda lubuntu.qcow2 -cdrom ~/Escritorio/Curso15-16/IV/EjerTema5/ejer4/lubuntu-12.04-desktop-i386.iso -m 512M*** para llevar a cabo la instalación.
+
+![Lubuntu ](https://www.dropbox.com/s/zanjre1p4mla3da/04.1.png?dl=1)
+
+
+![Instalación Lubuntu ](https://www.dropbox.com/s/z5muccqzxfqxrku/04.3.png?dl=1)
+
+
 ## Ejercicio 5.
 ### Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
+
+
 
 ## Ejercicio 6.
 ### Usar juju para hacer el ejercicio anterior.
@@ -111,3 +123,12 @@ Abrimos VirtualBox y le damos a Nueva, ponemos el nombre, la configuración, tam
 Ahora iniciamos
 
 ![Corriendo](https://www.dropbox.com/s/rtkapkwur0ei0z5/7.1.png?dl=1)
+
+
+Ahora vamos a realizar con Qemu.
+
+Añadimos disco virtual: ***qemu-img create -f qcow2 linuxmint.qcow2 6G***
+
+Ejecutamos ***qemu-system-x86_64 -hda linuxmint.qcow2 -cdrom ~/Escritorio/Curso15-16/IV/EjerTema5/ejer7/linuxmint-17.1-cinnamon-32bit.iso*** para llevar a cabo la instalación.
+
+![comandos](https://www.dropbox.com/s/vw413w4t8w1qdhb/7.png?dl=1)
