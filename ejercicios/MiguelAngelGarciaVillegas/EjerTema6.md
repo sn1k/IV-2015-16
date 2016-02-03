@@ -115,6 +115,8 @@ Podemos consultar los resultados
 ## Ejercicio 3.
 ### Escribir en YAML la siguiente estructura de datos en JSON, { uno: "dos",  tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }
 
+
+
 ## Ejercicio 4.
 ### Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
@@ -128,6 +130,39 @@ Podemos consultar los resultados
 
 ## Ejercicio 6.
 ### Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Debido a diferentes pruebas, al instalar Vagrant por el terminal ejecutando el comando ***sudo apt-get install vagrant***, esto instala la versión de Vagrant 1.4.3, lo que ocurre es que se requiere para nuestra práctica una versión posterior a la 1.6. Debemos de descargar la versión que queremos e instalarla en mi caso:
+
+Descargo [vagrant_1.8.1_x86_64.deb](https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb) y lo instalo ejecutando:
+***sudo dpkg -i vagrant_1.8.1_x86_64.deb***
+
+![instalando vagrant 1.8.1](https://www.dropbox.com/s/rvwgqwkdz8p7ul7/ejer6.png?dl=1)
+
+Ahora elegimos una distribución [Debian](http://www.vagrantbox.es/) en mi caso: ***Debian Jessie 8.0 RC2 64-bit***
+
+Ahora instalamos la versión de debian, ejecutando en el terminal:
+``vagrant box add debian http://static.gender-api.com/debian-8-jessie-rc2-x64-slim.box``
+
+![instalando debian vagrant](https://www.dropbox.com/s/g7ms810hvmtn99t/ejer6.2.png?dl=1)
+
+Una vez que termine vamos a ejecutar ***vagrant init debian*** ésto creará en el repositorio un archivo ***Vagrantfile***
+
+![Vagrantfile](https://www.dropbox.com/s/yjztqcn8fgwaczx/ejer6.3.png?dl=1)
+
+Ahora ejecutamos ***vagrant up***
+
+![Vagrantfile](https://www.dropbox.com/s/9rtmy8eujsm1zbg/ejer6.7.png?dl=1)
+
+Vamos a nuestro VirtualBox, y comprobamos que tenemos nuestra máquina virtual debian que acabamos de crear con vagrant.
+
+Vamos a conectarnos con ssh, ejecutando en el terminal ***vagrant ssh*** introducimos vagrant como usuario y contraseña y entramos.
+
+![Vagrantfile](https://www.dropbox.com/s/hy0tfdyz7mjoyi0/eje6.9.png?dl=1)
+
+También he comprobado que si apago la máquina desde VirtualBox, y comprobamos que automáticamente nos desconecta.
+ 
+![Vagrantfile](https://www.dropbox.com/s/sw9sz2dyt8kvhi8/Ejer6.10.png?dl=1)
+
 
 ## Ejercicio 7.
 ### Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
