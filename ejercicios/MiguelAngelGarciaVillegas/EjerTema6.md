@@ -19,13 +19,6 @@ Para comprobar que se ha instalado y la versión que tenemos instalada ejecutamo
 ## Ejercicio 2.
 ### Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
 
-Vamos a empezar a escribir una recetilla del Chef. Generalmente, escribir una receta es algo más complicado, pero comenzaremos por una receta muy simple que instale el imprescindible emacs y le asigne un nombre al nodo.
-
-Creamos el directorio chef en algún sitio conveniente y dentro de ese directorio irán diferentes ficheros.
-
-El fichero que contendrá efectivamente la receta se llamará default.rb
-
-El nombre del fichero indica que se trata de la receta por omisión, pero el nombre de la receta viene determinado por el directorio en el que se meta, que podemos crear de un tirón con ***mkdir -p chef/cookbooks/emacs/recipes***
 Vamos a crear los directorios en nuestro caso para ***nginx*** y ***nano***
 
 Ejecutamos en el terminal ***mkdir -p chef/cookbooks/nginx/recipes***
@@ -74,11 +67,49 @@ Una vez acabado, lo que hacemos es comprobar de nuevo, con el comando ***tree***
 Comprobamos que el estado de nginx y vemos que está corriendo.
 ![nginx is running](https://www.dropbox.com/s/qnykas8d1tptlj9/02.6.png?dl=1)
 
-Resultados
+Podemos consultar los resultados
 
-![resutados](https://www.dropbox.com/s/9ubufr9krqs82fk/02.5.png?dl=1)
+![resultados](https://www.dropbox.com/s/9ubufr9krqs82fk/02.5.png?dl=1)
+
+Hemos añadido una receta más para geany,
+
+Ejecutamos en el terminal ***mkdir -p chef/cookbooks/geany/recipes***
+
+Ahora en dichos directorios vamos a meter el archivo ***default.rb*** indicando en nuestro caso, para geany.
+
+default.rb para geany:
+
+    package 'geany'
+    directory "/home/magvugr/Documentos/geany"
+    file "/home/magvugr/Documentos/geany/LEEME" do
+        owner "magvugr"
+        group "magvugr"
+        mode 00544
+        action :create
+        content "Ejer2: Directorio para Geany"
+    end
+
+Ahora añadimos al archivo ***node.json***
+
+    {
+        "run_list":["recipe[nginx]", "recipe[nano]", "recipe[geany]"]
+    }
+
+Y finalmente ejecutamos:
 
 
+Ahora ejecutamos en el terminal ***sudo chef-solo -c chef/solo.rb*** para la instalación de los paquetes.
+
+![chef-solo -c chef/solo.rb](https://www.dropbox.com/s/tealpisj6mzuypw/ejer2.7.png?dl=1)
+![chef-solo -c chef/solo.rb](https://www.dropbox.com/s/gjwpttag5ykwa1m/2.8.png?dl=1)
+
+Una vez acabado, lo que hacemos es comprobar de nuevo, con el comando ***tree*** los archivos y directorios.
+
+![archivos](https://www.dropbox.com/s/qy5xlbgslxo92br/2.9.png?dl=1)
+
+Podemos consultar los resultados
+
+![resultados](https://www.dropbox.com/s/6ax8kuni2yfl7pp/2.10.png?dl=1)
 
 
 ## Ejercicio 3.
@@ -86,6 +117,8 @@ Resultados
 
 ## Ejercicio 4.
 ### Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+
+
 
 ## Ejercicio 5.1
 ### Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
