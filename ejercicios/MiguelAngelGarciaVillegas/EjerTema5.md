@@ -53,6 +53,17 @@ Instalamos el sistema con el fichero de almacenamiento virtual creado y la ISO d
 
 ![Qemu Ubuntu](https://www.dropbox.com/s/y7mz9mbmptt9b9v/2.4.png?dl=1)
 
+Voy a realizar también la instalación de un lubuntu, desde Qemu.
+
+añadimos disco virtual: ***qemu-img create -f qcow2 lubuntu.qcow2 4G***
+
+Ejecutamos ***qemu-system-x86_64 -hda lubuntu.qcow2 -cdrom ~/Escritorio/Curso15-16/IV/EjerTema5/ejer4/lubuntu-12.04-desktop-i386.iso -m 512M*** para llevar a cabo la instalación.
+
+![Lubuntu ](https://www.dropbox.com/s/zanjre1p4mla3da/04.1.png?dl=1)
+
+![Instalación Lubuntu ](https://www.dropbox.com/s/z5muccqzxfqxrku/04.3.png?dl=1)
+
+![Instalación Lubuntu ](https://www.dropbox.com/s/68nygdpivu19xmy/04.4.png?dl=1).
 
 ## Ejercicio 2.2
 ### Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
@@ -84,28 +95,38 @@ Para ello vamos a instalarlo.
 Una vez instalado, en nuestro caso vamos a crear los ficheros para el test de 8GB (mayor que la RAM), ejecutando en la terminal el siguiente comando ***sysbench --test=fileio --file-total-size=8G prepare***
 
 ![Creando ficheros de test ](https://www.dropbox.com/s/o2yj6pskd8uls2g/03.2.png?dl=1)
-
-
-
-
 Una vez creados, ya sólo nos queda ejecutar el test y esperar por lo resultados.
 
 ## Ejercicio 4.
 ### Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
-Para llevar a cabo éste ejercicio vamos a instalar Lubuntu, así que:
-añadimos disco virtual: ***qemu-img create -f qcow2 lubuntu.qcow2 4G***
-Ejecutamos ***qemu-system-x86_64 -hda lubuntu.qcow2 -cdrom ~/Escritorio/Curso15-16/IV/EjerTema5/ejer4/lubuntu-12.04-desktop-i386.iso -m 512M*** para llevar a cabo la instalación.
+Arrancamos ahora mediante servidor VNC ejecutando en el terminal: ```qemu-system-i386 -hda lubuntu.img vnc :1```
 
-![Lubuntu ](https://www.dropbox.com/s/zanjre1p4mla3da/04.1.png?dl=1)
+Y con la versión de Lubuntu descargada, vamos a iniciar el SO con Qemu: ```qemu-system-x86_64 -hda lubuntu.img -cdrom lubuntu-15.10-desktop-amd64.iso -m 512M``` e instalamos.
+
+![Instalación Lubuntu Ejer4](https://www.dropbox.com/s/nub41un21r0iio0/ejer%204.5.png?dl=1)
+
+![Instalación Lubuntu Ejer4](https://www.dropbox.com/s/pv8bqv0869wic9o/Ejer4.6.png?dl=1)
 
 
-![Instalación Lubuntu ](https://www.dropbox.com/s/z5muccqzxfqxrku/04.3.png?dl=1)
+Para acceso VNC:
 
+Configurando según la orden, ejecutamos: ***qemu-system-i386 -hda lubuntu.img vnc :1***
+
+Ahora vamos a conectar a la máquina virtual usando algún cliente de VNC tal como vinagre, para ello ejecutamos en el terminal, ***sudo apt-get install vinagre***
+
+Nnos podemos conectar a la máquina con vinagre: ***vinagre localhost:5901***
+
+Para conectar por SSH:
+Primero redireccionamos el puerto: ***qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name magv -redir tcp:2222::22.***
+
+Y conectamos: ```ssh -p 2222 magv@localhost```.
 
 ## Ejercicio 5.
 ### Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
+
+Error al instalar nodejs-legacy
 
 
 ## Ejercicio 6.
