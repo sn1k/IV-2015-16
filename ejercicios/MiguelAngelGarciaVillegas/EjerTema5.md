@@ -117,17 +117,20 @@ Ahora vamos a conectar a la máquina virtual usando algún cliente de VNC tal co
 
 Nnos podemos conectar a la máquina con vinagre: ***vinagre localhost:5901***
 
+
+
 Para conectar por SSH:
+
 Primero redireccionamos el puerto: ***qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name magv -redir tcp:2222::22.***
 
-Y conectamos: ```ssh -p 2222 magv@localhost```.
+Y conectamos: ***ssh -p 2222 magv@localhost***.
 
 ## Ejercicio 5.
 ### Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
 
 Error al instalar nodejs-legacy
-
+https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-tutorial/
 
 ## Ejercicio 6.
 ### Usar juju para hacer el ejercicio anterior.
