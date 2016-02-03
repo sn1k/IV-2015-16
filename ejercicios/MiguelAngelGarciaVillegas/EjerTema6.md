@@ -6,7 +6,15 @@
 ## Hay varios tutoriales que te permiten, con relativa rapidez, comenzar a trabajar con Chef-solo en un servidor; este te proporciona una serie de ficheros que puedes usar y este otro es más directo, dando una serie de órdenes. En todo caso, se trata básicamente tener acceso a un servidor o máquina virtual, instalar una serie de aplicaciones en él y ejecutarlas sobre un fichero de configuración
 
 ## Ejercicio 1.
-### Instalar chef en la máquina virtual que vayamos a usar
+### Instalar chef en la máquina virtual que vayamos a usar.
+
+Una forma más rápida de instalar Chef es descargarlo directamente desde la página web.
+
+Así que ejecutamos en el terminal: ***curl -L https://www.opscode.com/chef/install.sh | sudo bash***
+
+Para comprobar que se ha instalado y la versión que tenemos instalada ejecutamos: ***chef-solo -v***
+
+![Chef en ubuntu](https://www.dropbox.com/s/wlkfx0wotff4sqn/01.1.png?dl=1)
 
 ## Ejercicio 2.
 ### Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
