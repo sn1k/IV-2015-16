@@ -263,7 +263,7 @@ aws configure
 
 ```
 
-Este comando nos permitirá que rellenemos una serie de primitivas, la cual permitirán a **Command Line Interface** conectarse a nuestro perfil de Amazon. No se muestra pantallazo, debido a razones de seguridad.
+Este comando nos pedirá que rellenemos una serie de primitivas, la cual permitirán a **Command Line Interface** conectarse a nuestro perfil de Amazon. No se muestra pantallazo, debido a razones de seguridad.
 
 
 De la siguiente imagen, pasamos a mostrar como rellenar los campos que nos piden:
@@ -309,12 +309,12 @@ secret_access_key
 - **region**: aquí ponemos la región en la cúal estará nuestra instancia, en mi caso **us-west-2**.
 - **text_format**: aquí le di a **enter**, no es relevante de momento.
 
-- Una vez configurada **Command Line Interface**, configuramos la conexión ssh con nuestra instacia, la cual crearemos en el Vagrantfile, para ello deberemos crear un archivo **.pem**. La documentación oficial de Amazon nos explica como realizarlo, concretamente [aquí](http://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-using-param.html). En mi caso me ha valido con seguir la siguiente sintaxis:
+- Una vez especificado **Command Line Interface**, configuramos la conexión ssh con nuestra instacia, la cual crearemos en el Vagrantfile, para ello deberemos crear un archivo **.pem**. La documentación oficial de Amazon nos explica como realizarlo, concretamente [aquí](http://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-using-param.html). En mi caso me ha valido con seguir la siguiente sintaxis:
 
 ```
 aws ec2 create-key-pair --key-name my-key-pair
 
-``
+```
 
 ![img21](https://www.dropbox.com/s/d4ebg0arvvcxnfc/img21.png?dl=1)
 
@@ -385,7 +385,7 @@ override.ssh.username
 
 ```
 
-**Nota**: Usuario por el cual se conectará por ssh, por defecto es **ubuntu**.
+**Nota**: Usuario por el cual se conectará por ssh, por defecto es **ubuntu** en EC2.
 
 
 - Por lo que podemos ver nuestro VangrantFile tendrá la siguiente estructura:
@@ -476,7 +476,7 @@ Si se tiene alguna duda, se puede consultar el siguiente [enlacen](https://githu
 
 ```
 
-- Ya solo nos queda desplegar nuestra aplicación, para ello pondremos en nuestra terminal en el directorio donde esta el **Vagrantfile**
+- Ya solo nos queda desplegar nuestra aplicación, para ello pondremos en nuestra terminal en el directorio donde está el **Vagrantfile**
 
 ```
 
@@ -485,3 +485,8 @@ vagrant up --provider=aws
 ```
 
 **Nota** en **--provider** estamos indicando el proveedor, en mi caso Amazon, si fuera azure deberíamos poner **azure**.
+
+
+- Finalmente nuestra aplicación estará desplegada:
+
+![img21](https://www.dropbox.com/s/w6s217d4pld9o0j/img24.png?dl=1)
