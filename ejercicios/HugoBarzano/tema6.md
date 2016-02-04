@@ -386,6 +386,7 @@ El playbook se encarga de actualizar el sistema base, instalar dependencia, desc
 
 Si nos fijamos, esta ip privada es la establecida para la maquina virtual en el Vagrantfile. Para crear la maquina con vagrant, debemos ejecutar
 
+	vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
 	vagrant up --provider=azure
 
 ![imagen](https://www.dropbox.com/s/v8dtc28xemx2jow/ej8.png?dl=1)
@@ -400,3 +401,8 @@ Podemos comprobar que efectivamente el despliegue de la aplicación similar a la
 	http://maquinahugoej8-service-tvvyo.cloudapp.net/bares/
 
 ![imagen](https://www.dropbox.com/s/c972prq1ej67xhz/ej8_2.png?dl=1)
+
+
+Si queremos eliminar todo lo creado por vagrant podemos hacerlo con 
+
+	vagrant box remove <nombre_maquina> 
