@@ -129,11 +129,11 @@ Abrimos otro terminal, y ejecutamos ***ifconfig*** y buscamos la dirección de l
 
 Para conectar por SSH:
 
-Primero arrancamos la máquina aunque redireccionamos el puerto: ***qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name Lubuntu -redir tcp:1313::22***
+Primero arrancamos la máquina aunque redireccionamos el puerto: ***qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name Lubuntu -redir tcp:2222::22***
 
 Una vez arranque la máquina virtual instalamos ***ssh*** ejecutando en su terminal, ***apt-get update && apt-get install ssh***
 
-Y conectamos a través del terminal anfitrión ejecutando: ***ssh -p 1313 magv@localhost***.
+Y conectamos a través del terminal anfitrión ejecutando: ***ssh -p 2222 magv@localhost***.
 
 ## Ejercicio 5.
 ### Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
@@ -165,8 +165,6 @@ Una vez instalado nginx, hay que parar apache de kogind que está corriendo por 
 Vamos a introducir la url que nos ofrece en el navegador para comprobar que nginx está funcionando.
 
 ![Nginx en Koding](https://www.dropbox.com/s/3r4m5vxx4fqbb79/5.4.png?dl=1)
-
-
 
 ## Ejercicio 6.
 ### Usar juju para hacer el ejercicio anterior.
