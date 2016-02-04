@@ -97,6 +97,9 @@ Una vez instalado, en nuestro caso vamos a crear los ficheros para el test de 8G
 ![Creando ficheros de test ](https://www.dropbox.com/s/o2yj6pskd8uls2g/03.2.png?dl=1)
 Una vez creados, ya sólo nos queda ejecutar el test y esperar por lo resultados.
 
+Vamos a ejecutar para paravirtualización:
+***qemu-system-x86_64 -boot order=c -drive file=fichero-cow.qcow2,if=virtio***
+
 ## Ejercicio 4.
 ### Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
@@ -111,29 +114,122 @@ Y con la versión de Lubuntu descargada, vamos a iniciar el SO con Qemu: ```qemu
 
 Para acceso VNC:
 
-Configurando según la orden, ejecutamos: ***qemu-system-i386 -hda lubuntu.img vnc :1***
-
 Ahora vamos a conectar a la máquina virtual usando algún cliente de VNC tal como vinagre, para ello ejecutamos en el terminal, ***sudo apt-get install vinagre***
 
-Nnos podemos conectar a la máquina con vinagre: ***vinagre localhost:5901***
+Ejecutando ``qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name debian -vnc :1.``
 
+Se queda en ejecución sin abrir ninguna ventana ni nada.
+
+Abrimos otro terminal, y ejecutamos ***ifconfig*** y buscamos la dirección de la interfaz a la que nos conectaremos mediante ***192.168.122.1:5901***
+
+![ejecutando](https://www.dropbox.com/s/dgaac6f404zcpxm/4.11.png?dl=1)
+
+![ejecutando](https://www.dropbox.com/s/ayynmemvoymfufe/4.12.png?dl=1)
 
 
 Para conectar por SSH:
 
-Primero redireccionamos el puerto: ***qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name magv -redir tcp:2222::22.***
+Primero arrancamos la máquina aunque redireccionamos el puerto: ***qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name Lubuntu -redir tcp:1313::22***
 
-Y conectamos: ***ssh -p 2222 magv@localhost***.
+Una vez arranque la máquina virtual instalamos ***ssh*** ejecutando en su terminal, ***apt-get update && apt-get install ssh***
+
+Y conectamos a través del terminal anfitrión ejecutando: ***ssh -p 1313 magv@localhost***.
 
 ## Ejercicio 5.
 ### Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
 
-Error al instalar nodejs-legacy
-https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-tutorial/
+Para realizar este ejercicio, y crear una máquina virtual en ubuntu he usado Koding, que nos ofrece una máquina virtual.
+
+Nos logueamos con GitHub y se crea nuestra máquina virtual
+
+![koding](https://www.dropbox.com/s/wrm1bk30juykhnh/5.png?dl=1)
+
+![koding ubuntu](https://www.dropbox.com/s/1p6xt1oio3p3nhs/5.1.png?dl=1)
+
+
+Si vamos a la parte ***YourVMS*** podemos ver las características de nuestra máquina.
+![Nuestra Máquina](https://www.dropbox.com/s/pfwfxwykfg55q9t/5.6.png?dl=1)
+
+Ahora si ejecutamos en el propio terminal de Koding, ***lsb_release -a*** también podemos ver las características de nuestra máquina, como podemos observar nuestra máquina es Ubuntu.
+
+![koding ubuntu](https://www.dropbox.com/s/pw8hz654hicfv8d/5.5.png?dl=1)
+
+Ahora lo que vamos a hacer es instalar nginx, en la máquina Ubuntu de Koding, ejecutando en el terminal ***sudo apt-get install nginx***
+
+![koding ubuntu](https://www.dropbox.com/s/d9csl769wwldsib/5.2.png?dl=1)
+
+Una vez instalado nginx, hay que parar apache de kogind que está corriendo por defecto, y a continuación ejecutamos ***sudo service nginx start*** para arrancar el servicio nginx. Una vez arrancado nginx vamos y pulsamos a la opciones de nuestra máquina koding-vm-0.
+
+![(..)](https://www.dropbox.com/s/fjgen6og7wc60n9/5.3.png?dl=1)
+Vamos a introducir la url que nos ofrece en el navegador para comprobar que nginx está funcionando.
+
+![Nginx en Koding](https://www.dropbox.com/s/3r4m5vxx4fqbb79/5.4.png?dl=1)
+
+
 
 ## Ejercicio 6.
 ### Usar juju para hacer el ejercicio anterior.
+
+Vamos a instalar juju, ejecutando en el terminal
+
+  sudo apt-get install juju
+
+![Instalar Juju](https://www.dropbox.com/s/ieqpjcgy8xgznb1/eje6.1.png?dl=1)
+
+Vamos a crear un fichero de configuración ejecutando en la terminal, ***juju generar - config***
+
+Y vamos a editar el fichero de configuración, con nuestros datos en el tipo azure del fichero de configuración.
+
+  location: ***North Europe***
+
+  management-subscription-id: ***cc8baa98-9461-4225-866e-6b3e41c51556***
+  management-certificate-path: /home/me/azure.pem
+
+  storage-account-name: abcdefghijkl
+
+![Instalar Juju](https://www.dropbox.com/s/qmsrnix31m5goko/eje6.2.png?dl=1)
+
+Vamos a ejecutar los diferentes comandos para hacer un certificado.
+
+  - openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout azure.pem -out azure.pem
+  - openssl x509 -inform pem -in azure.pem -outform der -out azure.cer
+  - chmod 600 azure.pem
+
+Ahora tenemos que cargarlo en Azure, ***Configuración, Certificados de Administración y Cargar***, donde elegiremos nuestro azure.cer:
+
+![azure.cer](https://www.dropbox.com/s/v3u4qmnnratom0r/06.10.png?dl=1)
+
+![azure.cer](https://www.dropbox.com/s/7jl6n5x6nyi98hb/06.11.png?dl=1)
+
+Ahora ajustamos de nuevo la configuración de environments.yml
+
+![environments](https://www.dropbox.com/s/54stx62b13vwgln/06.14.png?dl=1)
+
+Ejecutamos en el terminal:
+
+***sudo juju switch azure***
+
+
+![juju switch azure](https://www.dropbox.com/s/t8v0a8sgsuvv1br/06.15.png?dl=1)
+
+***sudo juju bootstrap***
+
+![sudo juju bootstrap](https://www.dropbox.com/s/nme1qb9n6ryynu3/06.16.png?dl=1)
+
+***sudo juju deploy --to 0 juju-gui***
+
+***sudo juju status***
+
+![juju switch azure](https://www.dropbox.com/s/6mcsnq6d23ldztb/06.17.png?dl=1)
+
+Si todo está correcto vemos la dirección pública que tenemos que poner en el navegador, en mi caso ***juju-azure-13akhf1jmn.cloudapp.net***
+
+Nos muestra una imagen de login, que en debajo del formulario, podemos ver en dónde esta la contraseña.
+
+Para instalar ahora nginx tenemos que ejecutar en el terminal,
+`sudo juju deploy --to 0 cs:~hp-discover/trusty/nginx-4` y a continuación ``sudo expose nginx``
+
 
 ## Ejercicio 7.
 ### Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
