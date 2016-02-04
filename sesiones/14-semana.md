@@ -35,6 +35,8 @@ Antonio Miguel Pozo Cámara - [Bares](https://github.com/AntonioPozo/Bares)
 
 Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignaciorecuerda/gestionpedidos_django)
 
+Jesús Ángel González Novez - [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
+
 
 
 ## Lista de comprobación del proyecto
