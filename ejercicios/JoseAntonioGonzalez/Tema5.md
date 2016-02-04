@@ -116,7 +116,7 @@ Y nos devolverá un OK si todo va bien en la importación de credenciales
 
 Hecho todo, crearemos el sitio con la siguiente orden:
 
-	azure site create --location "West US" ejercicio5-IV-JAGonz
+	azure site create --location "Central US" ejercicio5-IV-JAGonz
     
 Donde ejercicio5-IV-JAGonz es el nombre del sitio web que estamos creando. Ya deberíamos poder acceder en el navegador [con el siguiente enlace](http://ejercicio5-iv-jagonz.azurewebsites.net/)
 
@@ -124,15 +124,36 @@ Donde ejercicio5-IV-JAGonz es el nombre del sitio web que estamos creando. Ya de
 
 El sitio web está creado, pero no cumple las condiciones del ejercicio aún.Instalaremos Ubuntu server en la máquina. Primero debemos saber la imagen a instalar, con la siguiente orden:
 
-	azure vm image list westus ubuntuserver
+	azure vm image list Central US ubuntuserver
     
 Nos devolverá una lista con todas las imágenes de ubuntu server disponibles. Nosotros instalamos una con nombre **b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB**
 
 Creamos la máquina virtual:
 
-	azure vm create ejercicio5-iv-jagonz b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB jagonz --location "West US" --ssh
+	azure vm create ejercicio5-iv-jagonz b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB jagonz --location "West US" --ssh"
 
+Una vez creada, la arrancamos con la siguiente orden:
 
+	azure vm start ejercicio5-iv-jagonz
+
+Nos conectamos por ssh a la máquina creada:
+
+	ssh joseantonio@ejercicio5-iv-jagonz.cloudapp.net
+
+Instalamos nginx:
+
+	sudo apt-get update
+    sudo apt-get install nginx	
+    sudo fuser -k 80/tcp
+    sudo service nginx start
+    
+Por último abrimos el puerto 80 en la máquina:
+
+	azure vm endpoint create ejercicio5-iv-jagonz 80 80
+
+Y al conectarnos a la página web que sirve nginx a través del navegador, veremos la página de bienvenida si se ha configurado todo correctamente:
+
+![](Ejercicio5-5)
 #Ejercicio 7
 
 Tenemos que descargarnos la imagen de LinuxMint. En mi caso, descargamos la imagen de 32 bit de [aqui](http://www.linuxmint.com/edition.php?id=203) (Se ubicará en la carpeta de descargas de la carpeta personal).
