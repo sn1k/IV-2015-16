@@ -6,6 +6,8 @@ Los proyectos se entregan el día 8 y se presentan el día 8 o el 15. Por favor,
 
 Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada/IV)
 
+Jesús Prieto López - [ProyectoIVDAI Bares](https://github.com/JesGor/Proyecto-IV-DAI)
+
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
