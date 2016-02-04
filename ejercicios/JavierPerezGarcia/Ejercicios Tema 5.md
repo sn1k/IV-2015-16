@@ -53,3 +53,43 @@ Una vez instalado todo ejecutamos virtualbox y procedemos a crear una VM:
 Una vez hecho seleccionamos nuestra ISO e instalamos:
 ![224](https://www.dropbox.com/s/3p7rq962w4hfbov/5-2-2-005.png?dl=1)
 ![225](https://www.dropbox.com/s/blcbx5npw8c18vf/5-2-2-006.png?dl=1)
+
+###Ejercicio 5
+Como partimos de un Ubuntu recién instalado, lo primero será instalar npm:
+![50](https://www.dropbox.com/s/57qlwepvfenm1vt/5-5-001.png?dl=1)
+
+La versión que se instala es inferior a la que necesitamos, de modo que actualizamos npm de la siguiente forma:
+![51](https://www.dropbox.com/s/l7vag2m9rli9ewt/5-5-002.png?dl=1)
+
+Procederemos una vez hecho esto a instalar el cliente de Azure. Como podemos observar también en la imagen, npm se ha actualizado con éxito:
+![52](https://www.dropbox.com/s/jbt4mu3fwollwab/5-5-003.png?dl=1)
+
+Procedemos a ejecutarlo:
+![53](https://www.dropbox.com/s/0verr8jtdbumi1z/5-5-006.png?dl=1)
+
+Para obtener este resultado, hemos introducido el código que se nos da en la siguiente web para obtener el acceso:
+![54](https://www.dropbox.com/s/f21l3uic3zj8kh9/5-5-004.png?dl=1)
+
+Obtendremos entonces una pantalla como esta:
+![55](https://www.dropbox.com/s/5i6qe0bdr8w7ni7/5-5-005.png?dl=1)
+
+Procederemos entonces a hacer una prueba mirando la lista de imagenes de MV's que hay:
+![56](https://www.dropbox.com/s/npsd5mx2j6pt13a/5-5-007.png?dl=1)
+
+Es entonces cuando, habiendo decidido la imagen, procedemos a crear una máquina, esta la crearemos de la siguiente forma:
+![57](https://www.dropbox.com/s/iora3k2rurcvwj5/5-5-008.png?dl=1)
+
+Nota: los caracteres admitidos como símbolos en la contraseña son !@#$%^&+= y es por eso que ha dado error al poner como carácter el símbolo _
+
+Una vez creada la máquina nos conectamos a ella por ssh:
+![58](https://www.dropbox.com/s/z37zvpbdz46h47a/5-5-009.png?dl=1)
+
+Una vez dentro procedemos a instalar nginx:
+
+![59](https://www.dropbox.com/s/qa4x0s5jbdizbwr/5-5-010.png?dl=1)
+
+Tras hacer esto nos desconectamos de la máquina y le decimos a Azure que nos abra el puerto 80:
+![590](https://www.dropbox.com/s/zlhjv691jglpjea/5-5-011.png?dl=1)
+
+Comprobemos finalmente que todo ha salido bien:
+![591](https://www.dropbox.com/s/3wxs2b976oj5f7z/5-5-012.png?dl=1)
