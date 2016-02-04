@@ -2,7 +2,7 @@
 
 ##Ejercicio 1
 
-Volvemos a hacer lo mismo que hicimos en el primer tema, esto es, escribimos `sudo apt-get install cpu-checker` y luego: `sudo apt install qemu-kvm libvirt-bin`. Con esto ya tenemos instalado kvm 3n el equipo.
+Volvemos a hacer lo mismo que hicimos en el primer tema, esto es, escribimos `sudo apt-get install cpu-checker` y luego: `sudo apt install qemu-kvm libvirt-bin`. Con esto ya tenemos instalado kvm en el equipo.
 
 ##Ejercicio 2
 
@@ -20,6 +20,14 @@ Una vez instalado VirtualBox voy a descargar una imagen de Ubuntu Desktop desde 
 
 ##Ejercicio 3
 
+Para este ejercicio voy a utilizar un Benchmark que desarrollé en la asignatura Ingeniería de servidores para comprobar diferentes sistemas de ficheros, aunque puede usarse para este propósito. Puede verse el benchmark [aquí](https://github.com/santidediego/Ingenieria-de-servidores/tree/master/Benchmark%20para%20medici%C3%B3n%20de%20velocidad%20de%20sistemas%20de%20ficheros). Lo único que he cambiado es que los resultados en lugar de exportarlos a un archivo .csv me los saque por terminal para mayor comodidad.
+
+Teniendo el benchmark, arranco la máquina virtual con Minino que cree anteriormente con `qemu-system-x86_64 -hda disco.qcow2`. Copiamos el Benchmark con ssh.
+
+Ahora hacemos lo mismo con la paravirtualización arrancando la máquina con `qemu-system-x86_64 -boot order=c -drive file=disco.qcow2,if=virtio`. Copiamos también el benchmark con ssh.
+
+En mi caso, he obtenido tiempos muy similares con ambos, aunque algo mejores en la caso de la paravirtualización, aunque la verdad que la diferencia no es significativa, quizá realizando más intentos puedan apreciarse más diferencias.
+
 ##Ejercicio 4
 
 En este ejercicio voy a crear una máquina virtual con Lubuntu con VirtualBox. He escogido esta distribución porque viene con el entorno gráfico LXDE instalado por defecto. Primero me descargo una imagen de Lubuntu de 32 bits de [aquí](https://help.ubuntu.com/community/Lubuntu/GetLubuntu) y una vez descargada creamos una MV en VirtualBox. En mi caso le he dado una capacidad de disco duro de 5GB como podemos ver abajo ya que se necesitan mínimo 4.4 GB para su correcto funcionamiento:
@@ -28,7 +36,7 @@ En este ejercicio voy a crear una máquina virtual con Lubuntu con VirtualBox. H
 
 Una vez instalado vamos a conectarnos por ssh. Para ello, primero tenemos que añadir una nueva interfaz de red solo anfitrión para poder conectarnos a nuestra máquina:
 
-![nueva interfaz de red](http://s864.photobucket.com/user/Santiago_de_Diego/media/Captura%20de%20pantalla%20de%202016-01-09%20175021_zps8uer6ku1.png.html?sort=3&o=1)
+![nueva interfaz de red](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20175021_zps8uer6ku1.png)
 
 Ahora entramos en el archivo */etc/network/intefaces* y lo editamos como aparece en la siguiente imagen:
 
@@ -38,5 +46,16 @@ Ahora ya solo queda conectarnos por ssh a la MV como podemos ver:
 
 ![ssh](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20175921_zpsg1mcuqsp.png)
 
+#Ejercicio 5:
+
+Primero de todo instalamos una máquina virtual con Ubuntu con VirtualBox. Seguimos los pasos de forma similar al ejercicio 4, Una vez instalada, vamos a configurar Nginx. Primero de todo lo instalamos con `sudo apt-get update && sudo apt-get install nginx`. En ubuntu, por defecto se arranca automáticamente sin tenerque hacer nada más. Por tanto ya lo tenemos
+
+#Ejercicio 7:
+
+Primero de todo creamos una máquina virtual en VirtualBox de la misma manera que antes, solo que ahora marcaremos Linux 2.6 y pondremos la versión de 32 bits para que sea más ligera. Después seleccionamos la imagen de Linux Mint descargada y arrancamos la MV. Nos aparece la siguiente pantalla:
+
+![linux mint](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-02-02%20152900_zps2qdsjkyi.png)
+
+Podemos entrar en la primera opción y después clicar en el instalador para comenzar a instalar la distribución, de forma similar a como lo hacemos en Ubuntu.
 
 
