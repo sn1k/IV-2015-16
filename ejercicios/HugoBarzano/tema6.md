@@ -386,6 +386,7 @@ El playbook se encarga de actualizar el sistema base, instalar dependencia, desc
 
 Si nos fijamos, esta ip privada es la establecida para la maquina virtual en el Vagrantfile. Para crear la maquina con vagrant, debemos ejecutar
 
+	vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
 	vagrant up --provider=azure
 
 ![imagen](https://www.dropbox.com/s/v8dtc28xemx2jow/ej8.png?dl=1)

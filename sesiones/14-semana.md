@@ -7,6 +7,7 @@ Los proyectos se entregan el día 8 y se presentan el día 8 o el 15. Por favor,
 Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada/IV)
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
+Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
 ## Día 15
 
 
