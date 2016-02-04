@@ -63,7 +63,7 @@ json_attribs "/home/javi/chef/node.json"
 
 - Por ultimo se instala los paquetes ejecutando la orden `sudo chef-solo -c chef/solo.rb`
 
-![ejecucion](ejer2)
+![ejecucion](http://i63.tinypic.com/11764ps.jpg)
 
 
 
@@ -101,7 +101,7 @@ Definimos la variable de entorno para que Ansible sepa donde se encuentra el fic
 $ export ANSIBLE_HOSTS=~/ansible_hosts
 ```
 
-![varansible](ejer4a)
+![varansible](http://i64.tinypic.com/amax5c.png)
 
 Ahora configuro la conexión ssh con mi máquina de Amazon:
 ```
@@ -111,7 +111,7 @@ ssh-add "ruta-archivo.pem"
 ```
 Compruebo la conexión:
 
-![comprobacion](ejer4b)
+![comprobacion](http://i65.tinypic.com/fc4qhs.png)
 
 Instalamos las librerias:
 ```
@@ -130,50 +130,8 @@ Ejecutamos la aplicación:
 ansible all -u ubuntu -m command -a "sudo python submodulo-javi/manage.py runserver 0.0.0.0:80"
 ```
 
-![ejecucion](ejer4c)
+![ejecucion](http://i66.tinypic.com/vspabm.png)
 
-
-### Ejercicio 5: 
-### 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
-
-El primer paso es definir el host, para ello en el archivo **ansible_hosts** se define lo siguiente:
-
-![ansible_hosts](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansiblehosts_zps5q8u3t5i.png)
-
-Posteriormente se define el archivo **.yml**, en mi caso lo he llamado **daiansible.yml** con el siguiente contenido:
-```
-- hosts: azure
-  sudo: yes
-  remote_user: javi
-  tasks:
-  - name: Instalar paquetes 
-    apt: name=python-setuptools state=present
-    apt: name=build-essential state=present
-    apt: name=python-dev state=present
-    apt: name=git state=present
-  - name: Obtener aplicacion de git
-    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
-  - name: Permisos de ejecucion
-    command: chmod -R +x DAI
-  - name: Instalar requisitos
-    command: sudo pip install -r DAI/requirements.txt
-  - name: ejecutar
-    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
-```
-
-Lo he ejecutado con la orden `ansible-playbook -u javi daiansible.yml`
-
-![ansibleplaybook](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansibleplaybook_zps7dsjypvz.png)
-
-Y el resultado es el mismo que en el ejercicio anterior con la salvedad de la automatización de ejecutar un solo script.
-
-![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansibleplaybook2_zps6qojylas.png)
-
-A tener en cuenta que el comando **nohup**  permite la ejecución de un comando pese a salir del terminal, ya que se ejecuta de manera independiente.Segun [linux.die](http://linux.die.net/man/1/nohup) -->**run a command immune to hangups, with output to a non-tty**
-
-### 2.¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
-
-La respuesta claramente es Ansible ya que permite ejecutarse desde fuera del servidor, por otra parte los **playbooks** de Ansible son más faciles de configurar que las recetas de Chef donde es necesario una jerarquización de directorios.
 
 ### Ejercicio 6:Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
 
@@ -187,7 +145,7 @@ sudo apt-get install vagrant
 vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
 ```
 
-![descimg]()
+![descimg](http://i68.tinypic.com/4hph4x.png)
 
 - Creamos el fichero Vagranfile e inicializamos la máquina:
 ```
@@ -197,14 +155,14 @@ vagrant init debian
 vagrant up
 ```
 
-![vagrantup]()
+![vagrantup](http://i64.tinypic.com/6rov8i.png)
 
 - Nos conectamos con ella para trabajar:
 ```
 vagrant ssh
 ```
 
-![ssh]()
+![ssh](http://i64.tinypic.com/snjn2o.png)
 
 
 ### Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
@@ -233,9 +191,9 @@ end
 
 - Levantamos y ponemos en amrcha la máquina y comprobamos la instalación de nginx:
 
-![img]()
+![img](http://i65.tinypic.com/2quhk5h.png)
 
-![img]()
+![img](http://i65.tinypic.com/mrqqd.png)
 
 
 
