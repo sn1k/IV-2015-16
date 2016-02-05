@@ -22,12 +22,12 @@ depencencias:
 - [x] ```sudo apt-get install debootstrap```
 
 Vamos a crear un contenedor  
-```sudo lxc-create -t ubuntu -n contenedorU```
+``sudo lxc-create -t ubuntu -n contenedorU``
 
 ![Contenedor Debian](https://www.dropbox.com/s/7iqr67qsidhtyh9/ejer2.png?dl=1)
 
 Vamos a iniciar el contenedor creado anteriormente. Ejecutamos en el terminal
-```sudo lxc-start -n contenedorU```
+``sudo lxc-start -n contenedorU``
 
 Seguidamente tenemos que introducir ```ubuntu``` como usuario y contraseña.
 
@@ -45,19 +45,19 @@ La interfaz ```eth0``` es para tener acceso a internet desde el contenedor, y ``
 ### 3.1 Crear y ejecutar un contenedor basado en Debian.
 
 Vamos a crear un contenedor Debian. Ejecutamos en el terminal  
- ```sudo lxc-create -t debian -n contenedorD```
+ ``sudo lxc-create -t debian -n contenedorD``
 
 ![Contenedor Debian](https://www.dropbox.com/s/o5gvgfsph4yihro/ejer3.2.png?dl=1)
 
 ### 3.2 Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
 
 Verificamos que tenemos instalado yum, y nos disponemos a crear un contenedor centOS. Ejecutamos en el terminal  
-```sudo lxc-create -t centos -n contenedorC```
+``sudo lxc-create -t centos -n contenedorC``
 
 ![Contenedor CentOS](https://www.dropbox.com/s/ifwtpq6avt5zawm/3.2.png?dl=1)
 
 Iniciamos el contenedor ejecutando en el terminal  
-``` sudo lxc-start -n contenedorC ```
+`` sudo lxc-start -n contenedorC ``
 
 ![Contenedor CentOS](https://www.dropbox.com/s/wfsnk189ik8n5uq/3.2.2.png?dl=1)
 
@@ -67,9 +67,9 @@ Iniciamos el contenedor ejecutando en el terminal
 
 Para llevar a cabo éste ejercicio he seguido los pasos de LXC Web panel: https://lxc-webpanel.github.io/install.html
 
-- Ejecutamos en el terminal ```sudo su``` para ser root.
+- Ejecutamos en el terminal ``sudo su`` para ser root.
 - Ejecutar seguidamente  
- ```wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash ```
+ ``wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash ``
 
 
 ![Instalación lxc-webpanel](https://www.dropbox.com/s/614u2hfu0l9kv65/4.0.png?dl=1)
@@ -84,7 +84,7 @@ Una vez logueados entramos en el Panel de contenedores, donde podemos ver los co
 
 ### 4.2 Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
-Para restringir los recursos de un contenedor, primero debemos pararlo, y seguidamente seleccionar el que queremos restringir, en mi caso he elegido el contenedor de Ubuntu, llamado ``` contenedorU ```
+Para restringir los recursos de un contenedor, primero debemos pararlo, y seguidamente seleccionar el que queremos restringir, en mi caso he elegido el contenedor de Ubuntu, llamado ``contenedorU ``
 
 ![Restricción de recursos contenedorU](https://www.dropbox.com/s/ykdskxgqt0wqavw/4.3.png?dl=1)
 
@@ -95,9 +95,9 @@ Para llevar a cabo éste ejercicio vamos a llevar a cabo los siguientes pasos:
 
 ### Contenedor
 
-- Crear y arrancar el contenedor, en mi caso he creado uno nuevo de ubuntu. (Crear contenedor: ```sudo lxc-create -t ubuntu -n my-container``` Arrancar contenedor: ```sudo lxc-start -n my-container``` Usuario y pass: ```ubuntu```)
+- Crear y arrancar el contenedor, en mi caso he creado uno nuevo de ubuntu. (Crear contenedor: ``sudo lxc-create -t ubuntu -n my-container`` Arrancar contenedor: ``sudo lxc-start -n my-container`` Usuario y pass: ``ubuntu``)
 
-Instalamos ahora nginx, ejecutando en el terminal, ```sudo apt-get install nginx```
+Instalamos ahora nginx, ejecutando en el terminal, ``sudo apt-get install nginx``
 
 ![Install nginx](https://www.dropbox.com/s/4xs5iyngz08a1uv/5.1.png?dl=1)
 
@@ -215,16 +215,16 @@ Pasos a seguir para en el caso Mongo.
 ### Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
 Para poder llevar a cabo todo esto, debemos arrancar el contenedor ejecutando en el terminal:
-```sudo docker run -i -t ubuntu```
+``sudo docker run -i -t ubuntu``
 
 Nos disponemos a crear un usuario, para ello, ejecutamos de forma independiente
 - useradd -d /home/us_docker -m us_docker (Creación usuario)
 - passwd us_docker (pass para el usuario)
 - sudo adduser us_docker sudo (privilegios para el usuario)
 
-Una vez el usuario está creado y con privilegios nos disponemos a loguearnos. Ejecutamos en el terminal ```login us_docker```
+Una vez el usuario está creado y con privilegios nos disponemos a loguearnos. Ejecutamos en el terminal ``login us_docker``
 
-Una vez logueado, instalamos nginx ejecutando en el terminal: ```sudo apt-get install nginx```
+Una vez logueado, instalamos nginx ejecutando en el terminal: ``sudo apt-get install nginx``
 
 ![Crear usuario, login e instalación](https://www.dropbox.com/s/ehue4a6mquw2kth/8.1.png?dl=1)
 
