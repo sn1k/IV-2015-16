@@ -6,7 +6,10 @@ Los proyectos se entregan el día 8 y se presentan el día 8 o el 15. Por favor,
 
 Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada/IV)
 
+Jesús Prieto López - [ProyectoIVDAI Bares](https://github.com/JesGor/Proyecto-IV-DAI)
+
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
+
 
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
 
@@ -24,12 +27,20 @@ Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMa
 
 Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
 
+Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
 Antonio Miguel Pozo Cámara - [Bares](https://github.com/AntonioPozo/Bares)
 
 Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignaciorecuerda/gestionpedidos_django)
+
+Jesús Ángel González Novez - [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
+
+Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/InsertaLogo)
+
+
+César Albusac Jorge - [App Bares y tapas](https://github.com/cesar2/DAI-BARES)
 
 
 

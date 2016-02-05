@@ -217,3 +217,10 @@ Una vez finalizado el uso de la máquina, vamos a apagarla para ahorrar recursos
 ```
 	azure vm shutdown iv-ej5-ubuntuserver
 ```
+
+
+## Ejercicio 7
+** Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado. **
+
+Realizando lo mismo que en los primeros ejercicios, en la captura siguiente muestro el proceso:
+![Linux Mint - máquina virtual](http://i.cubeupload.com/nJtXDI.png)
