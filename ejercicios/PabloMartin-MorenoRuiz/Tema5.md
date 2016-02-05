@@ -101,6 +101,34 @@ y no usarla ``` qemu-system-x86_64 -hda ubuntu.qcow2 ```  :
 
 ## Ejercicio 4. Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
+Primero creamos espacio en disco:
+
+![CrearDisco](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_021_zps4ebiztug.png)
+
+Instalamos el sistema operativo:
+
+![InstalamosLUbuntu](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_022_zpswnrfacgf.png)
+
+Ejecutamos con el siguiente comando:
+
+![Comando](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_023_zpsegjeq2l9.png)
+
+Instalamos vinagre ``` sudo apt-get install vinagre ```
+
+Y ahora ejecutamos el entorno gráfico:
+
+![EntornoGráfico](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_024_zpskt9niaaa.png)
+
+A continuación instalamos ssh ```sudo apt-get install ssh```
+
+Arrancamos la máquina con NAT del el puerto 2222 de la máquina host al puerto 22 de la invitada:
+
+![2222:22](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_025_zpspf71lz7g.png)
+
+Y ahora le hacemos un ssh:
+
+![ssh](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_026_zpsm87dxwif.png)
+
 ## Ejercicio 5. Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
 
