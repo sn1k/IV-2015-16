@@ -11,14 +11,14 @@ Ejecutamos el siguiente comando para comprobar comprobar que tenemos paravirtual
 ![comprobacionkvm](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_001_zpsfstijrg7.png)
 
 Instalamos los siguientes paquetes para tener KVM:
-'''
+```
 sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
-'''
+```
 
 Para crear máquinas virtuales instalamos el siguiente paquete:
-'''
+```
 sudo apt-get install virtinst
-'''
+```
 
 Ahora añado mi usuario a los siguientes grupos:
 
@@ -31,10 +31,9 @@ Y ahora compruebo que esta bien instalado:
 ![funciona](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_003_zpsmhcjt3x4.png)
 
 Podemos instalar una interfaz gráfica con el siguiente comando:
-'''
+```
 sudo apt-get install virt-manager
-'''
-
+```
 Y aquí la tenemos:
 ![InterfazGraficaQemu](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_004_zpsu9d4rfqe.png)
 
