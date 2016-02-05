@@ -35,11 +35,46 @@ Podemos instalar una interfaz gráfica con el siguiente comando:
 sudo apt-get install virt-manager
 ```
 Y aquí la tenemos:
+
 ![InterfazGraficaQemu](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_004_zpsu9d4rfqe.png)
 
 ## Ejercicio 2.
 
 ### 1. Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).
+
+Lo primero que hare será crear una máquina de Ubuntu.
+
+Para ello lo primero es crear espacio en disco para la máquina:
+
+![EspacioUbuntu](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_006_zps4pnodmef.png)
+
+Lo siguiente será instalar ubuntu usando una imágen descargada en el ordenador y el anterior disco creado:
+
+![CrearUbuntu](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_007_zpsmawtimbv.png)
+
+Y ya tenemos instalado ubuntu:
+
+![UbuntuInstalado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_008_zpssieux13u.png)
+
+Lo siguiente que voy a hacer es instalar otro sistema operativo en este caso debian, repitiendo los mismos pasos hechos anteriormente:
+
+Primero creamos espacio en disco para debian:
+
+![CrearDiscoParaDebian](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_009_zpsuogwwbzv.png)
+
+Lo siguiente es comenzar con la instalación:
+
+![InstalaciónDebian](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_011_zpsbdjrmvkx.png)
+
+Y por último procedemos a la instalación de debian:
+
+![InstalandoDebian](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_010_zpscxiwkqzj.png)
+
+Y cómo no solo nos interesa instalar máquinas virtuales sino que también nos interesa usarlas, lo hacemos con el siguiente comando:
+
+![UsoMaquinas](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_012_zpsglaujcgl.png)
+
+![MaquinaActiva](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_013_zpsjimofhv1.png)
 
 ### 2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels. 
 
