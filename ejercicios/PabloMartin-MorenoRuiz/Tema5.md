@@ -131,7 +131,7 @@ Y ahora le hacemos un ssh:
 
 ## Ejercicio 5. Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
-Para este ejercicio he usado Koding.com registrandote o logeandote con github te permite usar máquinas virtuales. Cómo mi ordenador es de 32 bits al intentar instalar azure-cli tenía muchos de problemas (de hecho, creo que no se puede), he usado Koding con una máquina de 64 bits.
+Para este ejercicio he usado Koding.com que registrandote o logeandote con github te permite usar máquinas virtuales. Cómo mi ordenador es de 32 bits al intentar instalar azure-cli tenía muchos de problemas (de hecho, creo que no se puede), he usado Koding con una máquina de 64 bits.
 
 Instalo azure-cli con los siguientes comandos:
 ```
