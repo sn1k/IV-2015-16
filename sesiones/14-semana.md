@@ -37,6 +37,8 @@ Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignacior
 
 Jesús Ángel González Novez - [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
 
+Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/InsertaLogo)
+
 
 
 ## Lista de comprobación del proyecto
