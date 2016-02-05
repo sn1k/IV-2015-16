@@ -10,6 +10,7 @@ Jesús Prieto López - [ProyectoIVDAI Bares](https://github.com/JesGor/Proyecto-
 
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
+
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
 
 Rafael Lachica Garrido - [PLUCO](https://github.com/rafaellg8/IV-PLUCO-RLG)
@@ -26,12 +27,17 @@ Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMa
 
 Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
 
+Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
 Antonio Miguel Pozo Cámara - [Bares](https://github.com/AntonioPozo/Bares)
 
 Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignaciorecuerda/gestionpedidos_django)
+
+Jesús Ángel González Novez - [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
+
+Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/InsertaLogo)
 
 
 
