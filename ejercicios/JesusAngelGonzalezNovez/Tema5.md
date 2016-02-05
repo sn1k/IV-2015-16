@@ -85,7 +85,7 @@ El Vagrantfile sería tal que así:
       end
     end
 
-Para ansible usariamos un playbook:
+playbook.yml
 
     ---
     - hosts: default
@@ -100,7 +100,19 @@ Para ansible usariamos un playbook:
         - name: Start service
           shell: service nginx start
 
+Ejecutamos Vagrant:
 
+    vagrant up --provider=aws
+
+### Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Creamos el disco duro:
+
+    qemu-img create -f qcow2 mint.qcow2 6G
+
+Instalar imagen Linux Mint
+
+    qemu-system-x86_64 -machine accel=kvm -hda mint.qcow2 -cdrom ~/linuxmint-17.3-cinnamon-64bit.iso -m 1G -boot d
  
 
 
