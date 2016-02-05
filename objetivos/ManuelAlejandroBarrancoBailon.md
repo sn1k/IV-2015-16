@@ -161,3 +161,45 @@
 - [X] Crear infraestructuras virtuales completas.
 - [X] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+
+##11ª Semana, comienza el 9 de Diciembre
+- [X] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+###Otros objetivos
+- [X] Instalar hipervisores libres y trabajar con ellos.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+
+##12ª Semana, comienza el 16 de Diciembre
+- [X] Usar gestores de máquinas virtuales.
+
+###Otros objetivos
+- [ ] Instalar clientes libres de infraestructura en la nube.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [X] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+##Objetivos específicos Tema 5
+- [X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [X] Documentar y mantener una plataforma virtual.
+- [X] Realizar tareas de administración de infraestructuras virtuales.
+
+##13ª Semana, comienza el 13 de Enero de 2016
+- [X] Usar infraestructura en la nube
+- [X] Entender el concepto de orquestación de máquinas virtuales.
+
+###Otros objetivos
+- [ ] Instalar clientes libres de infraestructura en la nube.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [ ] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+
+##14ª Semana, comienza el 20 de Enero de 2016
+- [X] Probar diferentes formas de desplegar en la nube.
+- [X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+###Otros objetivos
+- [ ] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [ ] Buscar alternativas a Vagrant.
+- [ ] Usar diferentes infraestructuras en la nube.
+- [X] Resolver dudas con respecto a la práctica final.

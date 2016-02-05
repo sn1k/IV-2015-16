@@ -172,3 +172,80 @@ Lista de objetivos de Jesús Prieto López
 - [X]  Crear infraestructuras virtuales completas.
 - [X] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+##Clases de 10ª semana
+
+ - [X] Usar docker en una aplicación real.
+
+###Otros objetivos
+
+- [X] Publicar imágenes de docker.
+- [X] Probar imágenes de docker publicadas.
+- [X] Trabajar con varias imágenes de docker conectadas.
+
+##Clases de 11ª semana
+
+- [X] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+###Otros objetivos
+
+- [X] Instalar hipervisores libres y trabajar con ellos.
+- [X] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+##Clases de 12ª semana
+
+- [X] Usar gestores de máquinas virtuales.
+
+###Otros objetivos
+
+- [X] Instalar clientes libres de infraestructura en la nube.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+
+##Clases de 13ª semana
+
+- [X] Usar infraestructura en la nube
+- [X] Entender el concepto de orquestación de máquinas virtuales.
+
+
+###Otros objetivos
+
+- [X] Instalar clientes libres de infraestructura en la nube.
+- [X] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+
+##Clases de 14ª semana
+
+- [X] Probar diferentes formas de desplegar en la nube.
+- [X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+###Otros objetivos
+
+- [ ] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [ ] Buscar alternativas a vagrant.
+- [X] Usar diferentes infraestructuras en la nube.
+- [X] Resolver dudas con respecto a la práctica final.
+
+
+##Tema 5
+
+- [X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [X] Documentar y mantener una plataforma virtual.
+- [X] Realizar tareas de administración de infraestructuras virtuales.
+
+
+## Tema 6
+
+- [X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [X] Documentar y mantener una plataforma virtual.
+- [X] Realizar tareas de administración en infraestructura virtual.
+
+
+###Objetivos específicos
+
+- [X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [X] Saber cómo aplicarlos en un caso determinado.
+- [X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
+
