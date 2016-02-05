@@ -289,5 +289,5 @@ vagrant up --provider=aws
 
 - Vemos que funciona:
 
-![img]()
+![img](http://i65.tinypic.com/mrzqad.png)
 
