@@ -109,7 +109,7 @@ Instalamos el sistema operativo:
 
 ![InstalamosLUbuntu](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_022_zpswnrfacgf.png)
 
-Ejecutamos con el siguiente comando:
+Ejecutamos la máquina con el siguiente comando:
 
 ![Comando](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_023_zpsegjeq2l9.png)
 
@@ -131,6 +131,56 @@ Y ahora le hacemos un ssh:
 
 ## Ejercicio 5. Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
+Para este ejercicio he usado Koding.com registrandote o logeandote con github te permite usar máquinas virtuales. Cómo mi ordenador es de 32 bits al intentar instalar azure-cli tenía muchos de problemas (de hecho, creo que no se puede), he usado Koding con una máquina de 64 bits.
+
+Instalo azure-cli con los siguientes comandos:
+```
+sudo apt-get install nodejs-legacy
+sudo apt-get install npm
+sudo npm install -g azure-cli
+```
+
+Lo primero es hacer es loguearse en azure. Con el siguiente comando que nos dará una url y un código. En la web ya introducimos
+nuestra cuenta y contraseña:
+
+![azureLogin](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_008_zpsktl5psni.png)
+
+Ejecutamos ```azure vm image list``` para ver las imagenes disponibles en azure:
+
+![AzureList](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_009_zpss8k0l5ts.png)
+
+Podemos ver información de la imagen con el siguiente comando:
+
+![ShowImagen](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_011_zps33xnypm1.png)
+
+Creamos la máquina virtual seleccionada:
+
+![CrearMáquina](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_012_zpsftxunuq1.png)
+
+Ahora iniciamos la máquina y nos logueamos con ssh:
+```
+azure vm start maquina-ubuntu-pmmre
+ssh pablo@maquina-ubuntu-pmmre.cloudapp.net
+```
+
+![inicio_ssh](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_013_zpswv39ay87.png)
+
+Ahora actualizamos repositorios y instalamos nginx:
+```
+sudo apt-get update
+sudo apt-get install nginx
+```
+Y ahora comprobamos el estado de nginx y iniciamos:
+
+![nginx_status](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_014_zpsruai39mv.png)
+
+Abrimos el puerto 80 fuera del ssh
+
+![abrirPuerto80](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_016_zpsxkalepby.png)
+
+Vemos en el navegador que funciona nginx:
+
+![PruebaNavegador](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_015_zpsx7on0uif.png)
 
 ## Ejercicio 7. Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
 
