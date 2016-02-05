@@ -87,6 +87,18 @@ En este apartado simplemente usaremos VirtualBox para instalar la misma imágen 
 
 ## Ejercicio 3. Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img
 
+Usare el siguiente benchmark:
+
+![benchmark](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_018_zpss2gvxk2e.png)
+
+Y podemos la diferencia entre usar paravirtualización ``` qemu-system-x86_64 -boot order=c -drive file=ubuntu.qcow2,if=virtio ```
+
+![Paravirtualización](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_017_zpsvliefwao.png)
+
+y no usarla ``` qemu-system-x86_64 -hda ubuntu.qcow2 ```  :
+
+![NoParavirtualización](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_019_zpschgbrben.png)
+
 ## Ejercicio 4. Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
 ## Ejercicio 5. Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
