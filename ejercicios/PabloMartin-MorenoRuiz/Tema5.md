@@ -78,6 +78,13 @@ Y cómo no solo nos interesa instalar máquinas virtuales sino que también nos 
 
 ### 2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels. 
 
+En este apartado simplemente usaremos VirtualBox para instalar la misma imágen de Debian usada antes:
+
+![VirtualBox1](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_014_zpsudmcwklq.png)
+
+![VirtualBox2](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_015_zpsitxnxtxg.png)
+
+
 ## Ejercicio 3. Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img
 
 ## Ejercicio 4. Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
@@ -86,3 +93,15 @@ Y cómo no solo nos interesa instalar máquinas virtuales sino que también nos 
 
 
 ## Ejercicio 7. Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Cómo hemos hecho anteriormente primero creamos el disco:
+
+![ReservamosEspacio](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_027_zpsldvqnwjj.png)
+
+Después iniciamos la instalación con la imágen descargada en el espacio creado:
+
+![InstalamosLinuxMint](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_028_zps7yqxpmor.png)
+
+Y finalmente aquí tenemos Linux Mint:
+
+![FunionandoLinuxMint](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/Seleccioacuten_029_zpsn1vafrjh.png) 
