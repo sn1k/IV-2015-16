@@ -286,3 +286,4 @@ Lista de objetivos del extra
 
 - [x] Asistir al seminario de bots de Telegram.
 - [x] Participar activamente en la circolab de miniblip
+- [x] Asistencia a la Ubuntu&Beers
