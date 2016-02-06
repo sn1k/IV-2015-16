@@ -27,7 +27,7 @@ Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMa
 
 Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
 
-Salvador Rueda Molina [aplicación bares DAI](https://github.com/srmf9/Proyecto-IV)  
+Salvador Rueda Molina [aplicación bares DAI](https://github.com/srmf9/Proyecto-IV)
 
 
 
@@ -45,6 +45,8 @@ Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/Insert
 
 
 César Albusac Jorge - [App Bares y tapas](https://github.com/cesar2/DAI-BARES)
+
+Samuel Carmona Soria - [Eat with Rango](https://github.com/Samuc/Eat-with-Rango)
 
 
 
