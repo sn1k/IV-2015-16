@@ -4,7 +4,8 @@ Ejercicio 1 .
 ![Imagen 1.1](https://www.dropbox.com/s/zbrtc3kpfg46gpd/1.1.png?dl=1)
 
 * Comprobamos:
-![Imagen 1.2](https://www.dropbox.com/s/ac4eyqk4a3p160k/1.2.png?dl=1)
+
+ ![Imagen 1.2](https://www.dropbox.com/s/ac4eyqk4a3p160k/1.2.png?dl=1)
 
 
 Ejercicio 2 .
@@ -16,7 +17,8 @@ Ejercicio 2 .
 ![Imagen 2.2](https://www.dropbox.com/s/8hbb9cjemzbxvqh/2.2.png?dl=1)
 
 * La probamos:
-![Imagen 2.3](https://www.dropbox.com/s/lbrqdy4seofixbb/2.3.png?dl=1)
+
+ ![Imagen 2.3](https://www.dropbox.com/s/lbrqdy4seofixbb/2.3.png?dl=1)
 
 * Creamos una máquina para Ártabros:
 ![Imagen 2.4](https://www.dropbox.com/s/qx4zblopn3lmpte/2.4.png?dl=1)
@@ -25,7 +27,8 @@ Ejercicio 2 .
 ![Imagen 2.5](https://www.dropbox.com/s/lv4883pn6bf6ol7/2.5.png?dl=1)
 
 * La probamos:
-![Imagen 2.6](https://www.dropbox.com/s/u4oemry4kukk46g/2.6.png?dl=1)
+
+ ![Imagen 2.6](https://www.dropbox.com/s/u4oemry4kukk46g/2.6.png?dl=1)
 
 * Instalamos Trisquel  en VirtualBox:
 ![Imagen 2.7](https://www.dropbox.com/s/bbjpkr8jvkrvwvz/2.7.png?dl=1)
@@ -37,7 +40,8 @@ Ejercicio 3 .
 ![Imagen 3.1](https://www.dropbox.com/s/gdkrnio84okv817/3.1.png?dl=1)
 
 * Observamos que la paravirtualización (la segunda) tarda más:
-![Imagen 3.2](https://www.dropbox.com/s/7uphcklaiavdeo6/3.2.png?dl=1)
+
+ ![Imagen 3.2](https://www.dropbox.com/s/7uphcklaiavdeo6/3.2.png?dl=1)
 
 
 Ejercicio 4 .
