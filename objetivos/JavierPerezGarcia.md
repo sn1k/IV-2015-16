@@ -29,15 +29,15 @@ Probando corregir a otro alumno
 
 ### Otros objetivos
 
-- [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige. 
+- [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
 
-- [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no*[] https).
+- [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no**[] https).
 
-- [x] Tener configurdos los dos repositorios (`origin`, el propio, `upstream`, el del resto de la clase). 
+- [x] Tener configurdos los dos repositorios (`origin`, el propio, `upstream`, el del resto de la clase).
 
 - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las 12:30 está la OSL en la sala de reuniones.
 
-- [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura [usando GitHub](../ejercicios/README.md). 
+- [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura [usando GitHub](../ejercicios/README.md).
 
 - [x] Manejar de forma básica la línea de órdenes de Linux.
 
@@ -45,7 +45,7 @@ Probando corregir a otro alumno
 
 - [x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
-- [x] Usar git para hacer *check-in[] en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
+- [x] Usar git para hacer *check-in[]* en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
 
 - [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
@@ -165,6 +165,17 @@ Probando corregir a otro alumno
 - [x] Asistir al taller de Telegram
 - [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
 
+## Objetivos de la décima semana
+
+### Objetivos principales
+
+- [x] Usar docker en una aplicación real.
+
+### Otros objetivos
+
+- [x] Publicar imágenes de docker.
+- [x] Probar imágenes de docker publicadas.
+- [ ] Trabajar con varias imágenes de docker conectadas.
 
 Lista de objetivos del temario
 ==============================
