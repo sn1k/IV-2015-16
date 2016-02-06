@@ -8,7 +8,7 @@ De esta forma se descargará un script que acto seguido, ejecutará. Dicho scrip
 
 En el momento de realización de éste ejercicio, parece que la descarga del scriptinstala una versión ya obsoleta de cheff, donde nos advierte que se actualizará solo y sin dejar advertencia.
 
-![](Ejercicio1)
+![](https://www.dropbox.com/s/nupnawtw829z4ju/Ejercicio1.png?dl=1)
 
 #Ejercicio 2
 
@@ -77,8 +77,8 @@ Ya está todo listo. Sólo queda lanzar la instalación mediante la orden:
     
 Y si todo va bien, debemos ver en pantalla algo como lo indicado en las imagenes
 
-![](Ejercicio2-1)
-![](Ejercicio2-2)
+![](https://www.dropbox.com/s/p4aj0rp12j0polz/Ejercicio2-1.png?dl=1)
+![](https://www.dropbox.com/s/gy3z6swo828k5dp/Ejercicio2-2.png?dl=1)
 
 #Ejercicio 3
 ```
@@ -147,7 +147,7 @@ Hecho esto, lanzamos la creación con la orden:
 
 	vagrant up --provider=azure
 
-![](Ejercicio6-tema6)
+![](https://www.dropbox.com/s/lwrfuh3tpa1vz9m/ejercicio6%20tema6.png?dl=1)
     
     
 
