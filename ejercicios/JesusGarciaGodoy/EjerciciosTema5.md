@@ -90,6 +90,21 @@ jesmorc@jesmorc-PClaptop ~ $ qemu-system-x86_64 -machine accel=kvm -hda slitaz.q
 
 
 
+## Ejercicio 2.2
+
+**Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.**
+
+Instalaré **SLliTaz** dada su ligereza, usando **VirtualBox**.
+
+Tal y como vemos a lo largo de las siguienets imágenes, creamos una nueva máquina, asignando la RAM que vaya a usar.
+Después creamos un disco duro virtual VDI con el tamaño que queramos.
+Finalmente le montamos la ISO en la cargadora de CD virtual y la arrancamos.
+![vbox_slitaz](http://i.imgur.com/CkdfuSE.png)
+![vbox_slitazhdd](http://i.imgur.com/1GDPOah.png)
+![vbox_slitazisomount](http://i.imgur.com/oleVRCF.png)
+![vbox_slitazrunning](http://i.imgur.com/3h0jJZt.png)
+
+
 
 
 
