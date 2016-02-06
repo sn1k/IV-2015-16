@@ -136,3 +136,19 @@ A continuación lo instalamos:
 
 Comprobemos finalmente que está hecho:
 ![615](https://www.dropbox.com/s/6lrbqsjrm99eoya/5-6-016.png?dl=1)
+
+###Ejercicio 7
+Procedamos paso a paso con la instalación:
+![700](https://www.dropbox.com/s/w5hv69ggsikxef7/5-7-001.png?dl=1)
+![701](https://www.dropbox.com/s/46tr07gn6t55ca9/5-7-002.png?dl=1)
+![702](https://www.dropbox.com/s/um2zn8oisul7zcs/5-7-003.png?dl=1)
+![7022](https://www.dropbox.com/s/6hn16mxhxwwn26d/5-7-004.png?dl=1)
+![703](https://www.dropbox.com/s/d8aqvp9v9id26pg/5-7-005.png?dl=1)
+![704](https://www.dropbox.com/s/lmkej2qtf9p7adu/5-7-006.png?dl=1)
+![705](https://www.dropbox.com/s/dxmmg9dl9aofk62/5-7-007.png?dl=1)
+![706](https://www.dropbox.com/s/ccfm00d30atd8hb/5-7-008.png?dl=1)
+![707](https://www.dropbox.com/s/bpsudinmi2fhunu/5-7-009.png?dl=1)
+![708](https://www.dropbox.com/s/yfedhe86yrtwv84/5-7-010.png?dl=1)
+![709](https://www.dropbox.com/s/sjsn6jq1oitp721/5-7-011.png?dl=1)
+![710](https://www.dropbox.com/s/xhoy4zcdw0k4wsn/5-7-012.png?dl=1)
+![711](https://www.dropbox.com/s/7fqzhn1e8qnt7in/5-7-013.png?dl=1)
