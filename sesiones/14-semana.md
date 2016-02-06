@@ -47,6 +47,9 @@ Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/Insert
 César Albusac Jorge - [App Bares y tapas](https://github.com/cesar2/DAI-BARES)
 
 
+Samuel Carmona Soria - [Eat with Rango](https://github.com/Samuc/Eat-with-Rango)
+
+
 
 ## Lista de comprobación del proyecto
 
