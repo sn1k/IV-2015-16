@@ -105,6 +105,44 @@ Finalmente le montamos la ISO en la cargadora de CD virtual y la arrancamos.
 ![vbox_slitazrunning](http://i.imgur.com/3h0jJZt.png)
 
 
+## Ejercicio 3
+
+**Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual **
+
+El benchmark simplemente ejecutará funciones matemáticas que requieren uso computacional moderado.
+
+**benchmark.py**:
+```
+import math
+d = {}
+for i in range(1, 9999999):
+        d[i] = math.log(i)
+```
+
+
+Para ejecutar el algoritmo en la máquina virtual slitaz en modo normal hacemos:
+
+```
+qemu-system-x86_64 -hda slitaz.qcow
+```
+
+Con la opción "virtio" indicamos que se use la paravirtualización.
+
+```
+ emu-system-x86_64 -boot order=c -drive file=slitaz.qcow,if=virtio
+```
+
+En cada uno he realizado lo siguiente, utilizando la librería *time* de python:
+```
+import time
+start_time = time.time()
+python benchmark.py
+print("--- %s seconds ---" % (time.time() - start_time))
+```
+La conclusión es que los tiempos no difieren mucho, pero van algo más rápido en el modo normal.
+
+
+
 
 
 
