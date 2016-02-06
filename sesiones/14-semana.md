@@ -27,6 +27,10 @@ Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMa
 
 Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
 
+Salvador Rueda Molina [aplicación bares DAI](https://github.com/srmf9/Proyecto-IV)  
+
+
+
 Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
 ## Día 15
 

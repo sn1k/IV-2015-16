@@ -78,6 +78,9 @@ Primero he editado el archivo ansible_hosts:
 ```
 [baresmachine]baresmachine.cloudapp.net
 ```
+
+Editamos también el archivo /etc/ansible/hosts con el mismo contenido que el archivo ansible_hosts.
+
 A continuación he creado el playbook.yml, que tiene el siguiente aspecto:
 
 ```
@@ -94,6 +97,8 @@ Por último he ejecutado el playbook como se muestra en la siguiente captura:
 Ansible ofrece más posibilidades que Chef: pueden ejecutarse las configuraciones desde fuera de la máquina, es decir, remotamente, mientras que Chef requiere configurarse y ejecutarse dentro del servidor. 
 
 Los playbooks de Ansible son mucho más sencillos de configurar y entender que la recetas de Chef. Por otra parte, Chef es más rápido pero Ansible ofrece una muy fácil gestión en múltiples máquinas al mismo tiempo.
+
+*Inspirado en el compañero Rubén Martín.*
 
 
 ### Ejercicio 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
@@ -119,4 +124,23 @@ end
 
 
 ### Ejercicio 8: Configurar tu máquina virtual usando Vagrant con el provisionador Ansible.
+
+Instalamos el plugin de vagrant para trabajar con azure con: 
+
+```
+vagrant plugin install vagrant-azure
+```
+He tenido problemas con la instalación y tras varias búsquedas he podido terminar el proceso haciéndo lo siguiente:
+
+```
+sudo apt-get install ruby-dev
+```
+
+instalamos Virtualbox con:
+
+```
+sudo apt-get install virtualbox virtualbox-dkms
+```
+Una vez hecho esto, creamos el Vagrantfile haciendo uso de una copia del playbook del ejercicio 5.1.
+
 
