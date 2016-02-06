@@ -269,6 +269,18 @@ Lista de objetivos del temario
 - [x] Documentar y mantener una plataforma virtual.
 - [x] Realizar tareas de administración de infraestructuras virtuales.
 
+# Objetivos Tema 6:
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Realizar tareas de administración en infraestructura virtual
+
+####Objetivos Especificos del tema 6
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [x] Saber cómo aplicarlos en un caso determinado.
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+
 Lista de objetivos del extra
 ============================
 
