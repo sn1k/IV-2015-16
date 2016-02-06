@@ -29,7 +29,8 @@ Ejercicio 3 .
 ![Imagen 3.1](https://www.dropbox.com/s/8uuq5lv8y64su6p/3.1.png?dl=1)
 
 * Iniciamos el contenedor:
-![Imagen 3.2](https://www.dropbox.com/s/sekp9svr7dgbo36/3.2.png?dl=1)
+
+ ![Imagen 3.2](https://www.dropbox.com/s/sekp9svr7dgbo36/3.2.png?dl=1)
 
 * Instalamos otro contenedor:
 ![Imagen 3.3](https://www.dropbox.com/s/ovsnb0rlzx75h6g/3.3.png?dl=1)
@@ -44,7 +45,7 @@ Ejercicio 4 .
 ![Imagen 4.2](https://www.dropbox.com/s/l4umad8cwqce5gi/4.2.png?dl=1)
 
 * Arrancamos los contenedores creados:
-![Imagen 4.4](https://www.dropbox.com/s/qf86kp6i9jk2h15/4.3.png?dl=1)
+![Imagen 4.4](https://www.dropbox.com/s/eypfrabjevbxc7o/4.4.png?dl=1)
 
 * Cambiamos los recursos asignados a un contenedor:
 ![Imagen 4.5](https://www.dropbox.com/s/7kdngho23pf6ng2/4.5.png?dl=1)
@@ -82,6 +83,7 @@ Ejercicio 7 .
 
 Ejercicio 8 .
 -------
+
 * Creamos un usuario:
 ![Imagen 8.1](https://www.dropbox.com/s/9j6s4a8yjwlp8oq/8.1.png?dl=1)
 
@@ -94,6 +96,7 @@ Ejercicio 8 .
 
 Ejercicio 9 .
 -------
+
 * Buscamos el ID del contenedor arrancado:
 ![Imagen 9.1](https://www.dropbox.com/s/spgajc2mafmnnci/9.1.png?dl=1)
 
