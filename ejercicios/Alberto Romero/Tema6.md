@@ -146,13 +146,5 @@ inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service ng
 end
 ```
 
-- Levantamos y ponemos en amrcha la máquina y comprobamos la instalación de nginx:
-
-![img](http://i65.tinypic.com/2quhk5h.png)
-
-![img](http://i65.tinypic.com/mrqqd.png)
-
-
-
 ### Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
