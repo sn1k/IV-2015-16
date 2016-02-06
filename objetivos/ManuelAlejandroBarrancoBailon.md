@@ -191,7 +191,7 @@
 ###Otros objetivos
 - [ ] Instalar clientes libres de infraestructura en la nube.
 - [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
-- [ ] Trabajar y solucionar problemas con la infraestructura en la nube.
+- [X] Trabajar y solucionar problemas con la infraestructura en la nube.
 
 
 ##14ª Semana, comienza el 20 de Enero de 2016
@@ -199,7 +199,12 @@
 - [X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
 
 ###Otros objetivos
-- [ ] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
-- [ ] Buscar alternativas a Vagrant.
+- [X] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [X] Buscar alternativas a Vagrant.
 - [ ] Usar diferentes infraestructuras en la nube.
 - [X] Resolver dudas con respecto a la práctica final.
+
+##Objetivos específicos Tema 6
+- [X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [X] Saber cómo aplicarlos en un caso determinado.
+- [X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
