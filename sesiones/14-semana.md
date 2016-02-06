@@ -54,7 +54,7 @@ Samuel Carmona Soria - [Eat with Rango](https://github.com/Samuc/Eat-with-Rango)
 
 José Manuel Luque Burgos - [RSMapWeb](https://github.com/luqueburgosjm/RSMapWeb)
 
-
+Mariano Palomo Villafranca - [Hearcloud](https://github.com/mpvillafranca/hear-cloud)
 ## Lista de comprobación del proyecto
 
 Lo más importante es que recordéis que el proyecto es un proyecto, no la suma de sus partes. Es decir, un proyecto que tenga una infraestructura compleja y sustancial y que se pueda desplegar con una sola orden o ejecutando varias órdenes. Por eso, conviene que comprobéis.
