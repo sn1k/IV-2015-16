@@ -79,17 +79,18 @@ Instalaremos Stilaz en VirtualBox
 Para que el sistema unix tenga entorno gráfico LXDE, instalamos [Lubuntu](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/)
 
 Creamos el almacenamiento
-```
+
 	qemu-img create -f qcow2 lubuntu.img 6G
-```	
-	![imagen](https://i.gyazo.com/5e1867f0ae10cb80e4326aa294296d31.png)
+
+![imagen](https://i.gyazo.com/5e1867f0ae10cb80e4326aa294296d31.png)
 
 Creamos la maquina habilitando vnc
 
 	qemu-system-x86_64 -cdrom lubuntu-14.04.3-desktop-amd64.iso -boot d -m 1G -vnc :1 lubuntu.img
-```
-		![imagen](https://i.gyazo.com/932c412ecf2c6deec92d457f061a2048.png)
-```
+
+![imagen](https://i.gyazo.com/932c412ecf2c6deec92d457f061a2048.png)
+		
+
 Para conectar por vnc instalamos vinagre: 
 
 	sudo apt-get install vinagre
