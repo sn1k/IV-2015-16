@@ -44,7 +44,7 @@ $ qemu-img create -f qcow2 coreos.qcow2 10G
 
 ![discocoreos](https://i.gyazo.com/2d7e0c761bd1b5989cc36234c1013792.png)
 
-Procedemos a instalar CoreOS [CoreOS](https://coreos.com/os/docs/latest/booting-with-iso.html) estable:
+Procedemos a instalar CoreOS
 ```
 $ qemu-system-x86_64 -machine accel=kvm -hda coreos.qcow2 -cdrom coreos_production_iso_image.iso -m 1G -boot d
 ```
