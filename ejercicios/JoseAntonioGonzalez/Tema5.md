@@ -124,7 +124,7 @@ Donde ejercicio5-IV-JAGonz es el nombre del sitio web que estamos creando. Ya de
 
 El sitio web está creado, pero no cumple las condiciones del ejercicio aún.Instalaremos Ubuntu server en la máquina. Primero debemos saber la imagen a instalar, con la siguiente orden:
 
-	azure vm image list Central US ubuntuserver
+	azure vm image list "Central US" ubuntuserver
     
 Nos devolverá una lista con todas las imágenes de ubuntu server disponibles. Nosotros instalamos una con nombre **b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB**
 
