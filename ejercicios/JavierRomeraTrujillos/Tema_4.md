@@ -20,7 +20,7 @@ Ejercicio 2 .
 
 * Con *ifconfig* vemos que se ha creado una nueva interfaz de red llamada veth1N1CMT para que el contenedor pueda conectarse:
 
-![Imagen 2.4](https://www.dropbox.com/s/znirys9giwr9u72/2.4.png?dl=1)
+ ![Imagen 2.4](https://www.dropbox.com/s/znirys9giwr9u72/2.4.png?dl=1)
 
 
 Ejercicio 3 .
