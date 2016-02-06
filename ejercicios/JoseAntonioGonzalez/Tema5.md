@@ -55,7 +55,7 @@ GUardamos, lanzamos la máquina, y seguimos el asistente de instalación igual q
 
 
 #Ejercicio 4
-
+#### Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 Descargaremos la imagen de Lubuntu, que cumple los requisitos del enunciado, del siguiente [enlace](cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.iso)
 
 DEspués, crearemos el fichero de disco duro virtual:
@@ -92,7 +92,7 @@ De esta forma, nos conectamos a la máquina mediante la órden:
     ssh -p 3000 usuario@
     
 #Ejercicio 5
-
+#### Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 Para poder utilizar Azure, haremos uso de los pases que se dieron a principio de curso. Creamos nuestra cuenta y asociamos el código proporcionado (fue necesario para el hito 4 de la asignatura).
 
 Para poder hacer uso de la máquina Azure mediante consola (es más cómodo y nos permitirá ganar experiencia para automatizar scripts de despliegue), instalamos Azure:
@@ -160,7 +160,7 @@ Y al conectarnos a la página web que sirve nginx a través del navegador, verem
 
 ![](https://www.dropbox.com/s/lbeuv6qv9m26t17/ejercicio5-5.png?dl=1)
 #Ejercicio 7
-
+#### Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
 Tenemos que descargarnos la imagen de LinuxMint. En mi caso, descargamos la imagen de 32 bit de [aqui](http://www.linuxmint.com/edition.php?id=203) (Se ubicará en la carpeta de descargas de la carpeta personal).
 
 Ahora, creamos la imagen del disco duro virtual:
