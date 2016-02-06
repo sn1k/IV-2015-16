@@ -136,11 +136,43 @@ He tenido problemas con la instalación y tras varias búsquedas he podido termi
 sudo apt-get install ruby-dev
 ```
 
-instalamos Virtualbox con:
+Instalamos Virtualbox con:
 
 ```
 sudo apt-get install virtualbox virtualbox-dkms
 ```
-Una vez hecho esto, creamos el Vagrantfile haciendo uso de una copia del playbook del ejercicio 5.1.
+
+Una vez hecho esto creamos el playbook de ansible:
 
 
+COMPLETAR
+
+Ahora creamos el Vagrantfile que hará uso del playbook de ansible:
+
+Añadimos las líneas de abajo en el archivo ~/ansible_hosts
+
+```
+[localhost]
+127.0.0.1
+ansible_connection=local
+```
+
+Para curarme en salud, he añadido también el mísmo código en el archivo /etc/ansible/hosts ya que alguna vez he tenido problemas con ello.
+
+Exportamos la variable de entorno de Ansible para que se reconozca el host:
+
+```
+export ANSIBLE_HOSTS=~/ansible_hosts 
+```
+Finalmente ejecutamos:
+
+```
+sudo vagrant up --provider=azure
+```
+
+La orden anterior crea la máquina, la configura y hace uso del playbook de ansible para desplegar la aplicación. 
+Si sólo queremos hacer el último paso (porque la máquina está ya creada) ejecutamos:
+
+```
+vagrant provider
+```
