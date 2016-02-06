@@ -192,6 +192,97 @@ ssh jesmorc@localhost -p 2121
 ![ejtema5_ej4](http://i.imgur.com/2Uco5RH.png)
 
 
+## Ejercicio 5
+
+**Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.**
+
+Usaré Azure, para ello hay que instalar el cliente y las dependencias necesarias:
+```
+    sudo apt-get install nodejs-legacy
+    sudo apt-get install npm
+    sudo npm install -g azure-cli
+```
+
+
+Tras ello,me autentico con la cuenta Azure, con:
+```
+azure login
+```
+
+Y seguimos las instrucciones que salen por pantalla.
+
+![login_azure](http://i.imgur.com/dtn8ejl.png)
+![login_azure2](http://i.imgur.com/zmiJD0I.png)
+
+Cabe decir que anes hay que subscribirse a Azure, metiendo nuestra tarjeta de crédito pero usando la versión de prueba.
+
+![azure_subscribe](http://i.imgur.com/oeKzIiz.png)
+![azure_subscribe2](http://i.imgur.com/C1QqKU0.png)
+
+
+Para listar todas las imágenes disponibles en azure para crear una máquina virtual:
+
+```
+azure vm image list
+```
+
+Y para ver más información sobre la imagen respectiva:
+
+```
+azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB
+```
+ 
+![azureimageshow](http://i.imgur.com/WZh8Kbv.png)
+
+
+Procedemos a crear una máquina virtual en nuestra cuenta azure a partir de dicha imagen, con el nombre de usuario y nombre de la mv.
+Nos pedira poner password complejo:
+
+```
+azure vm create iv-jesmorc-ubuntuserver b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB jesmorc --location "North Europe" --ssh
+```
+
+![createazuremv](http://i.imgur.com/cutCGIb.png)
+
+Una vez tenemos la confirmación de que la máquina se ha creado correctamente, probamos a ver si la conexión a través de ssh funciona, con el comando:
+```
+ssh iv-jesmorc-ubuntuserver.cloudapp.net
+```
+
+![sshazure](http://i.imgur.com/JUDBPEu.png)
+
+
+Ahora, vamos a instalar el servicio *nginx* en la máquina virtual con:
+
+```
+sudo apt-get install nginx
+```
+
+Comprobamos que se ha instalado y está funcionando correctamente.
+
+![curl_nginx_azure](http://i.imgur.com/VE2dGFl.png)
+
+
+Abrimos el puerto 80 para que se pueda realizar conexión desde el fuera:
+
+```
+azure vm endpoint create iv-jesmorc-ubuntuserver 80 80
+```
+
+![nginx_puertoabierto_azure](http://i.imgur.com/A3ZnwRa.png)
+
+
+Probamos que funciona la app desde el navegador:
+
+![nginx_funcionando_azure](http://i.imgur.com/LdbVz7s.png)
+
+
+Apagamos la máquina para ahorrar recursos una vez finalizadas las tareas:
+
+```
+azure vm shutdown iv-jesmorc-ubuntuserver
+```
+![azureshutdown](http://i.imgur.com/o8GjGSG.png)
 
 
 
