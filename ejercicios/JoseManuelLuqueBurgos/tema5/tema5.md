@@ -1,6 +1,7 @@
 # Ejercicios Tema 5
 
-## Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
+## Ejercicio 4
+### Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
 He elegido [debian](http://cdimage.debian.org/debian-cd/8.3.0/multi-arch/iso-cd/debian-8.3.0-amd64-i386-netinst.iso), através de su instalador podemos seleccionar lxde como entorno gráfico.
 
@@ -32,7 +33,8 @@ He elegido [debian](http://cdimage.debian.org/debian-cd/8.3.0/multi-arch/iso-cd/
   jose@tux2duo ⮀ ~ ⮀ qemu-system-x86_64 -boot order=c -drive file=debian.img,if=virtio -m 512M -name josedebian -redir tcp:2222::22
     ```
 
-## Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
+## Ejercicio 5
+### Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
 
 En primer lugar nos descargamos azure-cli através de npm
 
@@ -193,3 +195,19 @@ Ahora ya tenemos juju configurado para interactuar con nuestra cuenta de azure, 
   ```
   jose@ubuntu:~$: juju expose nginx
   ```
+## Ejercicio 7
+### Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Tras descargarnos la imagen de Linux Mint realizamos dos pasos:
+
+- Creamos el disco que va a usar la máquina (qcow2 indica el tipo de imagen para la vm)
+
+```
+jose@tux2duo ⮀ ~ ⮀ qemu-img create -f qcow2 mymint.qcow2 8G
+```
+
+- Ahora procedemos a la instalación:
+
+```
+jose@tux2duo ⮀ ~ ⮀ qemu-system-x86_64 -machine accel=kvm -hda mymint.qcow2 -cdrom /home/jose/Desktop/linuxmint-17.3-cinnamon-64bit.iso -m 512M -boot d
+```
