@@ -47,6 +47,49 @@ Finalmente comprobamos que el resultado del siguiente comando no nos da error:
 ```
 
 
+## Ejercicio 2.1
+
+**Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).**
+
+
+**Debian**
+
+Creamos una imagen de disco virtual con: 
+
+```
+qemu-img create -f qcow2 ~/maquinas/debian.qcow 2G
+```
+
+Descargamos la [ISO](https://www.debian.org/index.es.html) Debian y ejecutamos:
+
+```
+ qemu-system-x86_64 -machine accel=kvm -hda debian.qcow2 -cdrom debian-8.3.0-amd64-CD-1.iso -m 1G -boot d
+```
+
+![maquinaDebian](http://i.imgur.com/sanlQ5C.png)
+
+
+**SLiTaz**
+
+Creamos una imagen de disco virtual:
+```
+jesmorc@jesmorc-PClaptop ~ $ qemu-img create -f qcow2 slitaz.qcow2 2G
+Formatting 'slitaz.qcow2', fmt=qcow2 size=2147483648 encryption=off cluster_size=65536 lazy_refcounts=off 
+
+```
+
+Descargamos la [ISO](http://www.slitaz.org/en/) y ejecutamos la siguiente línea para la instalación:
+
+```
+jesmorc@jesmorc-PClaptop ~ $ qemu-system-x86_64 -machine accel=kvm -hda slitaz.qcow2 -cdrom slitaz-5.0-rc3.iso -m 1G -boot dd
+
+```
+
+![maquinaSLiTaz](http://i.imgur.com/wRT62bk.png)
+
+
+
+
 
 
 
