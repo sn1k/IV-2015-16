@@ -142,6 +142,54 @@ print("--- %s seconds ---" % (time.time() - start_time))
 La conclusión es que los tiempos no difieren mucho, pero van algo más rápido en el modo normal.
 
 
+## Ejercicio 4
+
+**Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.**
+
+Para que unix tenga entorno gráfico LXDE, vamos a instalar la distrubución Lubuntu. [ISO](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/).
+
+Igual que anteriormente, primero se crea el disco virtual: 
+```
+qemu-img create -f qcow2 lubuntu.qcow2 5G
+```
+
+Seguido de :
+
+```
+qemu-system-x86_64 -hda lubuntu.qcow2 -cdrom ./lubuntu-14.04.3-desktop-i386.iso -m 512M
+```
+
+Para configurar el acceso VNC, procedemos a instalar "vinagre":
+
+```
+sudo apt-get install vinagre
+```
+
+Para acceder:
+
+```
+vinagre localhost:1
+```
+
+Ahora instalamos y configuramos SSH:
+
+```
+sudo apt-get install ssh
+```
+
+Arrancamos la máquina lubuntu con puerto 2150:
+
+```
+qemu-system-x86_64 -hda lubuntu.qcow2 -m 512M -redir tcp:2150::22
+```
+*(22 del final es el puerto por defecto de SSH)*
+
+Ahora podremos acceder por ssh a la máquina con:
+```
+ssh jesmorc@localhost -p 2121
+```
+
+![ejtema5_ej4](http://i.imgur.com/2Uco5RH.png)
 
 
 
