@@ -64,11 +64,13 @@ DEspués, crearemos el fichero de disco duro virtual:
     
 Instalamos Lubunu:
 	qemu-system-x86_64 -hda hdd_lubuntu.qcow2 -cdrom ./Descargas/lubuntu-14.04-desktop-i386.iso -m 512M
-    
+
+![](https://www.dropbox.com/s/gr68ofn74qt7zde/Ejercicio4_1.png?dl=1)
 Con la máquina ya creada y con el SO instalado, necesitaremos descargar un cliente VNC. Ya que los apuntes del temario recomiendan Vinagre, vamos a seguir el ejemplo:
 
 	sudo apt-get install vinagre
-    
+
+![](https://www.dropbox.com/s/f4lsptqerzga7m3/Ejercicio4.png?dl=1)
 Una vez instalada la máquina, la apagamos, y la volvemos a encender, ésta vez con una opción de sevidor VNC:
 
 	qemu-system-i386 -hda hdd_lubuntu.qcow2 vnc :1
