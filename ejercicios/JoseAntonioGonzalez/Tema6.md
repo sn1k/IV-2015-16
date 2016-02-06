@@ -94,5 +94,65 @@ Y si todo va bien, debemos ver en pantalla algo como lo indicado en las imagenes
           - 10 
           - 11 
 ```
+#Ejercicio 6
 
+En la práctica hemos usado una imagen de Ubuntu (ejercicio 8), que en éste caso se hace igual, pero cambiando el nombre de imagen a instalar.
+
+Como no sabemos qué imágenes hay disponibles de Debian, ni sus versiones, ni tan siquiera su nombre, lo primero que debemos hacer es ver que imágenes podemos utilizar. Para eso introducimos la siguiente orden:
+
+	azure vm image list "Central Us" debian
+
+Con esto, vemos las imagenes, y nos quedaremos por ejemplo con la de nombre 6a83c2d016534a7a917bcd21b6e1c0c9__Debian-8-amd64-20160107.0  
+
+Ahora, toca usar vagrant. Si no lo hemos instalado aún, se puede descargar [desde aquí](https://www.vagrantup.com/downloads.html). Hecho eso, lo instalamos (al usar ubuntu la instalación es fácil, simplemente con un doble click se abre el centro de software donde se te pide permiso para instalar),
+
+Hecho eso, instalaremos el plugin de azure:
+
+	vagrant plugin install vagrant-azure
+
+Hacemos lo siguiente para crear el fichero Vagrantfile:
+
+	vagrant init
+
+Ahora toca hacer el Vagrantfile. Atendiendo principalmente al nombre de máquina, nombre de imagen, clave de suscripción, url de la box, etc.. Se explican más detalladamente en el [README](https://github.com/JA-Gonz/SMS_Estadisticas) del repositorio del proyecto. Es muy importante también la parte de creación de certificados.
+
+El Vagrantfile debe tener el siguiente aspecto:
+
+```
+
+Vagrant.configure(2) do |config|
+  	config.vm.box = "azure"
+	config.vm.network "public_network"
+
+  	#end
+  	config.vm.provider :azure do |azure, override|
+        # Mandatory Settings
+		azure.mgmt_certificate = File.expand_path("azure.pem")
+		azure.mgmt_endpoint    = "https://management.core.windows.net"
+		azure.subscription_id = "3252f376-df66-4dae-b865-76048fcb3c63"
+		azure.vm_name     = "ejercicioIVssss"
+		azure.vm_image    = "6a83c2d016534a7a917bcd21b6e1c0c9__Debian-8-amd64-20160107.0  "
+		azure.vm_size     = "Small"
+		config.vm.box_url = "https://github.com/msopentech/vagrant-azure/raw/master/dummy.box"
+	
+		azure.vm_user = "ja" # defaults to 'vagrant' if not provided
+		azure.vm_password = "12345678!Ab"
+		azure.vm_location = "Central US" # e.g., West US
+		azure.ssh_port = "22"
+	end 
+end
+```
+
+Hecho esto, lanzamos la creación con la orden:
+
+	vagrant up --provider=azure
+
+![](Ejercicio6-tema6)
     
+    
+
+#Ejercicio 8
+
+En el proyecto se ha realizado una creación de máquina virtual (en Azure) mediante Vagrant, y se ha aprovisionado con Ansible. Podemos ver el resultado del proyecto [aquí](https://github.com/JA-Gonz/SMS_Estadisticas).
+
+En profundidad, en este ejercicio se pide principalmente configurar un [Vagrantfile](https://github.com/JA-Gonz/SMS_Estadisticas/blob/master/Vagrantfile) y un fichero de [configuración de Ansible](https://github.com/JA-Gonz/SMS_Estadisticas/blob/master/ansible/configuracion_ansible.yml). Siguiendo los enlaces puede verse en detale como están hechos.
