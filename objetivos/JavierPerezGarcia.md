@@ -183,6 +183,13 @@ Probando corregir a otro alumno
 - [x] Instalar hipervisores libres y trabajar con ellos.
 - [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
+### Objetivos de la duodécima semana
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+
 
 Lista de objetivos del temario
 ==============================
