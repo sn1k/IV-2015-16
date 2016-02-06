@@ -31,3 +31,7 @@ __Nota:__ como podemos observar, el mismo gedit nos avisa de que la estructura e
 
 Ejecutamos nuestro programa y vemos los resultados:
 ![32](https://www.dropbox.com/s/iqkkl5e70583tds/6-3-003.png?dl=1)
+
+### Ejercicio 8
+Este ejercicio está realizado en el Hito 5, ya que despliego mi aplicación con Vagrant+Ansible en Azure, aquí dejo enlace:
+[SMSBDyReplica](https://github.com/neon520/SMS-BDyReplica)
