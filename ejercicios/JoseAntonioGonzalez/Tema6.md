@@ -149,3 +149,10 @@ Hecho esto, lanzamos la creación con la orden:
 
 ![](Ejercicio6-tema6)
     
+    
+
+#Ejercicio 8
+
+En el proyecto se ha realizado una creación de máquina virtual (en Azure) mediante Vagrant, y se ha aprovisionado con Ansible. Podemos ver el resultado del proyecto [aquí](https://github.com/JA-Gonz/SMS_Estadisticas).
+
+En profundidad, en este ejercicio se pide principalmente configurar un [Vagrantfile](https://github.com/JA-Gonz/SMS_Estadisticas/blob/master/Vagrantfile) y un fichero de [configuración de Ansible](https://github.com/JA-Gonz/SMS_Estadisticas/blob/master/ansible/configuracion_ansible.yml). Siguiendo los enlaces puede verse en detale como están hechos.
