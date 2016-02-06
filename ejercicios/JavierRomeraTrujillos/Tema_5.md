@@ -69,4 +69,5 @@ Ejercicio 7 .
 ![Imagen 7.1](https://www.dropbox.com/s/v0scqictv4koi6a/7.1.png?dl=1)
 
 * Comprobamos que funcione:
-![Imagen 7.2](https://www.dropbox.com/s/m37f9jjgw3mz3eh/7.2.png?dl=1)
+
+ ![Imagen 7.2](https://www.dropbox.com/s/m37f9jjgw3mz3eh/7.2.png?dl=1)
