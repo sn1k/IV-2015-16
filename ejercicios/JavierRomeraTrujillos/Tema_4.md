@@ -18,7 +18,8 @@ Ejercicio 2 .
 * Observamos que funciona:
 ![Imagen 2.3](https://www.dropbox.com/s/z1pa2m3emqek9zw/2.3.png?dl=1)
 
-* Con ifconfig podemos ver que se ha creado una nueva interfaz de red llamada veth1N1CMT para que el contenedor pueda conectarse:
+* Con *ifconfig* vemos que se ha creado una nueva interfaz de red llamada veth1N1CMT para que el contenedor pueda conectarse:
+
 ![Imagen 2.4](https://www.dropbox.com/s/znirys9giwr9u72/2.4.png?dl=1)
 
 
