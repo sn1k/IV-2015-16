@@ -93,3 +93,46 @@ Tras hacer esto nos desconectamos de la máquina y le decimos a Azure que nos ab
 
 Comprobemos finalmente que todo ha salido bien:
 ![591](https://www.dropbox.com/s/3wxs2b976oj5f7z/5-5-012.png?dl=1)
+
+###Ejercicio 6
+Empecemos instalando juju:
+![600](https://www.dropbox.com/s/feiaqzetrqmrvc7/5-6-001.png?dl=1)
+
+Una vez está instalado, vamos a generar el entorno de trabajo:
+![601](https://www.dropbox.com/s/12s2l1xlxpvromy/5-6-002.png?dl=1)
+
+Ahora vamos a generar nuestros certificados de servidor:
+![602](https://www.dropbox.com/s/9pib52n6ojdcbxu/5-6-003.png?dl=1)
+![603](https://www.dropbox.com/s/ur71pl4kd87ysk8/5-6-004.png?dl=1)
+
+Una vez generados, nos vamos a nuestra cuenta de Azure (portal antiguo) y en *Configuración -> Certificados de administración* subimos nuestro fichero \*.cer:
+![604](https://www.dropbox.com/s/2tf2t04sp5gur4y/5-6-005.png?dl=1)
+
+Una vez subido nos queda algo así:
+![605](https://www.dropbox.com/s/cxx3f3f4ycqgts3/5-6-006.png?dl=1)
+
+Además de un certificado, necesitaremos una *Cuenta de almacenamiento*, por lo que, desde el mismo portal de antes, crearemos uno en la sección *Almacenamiento*:
+![606](https://www.dropbox.com/s/rqdgv7b8j67rs1b/5-6-007.png?dl=1)
+
+__Nota importante:__ Anotar la Ubicación y la Dirección URL que pongamos, ya que luego los volveremos a necesitar.
+
+Una vez hecho todo esto, vamos a abrir el archivo que nos generó juju antes (en mi caso /home/neon520/.juju/environments.yaml) y lo modificamos, rellenando con los datos que dijimos de almacenar antes, dejándolo de la siguiente forma:
+![607](https://www.dropbox.com/s/tazswwi755bwz7t/5-6-008.png?dl=1)
+
+Guardamos y procedemos a ejecutarlo:
+![608](https://www.dropbox.com/s/y01talqfdjaood3/5-6-009.png?dl=1)
+![609](https://www.dropbox.com/s/5eurgyjbwf51ij1/5-6-010.png?dl=1)
+![610](https://www.dropbox.com/s/ui96ryeiowg3gzi/5-6-011.png?dl=1)
+![611](https://www.dropbox.com/s/orj5soa1l2t7zcd/5-6-012.png?dl=1)
+
+Como vemos está todo en orden. A continuación intentaremos conectarnos, para eso necesitamos el user y password, que obtendremos como sigue:
+![612](https://www.dropbox.com/s/ajcpko14fg67u48/5-6-013.png?dl=1)
+
+Nos conectamos y vemos que nginx no está:
+![613](https://www.dropbox.com/s/o1r9bmhh7tfdbfr/5-6-014.png?dl=1)
+
+A continuación lo instalamos:
+![614](https://www.dropbox.com/s/mf8tk1ulm8hyhue/5-6-015.png?dl=1)
+
+Comprobemos finalmente que está hecho:
+![615](https://www.dropbox.com/s/6lrbqsjrm99eoya/5-6-016.png?dl=1)
