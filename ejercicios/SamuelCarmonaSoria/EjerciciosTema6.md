@@ -108,3 +108,130 @@ Y obtendremos la siguiente salida
 ![demostración chef](http://i.cubeupload.com/wActlG.jpg)
 
 Podemos ver que como ya indica, nginx y nano ya están instalados antes de la realización del ejercicio. En caso de no estarlo, se instalarían al ejecutar éste comando.
+
+
+## Ejercicio 3
+**Escribir en YAML la siguiente estructura de datos en JSON "{ uno: "dos", tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }".**
+
+La estructura de los datos proporcionados en JSOn, quedarían en YAML tal que así:
+```
+
+---
+- uno: "dos"
+  tres:
+    - 4
+    - 5
+    - "Seis"
+    -
+      - siete: 8
+        nueve:
+          - 10
+          - 11
+```
+
+
+## Ejercicio 4
+**Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.**
+
+Para empezar, primero instalamos Ansible:
+```
+sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+```
+
+Añado la máquina la máquina de Azure al "inventario" :
+```
+echo "iv-ej5-ubuntuserver.cloudapp.net" > ~/ansible_hosts
+```
+
+Le indicamos a Ansible donde se encuentra el fichero con la siguiente variable de entorno:
+```
+export ANSIBLE_HOSTS=~/ansible_hosts
+```
+
+Arrancamos la máquina virtual:
+```
+azure vm start iv-ej5-ubuntuserver
+```
+
+
+Ahora debemos configurar SSH para poder conectar con la máquina:
+ ```
+ssh-keygen -t dsa
+```
+ ```
+ssh-copy-id -i .ssh/id_dsa.pub samu@iv-ej5-ubuntuserver.cloudapp.net
+```
+
+![Configurando SSH](http://i.cubeupload.com/kQhHSi.jpg)
+
+Ahora comprobaremos que tenemos acceso tanto por SSH como desde Ansible:
+
+ ```
+ssh samu@iv-ej5-ubuntuserver.cloudapp.net
+```
+
+![Conectando por SSH](http://i.cubeupload.com/PKmq15.jpg)
+A continuación conectamos con Ansible:
+```
+ansible all -u samu -m ping
+```
+![Conectando por Ansible](http://i.cubeupload.com/HD6UOn.jpg)
+
+Podemos ejecutar comandos desde nuestra máquina local, gracias a las características de Ansible:
+![Comandos con Ansible](http://i.cubeupload.com/65Vc8A.jpg)
+
+
+El siguiente proceso será realizar el despliegue de la app.
+
+Primero instalamos los librerías básicos en la máquina:
+```
+ansible all -u samu -a "sudo apt-get install -y python-setuptools python-dev build-essential git pkg-config libjpeg-dev zlib1g-dev"
+ansible all -u samu -m command -a "sudo easy_install pip"
+```
+
+Y ahora clonamos el repositorio en la máquina de Azure:
+
+ ```
+ansible all -u samu -m git -a "repo=https://github.com/Samuc/Eat-with-Rango.git  dest=~/Eat-with-Rango version=HEAD"
+```
+
+![Descargando repo en máquina](http://i.cubeupload.com/aCJv4q.jpg)
+
+
+
+Instalamos lo necesario para ejecutar la aplicación:
+```
+ansible all -u samu -m command -a "pip install -r Eat-with-Rango/requirements.txt"
+```
+
+En local: azure vm endpoint create iv-ej5-ubuntuserver 80 80
+
+Desactivamos el servidor web nginx en la máquina azure para que no ocupe el puerto 80, en caso de que lo esté ocupando y en caso de que esté activo:
+```
+ ansible all -u samu -m command -a "sudo update-rc.d nginx disable;"
+```
+
+He creado dos formas de ejecutar la aplicación, la primera, la más fácil, directamente desde ansible.
+Primero nos moveremos al directorio de la apliacción, y luego ejecutaremos la app:
+```
+ ansible all -m shell -a "cd ~/Eat-with-Rango && sudo python manage.py runserver 0.0.0.0:80"
+```
+
+
+La segunda opción es un script que he creado para que ésto lo haga automáticamente, moverse con el comando "cd" al directorio de la aplicación y que ejecute el manager.py para que funcione correctamente.
+
+El script.sh creado es el siguiente:
+```
+cd ~/Eat-with-Rango/
+sudo python manage.py runserver 0.0.0.0:80
+```
+
+Ahora, desde la máquina local podemos ejecutar la siguiente línea, y pondrá en funcionamiento nuestra apliación:
+```
+ansible all -u samu -m command -a "sh ~/Eat-with-Rango/script.sh"
+```
+
+Es necesario moverse al directorio de la apliación, porque si lo ejecuto desde el directorio home/<mi usuario>, con "python ~/Eat-with-Rango-Bar-Tapas/manage.py runserver 0.0.0.0:80", luego no funciona bien debido a la incorrecta indexación de los ficheros estáticos, al estar ejecutándose desde otra carpeta, y no desde la raíz de la aplicación.
+
+
+Ahora si entramos a [http://iv-ej5-ubuntuserver.cloudapp.net](http://iv-ej5-ubuntuserver.cloudapp.net) entraremos a la aplicación de Bares y Tapas con Rango.
