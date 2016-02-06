@@ -177,6 +177,13 @@ Probando corregir a otro alumno
 - [x] Probar imágenes de docker publicadas.
 - [ ] Trabajar con varias imágenes de docker conectadas.
 
+## Objetivos de la undécima semana
+
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+- [x] Instalar hipervisores libres y trabajar con ellos.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+
 Lista de objetivos del temario
 ==============================
 
