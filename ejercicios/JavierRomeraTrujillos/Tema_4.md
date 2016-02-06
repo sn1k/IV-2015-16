@@ -42,7 +42,8 @@ Ejercicio 4 .
 ![Imagen 4.1](https://www.dropbox.com/s/yl58b51wpnmidyp/4.1.png?dl=1)
 
 * Accedemos al webpanel:
-![Imagen 4.2](https://www.dropbox.com/s/l4umad8cwqce5gi/4.2.png?dl=1)
+
+ ![Imagen 4.2](https://www.dropbox.com/s/l4umad8cwqce5gi/4.2.png?dl=1)
 
 * Arrancamos los contenedores creados:
 ![Imagen 4.4](https://www.dropbox.com/s/eypfrabjevbxc7o/4.4.png?dl=1)
@@ -88,7 +89,8 @@ Ejercicio 8 .
 ![Imagen 8.1](https://www.dropbox.com/s/9j6s4a8yjwlp8oq/8.1.png?dl=1)
 
 * Instalamos nginx:
-![Imagen 8.2](https://www.dropbox.com/s/mab7r2b6we99fe5/8.2.png?dl=1)
+
+ ![Imagen 8.2](https://www.dropbox.com/s/mab7r2b6we99fe5/8.2.png?dl=1)
 
 * Comprobamos con curl que funcione:
 ![Imagen 8.3](https://www.dropbox.com/s/ydxsv18ubtsm811/8.3.png?dl=1)
@@ -113,7 +115,8 @@ Ejercicio 10 .
 ![Imagen 10.2](https://www.dropbox.com/s/1oa9kpfmid3o3oh/10.2.png?dl=1)
 
 * La arrancamos:
-![Imagen 10.3](https://www.dropbox.com/s/onzgn3p9byx1dvf/10.3.png?dl=1)
+
+ ![Imagen 10.3](https://www.dropbox.com/s/onzgn3p9byx1dvf/10.3.png?dl=1)
 
 * Arancamos el servidor en el puerto 500 y buscamos la ip:
 ![Imagen 10.4](https://www.dropbox.com/s/awkjn9u3uhmxcsa/10.4.png?dl=1)
