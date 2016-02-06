@@ -282,7 +282,8 @@ sudo service nginx status
 ###Ejercicio 8
 **Configurar tu máquina virtual usando vagrant con el provisionador
 ansible**
-Configuraré una máquina virtual Azure con vistas al último hito.
+Configuraré una máquina virtual Azure con vistas al último hito. 
+Me han sido de gran ayuda la [documentación del plugin vagrant-azure](https://github.com/Azure/vagrant-azure) y la web [https://unindented.org/articles/provision-azure-boxes-with-vagrant/](https://unindented.org/articles/provision-azure-boxes-with-vagrant/)
 
 * Instalo el provisionador de Azure para Vagrant:
 ~~~
@@ -300,7 +301,7 @@ Tras ejecutar azure account download, nos proporciona un enlace sobre el que pin
 ~~~
 azure account import ./*.publishsettings
 ~~~
-![azureAccountImport]()
+![azureAccountImport](http://i1016.photobucket.com/albums/af281/raperaco/azureAccountImport_zpsnau5ww1e.png)
 
 * Este fichero ya importado tiene información confidencial, por lo que lo borramos
 ~~~
@@ -315,7 +316,7 @@ openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 ~~~
 
 * Subir el certificado (fichero .cer) a Azure. Para ello hacerlo desde https://manage.windowsazure.com en el menú Configuración, en la pestaña Certificados de administración:
-![azureCer]()
+![azureCer](http://i1016.photobucket.com/albums/af281/raperaco/azureCer_zpsxqfr6spb.png)
 
 * Crear el fichero .pem que es el que acepta Azure. Dicho fichero .pem contiene tanto la clave privada como la pública:
 ~~~
@@ -356,3 +357,69 @@ Vagrant.configure(2) do |config|
 end
 ~~~
 
+* Definir la variable de entorno para Ansible en la que indicaremos dónde se encuentra el fichero ansible_hosts:
+~~~
+export ANSIBLE_HOSTS=~/Escritorio/trabajandoIV/pruebaVagrant/ansible_hosts
+~~~
+
+* Añadimos al fichero ansible_hosts, la nueva máquina que vamos a usar, que será localhost:
+~~~
+[localhost]
+127.0.0.1              ansible_connection=local
+~~~
+
+* Crear el playbook a usar de Ansible(playbookTusPachangas.yml):
+~~~
+---
+- hosts: localhost
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Actualizar repositorios
+    apt: update_cache=yes
+    tags: 
+    - apt-update
+        
+  - name: Instalar dependencias
+    apt: name={{ item }}
+    with_items:
+      - python-setuptools
+      - python-dev
+      - build-essential
+      - python-psycopg2
+      - git
+    tags:
+    - dependencias
+    
+  - name: easy_install
+    easy_install: name=pip
+    tags:
+    - pip
+    
+  - name: Descargar fuentes
+    git: repo=https://github.com/mabarrbai/TusPachangas.git dest=~/appDAI force=yes
+    tags:
+    - fuentes
+    
+  - name: Instalar requirements
+    pip: requirements=~/appDAI/requirements.txt
+    tags:
+    - requirements
+    
+  - name: Lanzar app
+    command: nohup python ~/appDAI/manage.py runserver 0.0.0.0:80
+    tags:
+    - app
+~~~
+
+* Procedemos al despliegue completo. No es necesario crear una 'box' de Vagrant puesto que el Vagrantfile si no encuentra la 'box' especificada, la crea con la imagen indicada en el mismo Vagrantfile.
+~~~
+vagrant up --provider=azure
+~~~
+![VagrantUp1](http://i1016.photobucket.com/albums/af281/raperaco/VagrantUp1_zps3uwxshbw.png)
+
+* Una vez alcanzado el final, podemos comprobar como la máquina virtual está en funcionamiento con la aplicación desplegada:
+![VagrantUp2](http://i1016.photobucket.com/albums/af281/raperaco/VagrantUp2_zpsjhjqjo0a.png)
+
+![VagrantfileAppDesplegada](http://i1016.photobucket.com/albums/af281/raperaco/VagrantfileAppDesplegada_zpsc8dw7dym.png)
