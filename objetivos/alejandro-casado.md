@@ -236,3 +236,154 @@ jueves a partir de las 12:30 está la OSL en la sala de reuniones.
 - [x] Crear infraestructuras virtuales completas.
 
 - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+
+##Novena semana
+
+- [x] Uso de docker para creación de imágenes
+
+- [x] Entender el uso de docker en el contexto de una aplicación.
+
+- [x] Analizar el resultado del último hito de las prácticas
+
+
+### Otros objetivos
+
+- [x] Revisar los errores en la entrega de tercer hito.
+
+- [x] Adoptar buenas prácticas en los repositorios git:
+
+	- [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+
+ 	- [ ] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+
+- [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+
+- [x] Asistir al taller de Telegram
+
+- [x] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+
+##Tema 4
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Optimizar aplicaciones sobre plataformas virtuales.
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+###Objetivos específicos
+
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+
+- [x]  Crear infraestructuras virtuales completas.
+
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+##Decima semana
+
+ - [x] Usar docker en una aplicación real.
+
+###Otros objetivos
+
+- [x] Publicar imágenes de docker.
+
+- [x] Probar imágenes de docker publicadas.
+
+- [x] Trabajar con varias imágenes de docker conectadas.
+
+##Decimoprimera semana
+
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+###Otros objetivos
+
+- [x] Instalar hipervisores libres y trabajar con ellos.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+##Decimosegunda semana
+
+- [x] Usar gestores de máquinas virtuales.
+
+###Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+
+##Decimotercera semana
+
+- [x] Usar infraestructura en la nube
+
+- [x] Entender el concepto de orquestación de máquinas virtuales.
+
+
+###Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+- [x] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+
+##Decimocuarta semana
+
+- [x] Probar diferentes formas de desplegar en la nube.
+
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+###Otros objetivos
+
+- [ ] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+- [ ] Buscar alternativas a vagrant.
+
+- [x] Usar diferentes infraestructuras en la nube.
+
+- [x] Resolver dudas con respecto a la práctica final.
+
+
+##Tema 5
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+
+##Tema 6
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+
+###Objetivos específicos
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+
+- [x] Saber cómo aplicarlos en un caso determinado.
+
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
+
+
