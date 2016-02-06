@@ -285,4 +285,12 @@ azure vm shutdown iv-jesmorc-ubuntuserver
 ![azureshutdown](http://i.imgur.com/o8GjGSG.png)
 
 
+## Ejercicio 7
 
+** Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado. **
+
+Realizando lo mismo que en los primeros ejercicios, con el siguiente comando se instala:
+
+```
+qemu-system-x86-64 -machine accel=kvm -hda lmint.qcow2 -cdrom linuxmint-17.3-cinnamon-64bit.iso -m1G -boot d
+```
