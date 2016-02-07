@@ -145,24 +145,32 @@ Este ejercicio y el siguiente los he realizado sobre mi ordenador con ubuntu 12.
 Lo primero que he hecho a sido descargarme este paquete vagrant_1.8.1_i686.deb de la siguiente páquina https://releases.hashicorp.com/vagrant/1.8.1/ e instalarlo con el siguiente comando:
  ```sudo dpkg -i vagrant_1.8.1_i686.deb```
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_042_zpskwyw4rio.png)
+Una vez obtenidoe el paquete buscamos una imagen compatible con nuestro sistema oeprativo y VirtualBox de Debian y creamos un box con ella como mostramos en la siguiente imagen:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_043_zpsetz9tvsi.png)
+![BoxAdd](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_042_zpskwyw4rio.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_044_zpsc6vxmu7k.png)
+Lo siguienete es inicializar una carpeta con este box (Esto lo que hace es crear un Vagrantfile configurado para este box, poca cosa en verdad):
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_045_zps726mffcf.png)
+![Init](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_043_zpsetz9tvsi.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_046_zpsfxfdkd4f.png)
+Una vez hecho esto ejectuamos vagrant up que si es la primera vez que lo hacemos entonces nos crea esa imagene VirtualBox, sino simplemente nos inicia la máquina.
+![up](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_044_zpsc6vxmu7k.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_047_zpsv0jqw5hq.png)
+Una vez acabado todo o anterior ya la tenemos creada y hacemos un ssh para comprobar que podemos conectarnos a ella:
+![ssh](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_045_zps726mffcf.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_048_zps8pstlrcm.png)
+Y finalmente se puede suspender con el siguiente comando:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_049_zps592ewmmb.png)
+![suspend](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_046_zpsfxfdkd4f.png)
+
 
 ## Ejericicio 7. Crear un script para provisionar `nginx` o cualquier otro servidor
 web que pueda ser útil para alguna otra práctica
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_047_zpsv0jqw5hq.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_049_zps592ewmmb.png)
+
 
 ## Ejercicio 8. Configurar tu máquina virtual usando vagrant con el provisionador
 ansible
