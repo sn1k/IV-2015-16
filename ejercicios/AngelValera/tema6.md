@@ -285,4 +285,126 @@ sudo service nginx status
 
 
 ###**Ejercicio 8:**Configurar tu máquina virtual usando vagrant con el provisionador ansible
+En este ejercicio vamos a configurar una máquina virtual de azure y provisionarla con la aplicación antes usada de bares y tapas de la asignatura de DAI.
+
+De ejercicios anteriores ya tenemos instalados tanto vagrant como azure-cli, por tanto lo primero que tenemos que hacer es instalar es el provisionador azure para vagrant
+
+```vagrant plugin install vagrant-azure```
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_023_zpsrddsrwg7.png)
+
+
+El siguiente paso es loguearse y conseguir información de las credenciales de Azure:
+
+```
+azure login
+azure account download
+```
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_024_zpsdfxi5axe.png)
+
+```azure account import Evaluación\ gratuita-2-5-2016-credentials.publishsettings```
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_025_zpsqvr4qpfj.png)
+
+
+Lo siguiente que debemos hacer es generar los certificados que se van a subir a Azure:
+
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout azurevagrant.key -out azurevagrant.key
+chmod 600 azurevagrant.key
+openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
+```
+
+Lo siguiente es subir el archivo .cer a Azure:
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_026_zpslehlmd7g.png)
+
+Para autenticar la maquina azure desde el Vagrantfile, necesitamos un archivo.pem. Para generarlo necesitamos hacer un truco, primero ejecutar:
+
+```
+openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+```
+
+Para generarlo y después concatenarle el fichero.key. Esto es necesario para que el fichero.pem contenga tanto la clave publica como la privada.
+
+```
+cat azurevagrant.key > azurevagrant.pem 
+```
+Ahora lo que debemos hacer es crear el vagrantfile:
+
+```
+Vagrant.configure(2) do |config|
+  config.vm.box = "azure"
+  config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'  
+  config.vm.network "public_network"
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.define "localhost" do |l|
+          l.vm.hostname = "localhost"
+  end
+  config.vm.provider :azure do |azure, override|
+    azure.mgmt_certificate = '/home/angel/Prueba/azurevagrant.pem'
+    azure.mgmt_endpoint = 'https://management.core.windows.net'
+    azure.subscription_id = '8afb40f4-4482-4a5c-832a-b7aab655fed1'
+    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+    azure.vm_name = 'maquinaavm'
+    azure.vm_password = 'Clave#Angel#1'
+    azure.vm_location = 'Central US' 
+        azure.ssh_port = '22'
+        azure.tcp_endpoints = '80:80'
+  end
+  config.vm.provision "ansible" do |ansible|
+        ansible.sudo = true
+        ansible.playbook = "playbookIV.yml"
+        ansible.verbose = "v"
+  end
+end
+```
+Ahora definimos el playbook de ansible:
+
+```
+- hosts: localhost
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Actualizar repositorios
+    apt: update_cache=yes        
+  - name: Instalar dependencias
+    apt: name={{ item }}
+    with_items:
+      - python-setuptools
+      - python-dev
+      - build-essential
+      - python-psycopg2
+      - git    
+  - name: easy_install
+    easy_install: name=pip    
+  - name: Descargar fuentes
+    git: repo=https://github.com/AngelValera/bares-y-tapas-DAI dest=~/appBaresyTapas force=yes    
+  - name: Instalar requirements
+    pip: requirements=~/appBaresyTapas/requirements.txt    
+  - name: Lanzar app
+    command: nohup python ~/appBaresyTapas/manage.py runserver 0.0.0.0:80
+```
+Además en el fichero ansible_host ponemos:
+
+```
+[localhost]
+127.0.0.1              ansible_connection=local
+```
+
+Hecho esto, podemos ejecutar:
+
+```
+vagrant up --provider=azure
+```
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_002_zpsc3tsonux.png)
+
+Y vemos que también se ejecuta el playbook de ansible:
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_003_zpsylr2hhzb.png)
+
+![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_004_zpskpbu6eux.png)
 
