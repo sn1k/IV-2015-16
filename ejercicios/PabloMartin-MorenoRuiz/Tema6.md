@@ -205,7 +205,7 @@ El siguiente paso es loguearme y una vez hecho obtener mis credenciales de Azure
 
 Acto seguido importo a mi CLI de Azure mis credenciales:
 
-!importAzure[](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
+![importAzure](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
 
 El siguiente paso es generar los certificados que se van a subir a Azure y que nos permitan interaccionar con él.
 ```
