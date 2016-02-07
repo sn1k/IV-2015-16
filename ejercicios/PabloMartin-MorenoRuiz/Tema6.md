@@ -199,7 +199,7 @@ El primer paso es instalar el provisionador de azure para vagrant:
 ![Aprovisonador](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_050_zpsvxmtdchd.png)
 
 
-El siguiente paso es loguearme y una vez hecho obtener mis credenciales de azure:
+El siguiente paso es loguearme y una vez hecho obtener mis credenciales de Azure:
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_051_zpspqzjlxbr.png)
 
@@ -214,10 +214,11 @@ chmod 600 ~/.ssh/azurevagrant.key
 openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 ```
 
-
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_055_zpszkwntudy.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_056_zpszozucwtq.png)
+Cómo Koding no tengo entorno gráfico mediante ssh obtengo el certificado en mi máquina local:
+
+Introduzco el certificado en Azure:
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_057_zpsr9kncfyy.png)
 
