@@ -44,11 +44,12 @@ Gabriel Stan - [GESTFG](https://github.com/gabriel-stan/gestion-tfg) 14:00
 Ángel Valera Motos -
 [Aplicación de DAI, bares y tapas](https://github.com/AngelValera/bares-y-tapas-DAI) 14:15
 
+Santiago de Diego de Diego -
+[Landscapes](https://github.com/santidediego/Landscapes) 10:00
 
 ## Día 15
 
-Santiago de Diego de Diego -
-[Landscapes](https://github.com/santidediego/Landscapes) 10:00
+
 
 Antonio Miguel Pozo Cámara -
 [Bares](https://github.com/AntonioPozo/Bares) 10:15
