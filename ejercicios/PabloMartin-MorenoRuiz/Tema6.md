@@ -254,6 +254,9 @@ Y podemos ver que funciona perfectamente:
 ![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_071_zpsciwvn5pz.png)
 
 Podemos ejecutar algunos comando de vagrant útiles:
+
 ```vagrant up``` Sólo crear la máquina.
+
 ```vagrant provision``` Sólo provisionarla
+
 ```vagrant suspend``` Apagarla
