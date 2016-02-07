@@ -123,7 +123,7 @@ Iniciamos la aplicación:
 
 ![iniciar](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_032_zps8hkwtb2e.png)
 
-Y Aquí la vemos funcionando:
+Y aquí la vemos funcionando:
 
 ![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_033_zps2fqtuxap.png)
 
@@ -139,6 +139,27 @@ Me ha parecido muy interesante explicar el ejercicio así pues vemos lo engorros
 ### 2. ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
 
 ## Ejericicio 6. Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Este ejercicio y el siguiente los he realizado sobre mi ordenador con ubuntu 12.04 de 32 bits sobre VirtualBox.
+
+Lo primero que he hecho a sido descargarme este paquete vagrant_1.8.1_i686.deb de la siguiente páquina https://releases.hashicorp.com/vagrant/1.8.1/ e instalarlo con el siguiente comando:
+ ```sudo dpkg -i vagrant_1.8.1_i686.deb```
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_042_zpskwyw4rio.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_043_zpsetz9tvsi.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_044_zpsc6vxmu7k.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_045_zps726mffcf.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_046_zpsfxfdkd4f.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_047_zpsv0jqw5hq.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_048_zps8pstlrcm.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_049_zps592ewmmb.png)
 
 ## Ejericicio 7. Crear un script para provisionar `nginx` o cualquier otro servidor
 web que pueda ser útil para alguna otra práctica
