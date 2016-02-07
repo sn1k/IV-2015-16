@@ -24,7 +24,7 @@ Una vez creados nos disponemos a crear las recetas de geany y nginx que es un ar
 
 ![recipes](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_063_zpsjicaomm7.png)
 
-Dentro de la carpeta chef creamos node.json y solo.rb. Dentro del primer primero indicamos lo que queremos intstalar y en el segundo las referencias a los archivos (instalables):
+Dentro de la carpeta chef creamos node.json y solo.rb. Dentro del primer primero indicamos lo que queremos instalar y en el segundo las referencias a los archivos (instalables):
 
 ![make_chef](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_064_zps2nbkhzhf.png)
 
@@ -55,6 +55,39 @@ Y aqui tenemos la la estructura de directorios y lo que se ha creado dentro de D
 			- 11
 ```
 ## Ejericicio 4. Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_018_zpsye6twgaf.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_019_zpsqrbgytb3.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_020_zps9cgdswdn.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_022_zpsnvsmwmo0.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_023_zps2j1c15yx.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_024_zpsjrmxsgt6.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_025_zpsz7yo6zts.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_026_zpsgrc3j0ye.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_027_zpswklgbcdq.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_028_zpsthfcpoqm.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_029_zpszngrjhbq.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_030_zpsub2vgrvw.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_031_zpsqmfrciie.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_032_zps8hkwtb2e.png)
+
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_033_zps2fqtuxap.png)
+
+
+
 
 ## Ejercicio 5
 
