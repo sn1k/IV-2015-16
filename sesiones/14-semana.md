@@ -81,7 +81,7 @@ Mariano Palomo Villafranca -
 
 Pedro Gázquez Navarrete - 
 [App Bares y Tapas Quesada](https://github.com/pedrogazquez/appBares) 13:00
-
+Lorenzo Manuel Rosas Rodríguez - [Tiendas](https://github.com/lorenmanu/Tiendas)
 
 ## Lista de comprobación del proyecto
 
