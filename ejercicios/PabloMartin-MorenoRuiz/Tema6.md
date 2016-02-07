@@ -145,15 +145,15 @@ Este ejercicio y el siguiente los he realizado sobre mi ordenador con ubuntu 12.
 Lo primero que he hecho a sido descargarme este paquete vagrant_1.8.1_i686.deb de la siguiente páquina https://releases.hashicorp.com/vagrant/1.8.1/ e instalarlo con el siguiente comando:
  ```sudo dpkg -i vagrant_1.8.1_i686.deb```
 
-Una vez obtenidoe el paquete buscamos una imagen compatible con nuestro sistema oeprativo y VirtualBox de Debian y creamos un box con ella como mostramos en la siguiente imagen:
+Una vez obtenido el paquete buscamos una imagen Debian compatible con nuestro sistema operativo y VirtualBox. Y creamos un box con ella como mostramos en la siguiente imagen:
 
 ![BoxAdd](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_042_zpskwyw4rio.png)
 
-Lo siguienete es inicializar una carpeta con este box (Esto lo que hace es crear un Vagrantfile configurado para este box, poca cosa en verdad):
+Lo siguiente es inicializar una carpeta con este box (Esto lo que hace es crear un Vagrantfile configurado para este box, poca cosa en verdad):
 
 ![Init](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_043_zpsetz9tvsi.png)
 
-Una vez hecho esto ejectuamos vagrant up que si es la primera vez que lo hacemos entonces nos crea esa imagene VirtualBox, sino simplemente nos inicia la máquina.
+Una vez hecho esto ejectuamos vagrant up que si es la primera vez que lo hacemos entonces nos crea esa imagen en VirtualBox, sino simplemente nos inicia la máquina.
 ![up](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_044_zpsc6vxmu7k.png)
 
 Una vez acabado todo o anterior ya la tenemos creada y hacemos un ssh para comprobar que podemos conectarnos a ella:
@@ -164,12 +164,16 @@ Y finalmente se puede suspender con el siguiente comando:
 ![suspend](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_046_zpsfxfdkd4f.png)
 
 
-## Ejericicio 7. Crear un script para provisionar `nginx` o cualquier otro servidor
-web que pueda ser útil para alguna otra práctica
+## Ejericicio 7. Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_047_zpsv0jqw5hq.png)
+En este caso abrimos Vagrantfile y descomentamos las siguiente líneas incluyen los paquetes que queremos instalar
+![Vagrantfile](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_066_zpsqbejfffe.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_049_zps592ewmmb.png)
+Ejecutamos ```vagrant provision``` (teniendo en cuenta que antes debemos haber ejecutado ```vagrant up```):
+![provision](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_047_zpsv0jqw5hq.png)
+
+Nos comprobamos por ssh y comrpobarmos que nginx esta instalado con el comando ```sudo service nginx start``` (de las ultimas líneas)
+![OK](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_049_zps592ewmmb.png)
 
 
 ## Ejercicio 8. Configurar tu máquina virtual usando vagrant con el provisionador
