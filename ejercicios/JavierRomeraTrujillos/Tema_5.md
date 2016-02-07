@@ -65,7 +65,7 @@ Ejercicio 4 .
 Ejercicio 5 .
 -------
 * Instalamos Azure:
-![Imagen 5.1(https://www.dropbox.com/s/6tbmey4lq69ey9k/5.1.png?dl=1)
+![Imagen 5.1](https://www.dropbox.com/s/6tbmey4lq69ey9k/5.1.png?dl=1)
 
 [Guía](https://azure.microsoft.com/es-es/documentation/articles/xplat-cli-install/)
 
