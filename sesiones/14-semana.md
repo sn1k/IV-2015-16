@@ -33,7 +33,7 @@ Gabriel Stan - [GESTFG](https://github.com/gabriel-stan/gestion-tfg)
 
 Ángel Valera Motos - [Aplicación de DAI, bares y tapas](https://github.com/AngelValera/bares-y-tapas-DAI)
 
-Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
+
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
@@ -44,7 +44,7 @@ Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignacior
 Jesús Ángel González Novez - [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
 
 Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/InsertaLogo)
-
+Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
 
 César Albusac Jorge - [App Bares y tapas](https://github.com/cesar2/DAI-BARES)
 
