@@ -132,6 +132,44 @@ Formato JSON
 ## Ejercicio 5.1
 ### Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 
+Para mi práctica hito 5, he utilizado el siguiente playbook.
+
+    ---
+    - hosts: default
+      user: magvugr
+      sudo: yes
+
+      tasks:
+        #Instalacion requisitos
+      - name: Actualizar
+        apt: update_cache=yes
+
+      - name: Instalar buildessential
+        apt: name=build-essential state=present
+
+      - name: Install git
+        apt: name=git state=present
+
+      - name: Borrar si Actualiza
+        shell: rm -rf InsertaLogo
+
+      - name: Clonar InsertaLogo
+        git: repo=https://github.com/magvugr/InsertaLogo.git dest=InsertaLogo clone=yes force=yes
+
+      - name: InstalarPip
+        apt: name=python-pip state=present
+
+      - name: InstalarPip Dev
+        apt: name=python-dev state=present
+
+      - name: Install
+        shell: cd InsertaLogo/ && make installa
+
+
+Una vez creado dicho archivo ejecutamos en el terminal:
+***ansible-playbook playbook.yml***
+
+
 ## Ejercicio 5.2
 ### ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
 
