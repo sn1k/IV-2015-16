@@ -136,7 +136,7 @@ Me ha parecido muy interesante explicar el ejercicio así pues vemos lo engorros
 
 ### 1. Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 
-Este ejercicio también lo he realizadocon Koding sobre lo que tengo en la máquina de azure (como siempr que hago algo en azure ya que azure-cli no funciona en mi equipo).
+Este ejercicio también lo he realizadocon Koding sobre lo que tengo en la máquina de azure (como siempre que hago algo en azure ya que azure-cli no funciona en mi equipo).
 
 Copiarmos la dirección de la máquina en el siguiente archivo (en este caso el DNS):
 
@@ -146,7 +146,7 @@ Instroducimos todo lo que se necesita instalar en un archivo .yml
 
 ![yml](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_068_zpscm83tuxx.png)
 
-Y lo ejecutamos con la siguiente orden ```ansible-playbook -u pablo calificaciones.yml ```` y ya tenemos todo listo para ejecutar.
+Y lo ejecutamos con la siguiente orden ```ansible-playbook -u pablo calificaciones.yml ``` y ya tenemos todo listo para ejecutar.
 
 Podemos ver que de está forma es muy útil, mucho menos engorrosa que la del ejercicio anterior y lo más importante que de un comando isntalamos lo encesario. En el ejercicio 8 veremos cómo hacer esto lanzándolo desde vagrant.
 
