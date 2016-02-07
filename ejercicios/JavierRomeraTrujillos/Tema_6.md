@@ -56,6 +56,6 @@ Ejercicio 6 .
 
  ![Imagen 6.3](https://www.dropbox.com/s/qyzkfd93m1l9gdz/6.3.png?dl=1)
 
-* Para inicializar la máquina virtual usaremos * vagrant up*.
+* Para inicializar la máquina virtual usaremos *vagrant up*.
 
 * Para conectarnos usaremos *vagrant ssh*.
