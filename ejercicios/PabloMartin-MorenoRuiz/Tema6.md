@@ -67,7 +67,7 @@ Ahora incluimos la máquina de Azure al inventario de ansible y defininimos la v
 ![ansible1](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_018_zpsye6twgaf.png)
 
 Ahora hacemos ```azure login``` para conectarnos a la cuenta de azure (ya explicado en el tema antrior, copiar enlace y ponerle el código).
-Y iniciamos la máquina con con "azure vm start maquina-ubuntu-pmmre```
+Y iniciamos la máquina con con ```azure vm start maquina-ubuntu-pmmre```
 
 Ansible funciona conectándose con ssh por eso para usarlo deberemos pasarle a la nueva máquina la llave publica de la máquina que estamos usando, en mi caso es Koding.
 Si no tenemos generadas las llaves las generamos con ```ssh-keygen -t dsa ``` y las enviamos a la máquina con la siguiente orden:
@@ -75,7 +75,8 @@ Si no tenemos generadas las llaves las generamos con ```ssh-keygen -t dsa ``` y 
 ssh-copy-id -i .ssh/id_dsa.pub pablo@maquina-ubuntu-pmmre.cloudapp.net
 ```
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_019_zpsqrbgytb3.png)
+Y comprobamos con Ansible que podemos conectarnos bien mediante un ping:
+![ansible2](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_019_zpsqrbgytb3.png)
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_020_zps9cgdswdn.png)
 
