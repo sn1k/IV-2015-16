@@ -218,9 +218,9 @@ openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 
 Cómo Koding no tengo entorno gráfico mediante ssh obtengo el certificado en mi máquina local:
 
-Introduzco el certificado en Azure:
-
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_057_zpsr9kncfyy.png)
+
+Introduzco el certificado en Azure:
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_058_zpsvyodbees.png)
 
