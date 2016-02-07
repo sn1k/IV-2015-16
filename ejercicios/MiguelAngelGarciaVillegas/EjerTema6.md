@@ -125,9 +125,84 @@ Formato JSON
 ## Ejercicio 4.
 ### Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
+Mi archivo Vagrantfile
+#Instalar plugin azure
+
+    Vagrant.configure('2') do |config|
+        config.vm.box = 'azure'
+        config.vm.network "forwarded_port", guest: 80, host: 80
+        config.vm.provider :azure do |azure, override|
+            # Mandatory Settings
+            azure.mgmt_certificate = File.expand_path('azure.pem')
+            azure.mgmt_endpoint    = 'https://management.core.windows.net'
+            azure.subscription_id = 'xxx'
+            azure.vm_name     = 'insertalogo'
+            azure.vm_image    = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+            azure.vm_size     = 'Small'
+            config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
+            azure.cloud_service_name = 'insertalogo'
+
+    	# Optional Settings
+            azure.vm_user = 'ma' # defaults to 'vagrant' if not provided
+            azure.vm_password = 'xxx'
+            azure.vm_location = 'North Europe' # e.g., West US
+            azure.ssh_port             = '22'
+            azure.tcp_endpoints = '80:80'
+          end
+          config.ssh.username = 'ma'
+          config.ssh.password = 'xxx'
+          config.vm.synced_folder ".", "/vagrant",disabled:true #Evitar subir la copia local
+
+    # Instalacion ansible sudo pip install ansible
+    #Ansible
+      config.vm.provision "ansible" do |ansible|
+        ansible.sudo = true
+        ansible.raw_arguments = ["-vvvv"] #Depurando errores
+        ansible.force_remote_user = false
+        ansible.playbook = "ansible/webservice.yml"
+        #ansible.playbook = ".vagrant/provisioners/ansible/inventory/webservice.yml"
+      end
+    end
+
+Mi archivo Ansible
+
+    ---
+    - hosts: default
+      user: ma
+      sudo: yes
+
+      tasks:
+        #Instalacion requisitos
+      - name: Actualizar
+        apt: update_cache=yes
+
+      - name: Instalar buildessential
+        apt: name=build-essential state=present
+
+      - name: Install git
+        apt: name=git state=present
+
+      - name: Borrar si Actualiza
+        shell: rm -rf InsertaLogo
+
+      - name: Clonar InsertaLogo
+        git: repo=https://github.com/magvugr/InsertaLogo.git dest=InsertaLogo clone=yes force=yes
+
+      - name: InstalarPip
+        apt: name=python-pip state=present
+
+      - name: InstalarPip Dev
+        apt: name=python-dev state=present
+
+      - name: InstalarPip libpq-dev
+        apt: name=libpq-dev state=present
+
+      - name: Install
+        shell: cd InsertaLogo/ && make installa
 
 
-
+Ejecutamos en el terminal ***vagrant up --provider=azure***
+y cuando se crea la máquina automáticamente vagrant, usa el fichero de ansible en mi caso llamado ***webservice.yml*** para instalar todo lo necesario en nuestra máquina virtual instalada en azure.
 
 ## Ejercicio 5.1
 ### Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
@@ -167,11 +242,17 @@ Para mi práctica hito 5, he utilizado el siguiente playbook.
 
 
 Una vez creado dicho archivo ejecutamos en el terminal:
-***ansible-playbook playbook.yml***
+***ansible-playbook -i hosts playbook.yml --sudo --verbose***
 
 
 ## Ejercicio 5.2
 ### ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
+
+Yo decido ansible, me ha parecido muy fácil e intuitivo para utilizarlo de forma cómoda y fácil.
+
+Organiza muy bien las tareas mientras que chef, lo he visto muy interesante pero menos intuitivo debido a su jerarquía de directorios.
+
+Realmente depende de para qué lo vayas utilizar te interesará más una cosa u otra, pero dado que los dos son para un mismo fin, me ha parecido más interesante ansible.
 
 ## Ejercicio 6.
 ### Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
@@ -283,3 +364,45 @@ Para mi práctica hito 5, utilizo vagrant, azure y ansible. Éste es mi fichero 
 
 Resultado
 ![Maquina en Azure](https://www.dropbox.com/s/rwqz7h0pcosj7zm/Iniciando%20.png?dl=1)
+
+Y también he creado un archivo de fabric:
+
+      from fabric.api import task, run, local, hosts, cd, env
+
+      def informacion_sistema():
+          run('uname -a')
+
+      ########   Docker y descargar imagen Inserta Logo
+      def getdocker():
+      	run('sudo apt-get update')
+      	run('sudo apt-get install -y docker.io')
+      	run('sudo docker pull magvugr/insertalogo')
+
+      ########   Ejecutamos Docker
+      def rundocker():
+      	run('sudo docker run -i -t magvugr/insertalogo')
+
+      ########   Clonamos repositorio
+      def getapp():
+      	run('sudo apt-get update')
+      	run('sudo apt-get install -y git')
+      	run('sudo git clone https://github.com/magvugr/InsertaLogo.git')
+
+      ########   Install del make
+      def install():
+      	run('cd InsertaLogo && make install')
+
+      ########   Test
+      def test():
+      	run('cd InsertaLogo && make test')
+
+      ########   Ejecucion app
+      def run_app():
+      	run('cd InsertaLogo && sudo python manage.py runserver 0.0.0.0:80')
+
+      def run_app_2():
+          run('cd InsertaLogo && sudo gunicorn -b 0.0.0.0:80 InsertaLogo.wsgi --log-file - &')
+
+      ########   Borrar
+      def remove():
+          run('sudo rm -r InsertaLogo')
