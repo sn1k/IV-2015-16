@@ -235,3 +235,78 @@ Es necesario moverse al directorio de la apliación, porque si lo ejecuto desde 
 
 
 Ahora si entramos a [http://iv-ej5-ubuntuserver.cloudapp.net](http://iv-ej5-ubuntuserver.cloudapp.net) entraremos a la aplicación de Bares y Tapas con Rango.
+
+
+## Ejercicio 5.1
+**Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.**
+
+Compruebo que el nombre de la máquina de azure está en el fichero "ansible_hosts", si no, se añade como se hizo en el ejercicio 4:
+![ansible_hosts](http://i.cubeupload.com/1muxcz.jpg)
+
+Vamos a crear el playbook de Ansible, "despliegueRangoBares.yml" , en el que añadiremos la instalación de cada paquete necesario para la aplicación, así como los comandos necesarios para instalar los paquetes listados en requirements.txt, y ejecutar la aplicación:
+```
+---
+- hosts: RangoAzure
+  sudo: yes
+  remote_user: samu
+  tasks:
+  - name: Actualizar cache apt
+    apt: update_cache=yes
+  - name: Instalar python-setuptools
+    apt: name=python-setuptools state=present
+  - name: Instalar python-dev
+    apt: name=python-dev state=present
+  - name: Instalar build-essential
+    apt: name=build-essential state=present
+  - name: Instalar git
+    apt: name=git state=present
+  - name: Instalar pkg-config
+    apt: name=pkg-config state=present
+  - name: Instalar libtiff4-dev
+    apt: name=libtiff4-dev state=present
+  - name: Instalar libjpeg8-dev
+    apt: name=libjpeg8-dev state=present
+  - name: Instalar zlib1g-dev
+    apt: name=zlib1g-dev state=present
+  - name: Instalar PIP
+    shell: sudo easy_install pip
+  - name: Instalar Pillow
+    shell: sudo -H pip install Pillow --upgrade
+  - name: Clonando repositorio desde git
+    git: repo=https://github.com/Samuc/Eat-with-Rango.git  dest=~/Eat-with-Rango clone=yes force=yes
+  - name: Dar permisos a apliacación
+    shell: sudo chmod +x ~/Eat-with-Rango
+  - name: Instalar requisitos para la app
+    shell: sudo pip install -r ~/Eat-with-Rango/requirements.txt
+  - name: Ejecutar aplicacion
+    shell: cd ~/Eat-with-Rango && sudo python manage.py runserver 0.0.0.0:80
+
+```
+
+*Nota:* el sudo de "python manage.py runserver 0.0.0.0:80" lo ponemos para tener permiso en ejecutar la aplicación por el puerto 80.
+
+
+Colocamos el fichero de despliegue en ~/ de la máquina local, para que pille bien el ansible_hosts previamente configurado, y seguidamente ya podemos ejecutar el playbook con el siguiente comando:
+
+ `ansible-playbook -u samu despliegueRangoBares.yml`
+
+Y vemos que todo se ejecuta correctamente en las siguientes capturas:
+
+![Despliegue playbook de Ansible 1 ](http://i.cubeupload.com/65veU1.jpg)
+![Despliegue playbook de Ansible 2 ](http://i.cubeupload.com/zUnOhR.jpg)
+
+
+Ahora, mientras no hagamos ctrl+c en el terminal, se estará ejecutando la aplicación en la dirección de nuestra máquina azure, que en mi caso es: http://iv-ej5-ubuntuserver.cloudapp.net/
+
+No hace falta poner el puerto al final, ya que lo hemos configurado para que utilice el de por defecto, el puerto 80:
+![Apliacción desplegada con  ansible-playbook](http://i.cubeupload.com/P6Eek4.jpg)
+
+
+## Ejercicio 5.2
+**¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí? **
+Chef requiere configurarse desde dentro del servidor, creación de directorios, ficheros, etc
+Ansible se puede configurar desde fuera del servidor.
+
+También, los playbooks son más fáciles de de configurar en Ansible que las recetas de Chef.
+
+Como ventaja, Chef es más ligero, pero es una diferencia no perceptible por mis pruebas realizadas.
