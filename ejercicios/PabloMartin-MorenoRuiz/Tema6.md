@@ -16,7 +16,19 @@ Y comprovamos la versión:
 ## Ejericicio 2. Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
 
 ## Ejercicio 3. Escribir en YAML la siguiente estructura de datos en JSON
-
+```
+---
+-uno:"dos"
+ tres:
+	- 4
+	- 5
+	- "Seis"
+	-
+		- siete: 8
+		  nueve:
+			- 10
+			- 11
+```
 ## Ejericicio 4. Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
 ## Ejercicio 5
