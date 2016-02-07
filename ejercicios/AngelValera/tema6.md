@@ -150,6 +150,7 @@ ansible all -u angel  -m command -a "sudo apt-get install python-setuptools pyth
 ansible all -u angel -m git -a "repo=https://github.com/AngelValera/bares-y-tapas-DAI  dest=~/aplicacionDAI version=HEAD"
 ansible all -u angel -m command -a "sudo pip install -r aplicacionDAI/requirements.txt"
 ```
+
 ![](http://i666.photobucket.com/albums/vv21/angelvalera/Ejercicios%20tema%206/Seleccioacuten_013_zpscqgvtwnk.png)
 
 * **Paso 7**Ahora antes de ejecutar la aplicación debemos tener en cuenta algunas cosas:
@@ -170,14 +171,17 @@ ansible all -u angel -m command -a "sudo fuser -k 80/tcp"
 
 Hechas estas comprobaciones, ejecutamos:
 
-```ansible all -u angel -m command -a "sudo python ~/aplicacionDAI/manage.py runserver 0.0.0.0:80"
+```
+ansible all -u angel -m command -a "sudo python ~/aplicacionDAI/manage.py runserver 0.0.0.0:80"
 ```
 
 ![](http://i666.photobucket.com/albums/vv21/angelvalera/Seleccioacuten_014_zpsq1otkyfy.png)
 
 Por último apagar la máquina:
 
-```azure vm shutdown maquina-angel-ej5```
+```
+azure vm shutdown maquina-angel-ej5
+```
 
 
 ###**Ejercicio 5.1:**Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
