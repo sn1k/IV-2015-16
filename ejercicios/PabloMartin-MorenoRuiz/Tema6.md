@@ -56,7 +56,7 @@ Y aqui tenemos la la estructura de directorios y lo que se ha creado dentro de D
 ```
 ## Ejericicio 4. Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
-Para este ejercicio usaré la máquina virtual que tenía del tema anterior. A parte de explicar los pasos para hacer el ejercicio mostraré algunos errores que van saliendo para que podamos apreciar la mejora en hacerlo con un archivo de provisionamiento con ansible en el siguiente ejercicio.
+Para este ejercicio usaré la máquina virtual que tenía del tema anterior en Azure. A parte de explicar los pasos para hacer el ejercicio mostraré algunos errores que van saliendo para que podamos apreciar la mejora en hacerlo con un archivo de provisionamiento con ansible en el siguiente ejercicio.
 
 Primero instalamos Ansible:
 ```
@@ -136,6 +136,20 @@ Me ha parecido muy interesante explicar el ejercicio así pues vemos lo engorros
 
 ### 1. Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 
+Este ejercicio también lo he realizadocon Koding sobre lo que tengo en la máquina de azure (como siempr que hago algo en azure ya que azure-cli no funciona en mi equipo).
+
+Copiarmos la dirección de la máquina en el siguiente archivo (en este caso el DNS):
+
+![ansible_hosts](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_067_zpslwq7ypde.png)
+
+Instroducimos todo lo que se necesita instalar en un archivo .yml
+
+![yml](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_068_zpscm83tuxx.png)
+
+Y lo ejecutamos con la siguiente orden ```ansible-playbook -u pablo calificaciones.yml ```` y ya tenemos todo listo para ejecutar.
+
+Podemos ver que de está forma es muy útil, mucho menos engorrosa que la del ejercicio anterior y lo más importante que de un comando isntalamos lo encesario. En el ejercicio 8 veremos cómo hacer esto lanzándolo desde vagrant.
+
 ### 2. ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
 
 ## Ejericicio 6. Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
@@ -176,5 +190,4 @@ Nos comprobamos por ssh y comrpobarmos que nginx esta instalado con el comando `
 ![OK](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_049_zps592ewmmb.png)
 
 
-## Ejercicio 8. Configurar tu máquina virtual usando vagrant con el provisionador
-ansible
+## Ejercicio 8. Configurar tu máquina virtual usando vagrant con el provisionador ansible
