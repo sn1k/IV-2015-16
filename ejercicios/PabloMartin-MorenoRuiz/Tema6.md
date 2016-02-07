@@ -56,7 +56,15 @@ Y aqui tenemos la la estructura de directorios y lo que se ha creado dentro de D
 ```
 ## Ejericicio 4. Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_018_zpsye6twgaf.png)
+Para este ejercicio usarñe la máquina virtual que tenía del tema anterior. A parte de explicar los pasos para hacer el ejercicio mostraré algunos errores que van saliendo para que podamos apreciar la mejora en hacerlo con un archivo de provisionamiento con ansible en el siguiente ejercicio.
+
+Primero instalamos Ansible:
+```
+sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+```
+Ahora incluimos la máquina de Azure al inventario de ansible y defininimos la variable de entorno
+
+![ansible1](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_018_zpsye6twgaf.png)
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_019_zpsqrbgytb3.png)
 
