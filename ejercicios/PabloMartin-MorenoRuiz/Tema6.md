@@ -82,17 +82,23 @@ Comprobamos que podemos hacer un ssh y que ahora no nos pide la clave:
 Y comprobamos con Ansible que podemos conectarnos bien mediante un ping:
 ![ansiblePing](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_020_zps9cgdswdn.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_022_zpsnvsmwmo0.png)
+Nos descargamos con ansible nuestro proyecto usando git:
+![ansibleGit](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_022_zpsnvsmwmo0.png)
 
+Vamos a instalar los paquete con pip pero nos dice que no se encuentra:
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_023_zps2j1c15yx.png)
 
+Actualizamos los repositorios:
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_024_zpsjrmxsgt6.png)
 
+Instalamos pip:
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_025_zpsz7yo6zts.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_026_zpsgrc3j0ye.png)
-
+Nos sale el siguiente error al instentar instalar de nuevo con pip:
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_027_zpswklgbcdq.png)
+
+Así que ahora sabemos que nos faltan los siguientes paquetes que los instalamos:
+![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_026_zpsgrc3j0ye.png)
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_028_zpsthfcpoqm.png)
 
