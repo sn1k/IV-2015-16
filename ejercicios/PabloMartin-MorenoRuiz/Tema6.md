@@ -192,13 +192,22 @@ Nos comprobamos por ssh y comrpobarmos que nginx esta instalado con el comando `
 
 ## Ejercicio 8. Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_050_zpsvxmtdchd.png)
+En este apartado final lo realizaré también desde Koding.
+
+El primer paso es instalar el provisionador de azure para vagrant:
+
+![Aprovisonador](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_050_zpsvxmtdchd.png)
+
+
+El siguiente paso es loguearme y una vez hecho obtener mis credenciales de azure:
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_051_zpspqzjlxbr.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_052_zpsdgt8hvyo.png)
+Acto seguido importo a mi CLI de Azure mis credenciales:
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
+
+El siguiente paso es generar los certificados que se van a subir a Azure y que nos permitan interaccionar con él.
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_054_zpsplltxwkv.png)
 
