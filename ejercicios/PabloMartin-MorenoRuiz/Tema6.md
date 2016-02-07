@@ -75,10 +75,12 @@ Si no tenemos generadas las llaves las generamos con ```ssh-keygen -t dsa ``` y 
 ssh-copy-id -i .ssh/id_dsa.pub pablo@maquina-ubuntu-pmmre.cloudapp.net
 ```
 
-Y comprobamos con Ansible que podemos conectarnos bien mediante un ping:
-![ansible2](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_019_zpsqrbgytb3.png)
+Comprobamos que podemos hacer un ssh y que ahora no nos pide la clave:
+![ansibleSSH](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_019_zpsqrbgytb3.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_020_zps9cgdswdn.png)
+
+Y comprobamos con Ansible que podemos conectarnos bien mediante un ping:
+![ansiblePing](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_020_zps9cgdswdn.png)
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_022_zpsnvsmwmo0.png)
 
