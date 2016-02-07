@@ -107,16 +107,28 @@ Por fin conseguimos instalar todos los paquetes para nuestra aplicación:
 
 ![OK](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_028_zpsthfcpoqm.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_029_zpszngrjhbq.png)
+Ahora liberamos el puerto 80 para poder mostrar por hay el contenido de la web:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_030_zpsub2vgrvw.png)
+![liberar80](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_029_zpszngrjhbq.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_031_zpsqmfrciie.png)
+Cómo teníamos nginx funcionando por este puerto lo que hemos hecho es apagar, tenemos que para nginx para que funcione la web ya sea con el comando anterior o con ```sudo service nginx stop```:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_032_zps8hkwtb2e.png)
+![Status](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_030_zpsub2vgrvw.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_033_zps2fqtuxap.png)
+Abrimos el tráfico de Azure (hecho en el tema anterior):
 
+![abrirTrafico](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_031_zpsqmfrciie.png)
+
+Iniciamos la aplicación:
+
+![iniciar](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_032_zps8hkwtb2e.png)
+
+Y Aquí la vemos funcionando:
+
+![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_033_zps2fqtuxap.png)
+
+
+Me ha parecido muy interesante explicar el ejercicio así pues vemos lo engorroso que puede llegar a ser el despliegue de la aplicación comando a comando para así poder ver lo útil y robusto que es hacerlo cómo en el ejercicio 5 y para adelante.
 
 
 
