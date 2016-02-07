@@ -85,22 +85,27 @@ Y comprobamos con Ansible que podemos conectarnos bien mediante un ping:
 Nos descargamos con ansible nuestro proyecto usando git:
 ![ansibleGit](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_022_zpsnvsmwmo0.png)
 
-Vamos a instalar los paquete con pip pero nos dice que no se encuentra:
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_023_zps2j1c15yx.png)
+Vamos a instalar los paquete con pip pero nos dice que pip no se encuentra:
+![errorPip](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_023_zps2j1c15yx.png)
 
 Actualizamos los repositorios:
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_024_zpsjrmxsgt6.png)
+
+![update](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_024_zpsjrmxsgt6.png)
 
 Instalamos pip:
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_025_zpsz7yo6zts.png)
 
-Nos sale el siguiente error al instentar instalar de nuevo con pip:
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_027_zpswklgbcdq.png)
+![installPip](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_025_zpsz7yo6zts.png)
+
+Nos sale el siguiente error al intentar instalar de nuevo con pip:
+
+![otroError](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_027_zpswklgbcdq.png)
 
 Así que ahora sabemos que nos faltan los siguientes paquetes que los instalamos:
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_026_zpsgrc3j0ye.png)
+![installMas](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_026_zpsgrc3j0ye.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_028_zpsthfcpoqm.png)
+Por fin conseguimos instalar todos los paquetes para nuestra aplicación:
+
+![OK](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_028_zpsthfcpoqm.png)
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_029_zpszngrjhbq.png)
 
