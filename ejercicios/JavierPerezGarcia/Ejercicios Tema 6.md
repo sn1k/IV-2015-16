@@ -34,7 +34,7 @@ Ejecutamos nuestro programa y vemos los resultados:
 
 ### Ejercicio 5
 ####Ejercicio 5.1
-Este ejercicio está realizado en el Hito 5, ya que en el despliegue de mi aplicación utilizo un playbook de Ansible ([este]()) para los módulos de mi aplcación (se entregará en DAI).
+Este ejercicio está realizado en el Hito 5, ya que en el despliegue de mi aplicación utilizo un playbook de Ansible ([este](https://github.com/neon520/SMS-BDyReplica/blob/master/ansible/configuracion_ansible.yml)) para los módulos de mi aplcación (se entregará en DAI).
 
 ####Ejercicio 5.2
 Me quedo con Ansible ya que con chef, aunque está más estructurado, pequeños cambios requieren mucho esfuerzo, mientras que con ansible está todo en un archivo.
