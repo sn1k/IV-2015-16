@@ -62,6 +62,13 @@ Ejercicio 4 .
 ![Imagen 4.4](https://www.dropbox.com/s/18cvsfw5s64i3ak/4.5.png?dl=1)
 * Para conectarnos por ssh usamos *qemu-system-x86_64 -hda trisquel -m 512 -redir tcp:7777::8001* y *ssh: ssh -p 8001 trisquel@localhost*.
 
+Ejercicio 5 .
+-------
+* Instalamos Azure:
+![Imagen 5.1(https://www.dropbox.com/s/6tbmey4lq69ey9k/5.1.png?dl=1)
+
+[Guía](https://azure.microsoft.com/es-es/documentation/articles/xplat-cli-install/)
+
 
 Ejercicio 7 .
 -------
