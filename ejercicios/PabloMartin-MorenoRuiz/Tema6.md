@@ -201,11 +201,11 @@ El primer paso es instalar el provisionador de azure para vagrant:
 
 El siguiente paso es loguearme y una vez hecho obtener mis credenciales de Azure:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_051_zpspqzjlxbr.png)
+![obtenerCredenciales](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_051_zpspqzjlxbr.png)
 
 Acto seguido importo a mi CLI de Azure mis credenciales:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
+!importAzure[](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
 
 El siguiente paso es generar los certificados que se van a subir a Azure y que nos permitan interaccionar con él.
 ```
@@ -214,18 +214,46 @@ chmod 600 ~/.ssh/azurevagrant.key
 openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 ```
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_055_zpszkwntudy.png)
+![GenerarCertificado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_055_zpszkwntudy.png)
 
 Cómo Koding no tengo entorno gráfico mediante ssh obtengo el certificado en mi máquina local:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_057_zpsr9kncfyy.png)
+![ObtenerCertificadoSSH](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_057_zpsr9kncfyy.png)
 
 Introduzco el certificado en Azure:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_058_zpsvyodbees.png)
+![IntroducirCertificado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_058_zpsvyodbees.png)
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_059_zpstadryvbc.png)
+Para poder autenticar Azure desde Vagrantfile es necesario crear un archivo .pem y concatenarle el archivo .key, para ello:
+```
+openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+cat azurevagrant.key > azurevagrant.pem
+```
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_060_zpsqppxlfyo.png)
+Lo siguiente que hago es obtener el box de azure:
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_062_zpsi1tkujtp.png)
+![BoxAzure](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_059_zpstadryvbc.png)
+
+Ejecuto ```vagrant init azure```:
+
+![Init](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_060_zpsqppxlfyo.png)
+
+Lo siguiente que hay que hacer es configurar Vagrantfile cómo se muestra en la siguiente iamgen.Hay que destacarq que de los 3 bloques el primero siver para configurar la red de la máquina, el segundo para configurar la instalación del sistema operativo y el tercero para provisonarlo con ansible:
+
+![Vagrantfile](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_069_zpsz3ohrofm.png)
+
+En ansible incluimos todo lo necesario para que funcione nuestro programa:
+
+![ansible](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_070_zpsgyc9ngrn.png)
+
+Y con el siguiente comando nos disponemos a lanzar ansible para que cre la maquina y por último que nos ejecute ansible (provisionar) para que funcione todo:
+![Lanzar](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_062_zpsi1tkujtp.png)
+
+
+Y podemos ver que funciona perfectamente:
+![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_071_zpsciwvn5pz.png)
+
+Podemos ejecutar algunos comando de vagrant útiles:
+```vagrant up``` Sólo crear la máquina.
+```vagrant provision``` Sólo provisionarla
+```vagrant suspend``` Apagarla
