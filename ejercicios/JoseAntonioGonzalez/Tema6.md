@@ -1,5 +1,5 @@
 #Ejercicio 1
-
+#### Instalar chef en la máquina virtual que vayamos a usar
 Para instalar Cheff, nos iremos a [su página de getting started](http://gettingstartedwithchef.com/first-steps-with-chef.html), y seguiremos la órden que se indica:
 
 	 curl -L https://www.opscode.com/chef/install.sh | sudo bash
@@ -8,10 +8,10 @@ De esta forma se descargará un script que acto seguido, ejecutará. Dicho scrip
 
 En el momento de realización de éste ejercicio, parece que la descarga del scriptinstala una versión ya obsoleta de cheff, donde nos advierte que se actualizará solo y sin dejar advertencia.
 
-![](Ejercicio1)
+![](https://www.dropbox.com/s/nupnawtw829z4ju/Ejercicio1.png?dl=1)
 
 #Ejercicio 2
-
+#### Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
 PRimero, crearemos los directorios (dentro de la máquina virtual):
 	
     mkdir -p chef/cookbooks/nginx/recipes
@@ -77,10 +77,11 @@ Ya está todo listo. Sólo queda lanzar la instalación mediante la orden:
     
 Y si todo va bien, debemos ver en pantalla algo como lo indicado en las imagenes
 
-![](Ejercicio2-1)
-![](Ejercicio2-2)
+![](https://www.dropbox.com/s/p4aj0rp12j0polz/Ejercicio2-1.png?dl=1)
+![](https://www.dropbox.com/s/gy3z6swo828k5dp/Ejercicio2-2.png?dl=1)
 
 #Ejercicio 3
+#### Escribir en YAML la siguiente estructura de datos en JSON
 ```
 --- 
 - uno: "dos" 
@@ -95,7 +96,7 @@ Y si todo va bien, debemos ver en pantalla algo como lo indicado en las imagenes
           - 11 
 ```
 #Ejercicio 6
-
+#### Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
 En la práctica hemos usado una imagen de Ubuntu (ejercicio 8), que en éste caso se hace igual, pero cambiando el nombre de imagen a instalar.
 
 Como no sabemos qué imágenes hay disponibles de Debian, ni sus versiones, ni tan siquiera su nombre, lo primero que debemos hacer es ver que imágenes podemos utilizar. Para eso introducimos la siguiente orden:
@@ -147,12 +148,13 @@ Hecho esto, lanzamos la creación con la orden:
 
 	vagrant up --provider=azure
 
-![](Ejercicio6-tema6)
+![](https://www.dropbox.com/s/lwrfuh3tpa1vz9m/ejercicio6%20tema6.png?dl=1)
     
     
 
 #Ejercicio 8
-
+#### Configurar tu máquina virtual usando vagrant con el provisionador
+ansible
 En el proyecto se ha realizado una creación de máquina virtual (en Azure) mediante Vagrant, y se ha aprovisionado con Ansible. Podemos ver el resultado del proyecto [aquí](https://github.com/JA-Gonz/SMS_Estadisticas).
 
 En profundidad, en este ejercicio se pide principalmente configurar un [Vagrantfile](https://github.com/JA-Gonz/SMS_Estadisticas/blob/master/Vagrantfile) y un fichero de [configuración de Ansible](https://github.com/JA-Gonz/SMS_Estadisticas/blob/master/ansible/configuracion_ansible.yml). Siguiendo los enlaces puede verse en detale como están hechos.
