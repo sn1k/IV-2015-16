@@ -136,18 +136,25 @@ He tenido problemas con la instalación y tras varias búsquedas he podido termi
 sudo apt-get install ruby-dev
 ```
 
+**Nota:** El plugin de azure para vagrant funciona para versiones de vagrant >=1.6
+
 Instalamos Virtualbox con:
 
 ```
 sudo apt-get install virtualbox virtualbox-dkms
 ```
 
-Una vez hecho esto creamos el playbook de ansible:
+Una vez hecho esto creamos el playbook de ansible [playbookej8.yml](https://github.com/AntonioPozo/Bares/blob/master/playbookej8.yml) que va a servir para todo lo relativo al aprovisionamiento de la aplicación:
+
+- Actualizar el sistema
+- Instalar herramientas necesarias
+- Clonar el repositorio de Git
+- Dar permisos necesarios
+- **Ejecutar la aplicación**
 
 
-COMPLETAR
 
-Ahora creamos el Vagrantfile que hará uso del playbook de ansible:
+Ahora creamos el [Vagrantfile](https://github.com/AntonioPozo/Bares/blob/master/Vagrantfile) que creará la máquina virtual en Azure. El último bloque del archivo hace uso del playbook de ansible.
 
 Añadimos las líneas de abajo en el archivo ~/ansible_hosts
 
@@ -157,7 +164,7 @@ Añadimos las líneas de abajo en el archivo ~/ansible_hosts
 ansible_connection=local
 ```
 
-Para curarme en salud, he añadido también el mísmo código en el archivo /etc/ansible/hosts ya que alguna vez he tenido problemas con ello.
+Para curarme en salud, he añadido también el mísmo código en el archivo ```/etc/ansible/hosts``` ya que alguna vez he tenido problemas con ello.
 
 Exportamos la variable de entorno de Ansible para que se reconozca el host:
 
@@ -167,12 +174,18 @@ export ANSIBLE_HOSTS=~/ansible_hosts
 Finalmente ejecutamos:
 
 ```
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
 sudo vagrant up --provider=azure
 ```
 
 La orden anterior crea la máquina, la configura y hace uso del playbook de ansible para desplegar la aplicación. 
+
+
 Si sólo queremos hacer el último paso (porque la máquina está ya creada) ejecutamos:
 
 ```
 vagrant provider
 ```
+
+A continuación muestro una captura de la aplicación funcionando en el host indicado en la línea 19 del [Vagrantfile](https://github.com/AntonioPozo/Bares/blob/master/Vagrantfile):
+![sitio barchecker](https://www.dropbox.com/s/opc4omca9urrop9/Barchecker_-_Inicio.png?dl=1)
