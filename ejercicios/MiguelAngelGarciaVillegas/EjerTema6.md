@@ -115,10 +115,17 @@ Podemos consultar los resultados
 ## Ejercicio 3.
 ### Escribir en YAML la siguiente estructura de datos en JSON, { uno: "dos",  tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }
 
+Formato JSON
+***{ "uno": "dos", "tres": [ 4 , 5 ,"Seis" ,{ "siete":8, "nueve":[10,11]}]}***
+
+
+![Json to Yaml](https://www.dropbox.com/s/goyaicw50kc8t4s/Ejer3.png?dl=1)
 
 
 ## Ejercicio 4.
 ### Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+
+
 
 
 
@@ -160,12 +167,37 @@ Vamos a conectarnos con ssh, ejecutando en el terminal ***vagrant ssh*** introdu
 ![Vagrantfile](https://www.dropbox.com/s/hy0tfdyz7mjoyi0/eje6.9.png?dl=1)
 
 También he comprobado que si apago la máquina desde VirtualBox, y comprobamos que automáticamente nos desconecta.
- 
+
 ![Vagrantfile](https://www.dropbox.com/s/sw9sz2dyt8kvhi8/Ejer6.10.png?dl=1)
 
 
 ## Ejercicio 7.
 ### Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
+
+He creado un script ningx.sh con el siguiente contenido
+
+
+    #!/bin/bash
+    sudo apt-get update && apt-get install -y nginx
+    sudo service nginx restart && sudo service nginx status
+
+Vamos a crear el archivo vagrant con el siguiente contenido
+
+
+    # -*- mode: ruby -*-
+    # vi: set ft=ruby :
+
+    Vagrant.configure(2) do |config|
+      config.vm.box = "debian"
+
+      config.vm.provision "shell",
+      	path: "nginx.sh"
+    end
+
+Después de tener los archivos ejecutamos en el terminal, ***vagrant up*** para que nos cree la máquina con el servicio
+indicado en el script.
+
+![mv creada](https://www.dropbox.com/s/fc439frzq5wyvny/Ejer7.1.png?dl=1)
 
 ## Ejercicio 8.
 ### Configurar tu máquina virtual usando vagrant con el provisionador ansible
