@@ -208,8 +208,12 @@ Acto seguido importo a mi CLI de Azure mis credenciales:
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
 
 El siguiente paso es generar los certificados que se van a subir a Azure y que nos permitan interaccionar con él.
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout azurevagrant.key -out azurevagrant.key
+chmod 600 ~/.ssh/azurevagrant.key
+openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
+```
 
-![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_054_zpsplltxwkv.png)
 
 ![](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_055_zpszkwntudy.png)
 
