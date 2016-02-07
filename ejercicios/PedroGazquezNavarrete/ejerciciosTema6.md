@@ -342,9 +342,9 @@ Ahora descargamos la box de azure con el siguiente comando:
 ```
 vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
 
+```
 ![dummybox](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-05%20165928_zps2kqtfjqy.png)
 
-```
 Y ahora podemos proceder a ejecutar provider para que cree la app con el siguiente comando:
 ```
 vagrant up --provider=azure
