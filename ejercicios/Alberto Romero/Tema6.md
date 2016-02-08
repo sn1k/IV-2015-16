@@ -1,6 +1,6 @@
-### Ejercicio 1 : Instalar chef en la m·quina virtual que vayamos a usar
+### Ejercicio 1 : Instalar chef en la m√°quina virtual que vayamos a usar
 
-Procedemos a su instalaciÛn:
+Procedemos a su instalaci√≥n:
 ```
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
 ```
@@ -12,14 +12,14 @@ chef-solo -v
 ![imagen](https://i.gyazo.com/ddc3050365fe41d86515efcf2172321a.png)
 
 
-### Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y alg˙n directorio y fichero que uses de forma habitual.
+### Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y alg√∫n directorio y fichero que uses de forma habitual.
 
 Creamos los directorios necesarios
 ```
 mkdir -p chef/cookbooks/nginx/recipes
 mkdir -p chef/cookbooks/nano/recipes
 ```
-Creamos los archivos default.rb en cada uno de los directorios previamente creado. Cada archivo tendr· la "receta" p‡ra instalar nginx y nano.
+Creamos los archivos default.rb en cada uno de los directorios previamente creado. Cada archivo tendr√° la "receta" p√†ra instalar nginx y nano.
 
 **Nginx**
 ```
@@ -54,8 +54,8 @@ Creamos el .json
     "run_list":["recipe[nginx]", "recipe[nano]"]
 }
 ```
-DespuÈs, aÒadiremos en el directorio chef creado en el punto 1 el arhivo solo.rb con el siguiente contenido.
-- Adem·s en el directorio chef es necesario incluir el archivo **solo.rb** que incluye referencias a los archivos anteriores, este tiene el siguiente contenido:
+Despu√©s, a√±adiremos en el directorio chef creado en el punto 1 el arhivo solo.rb con el siguiente contenido.
+- Adem√°s en el directorio chef es necesario incluir el archivo **solo.rb** que incluye referencias a los archivos anteriores, este tiene el siguiente contenido:
 ```
 file_cache_path "/home/snik/chef" 
 cookbook_path "/home/snik/chef/cookbooks" 
@@ -71,7 +71,7 @@ Ya podemos usar `sudo chef-solo -c chef/solo.rb` para realizarlo todo.
 ### Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON
 ## `{ uno: "dos",`
 ## `tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }`
-QuedarÌa de tal forma
+Quedar√≠a de tal forma
 
 ```
 ---
@@ -87,10 +87,10 @@ QuedarÌa de tal forma
 			- 11
 ```
 
-###	Ejercicio 4: Desplegar los fuentes de la aplicaciÛn de DAI o cualquier otra aplicaciÛn que se encuentre en un servidor git p˙blico en la m·quina virtual Azure (o una m·quina virtual local) usando ansible.
+###	Ejercicio 4: Desplegar los fuentes de la aplicaci√≥n de DAI o cualquier otra aplicaci√≥n que se encuentre en un servidor git p√∫blico en la m√°quina virtual Azure (o una m√°quina virtual local) usando ansible.
 
 
-### Ejercicio 6:Instalar una m·quina virtual Debian usando Vagrant y conectar con ella.
+### Ejercicio 6:Instalar una m√°quina virtual Debian usando Vagrant y conectar con ella.
 
 - Instalamos Vagrant:
 ```
@@ -104,7 +104,7 @@ vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/down
 
 ![descimg](https://i.gyazo.com/43c6105629297df58e06717b26c4727f.png)
 
-- Creamos el fichero Vagranfile e inicializamos la m·quina:
+- Creamos el fichero Vagranfile e inicializamos la m√°quina:
 ```
 vagrant init debian
 ```
@@ -122,7 +122,7 @@ vagrant ssh
 ![ssh](https://i.gyazo.com/1cf82129883ad38cba9ce2edb653aedd.png)
 
 
-### Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser ˙til para alguna otra pr·ctica
+### Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser √∫til para alguna otra pr√°ctica
 
 Scrip de Vagrant para nginx:
 ```
@@ -146,15 +146,15 @@ inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service ng
 end
 ```
 
-### Ejercicio 8: Configurar tu m·quina virtual usando vagrant con el provisionador ansible
+### Ejercicio 8: Configurar tu m√°quina virtual usando vagrant con el provisionador ansible
 
 Con el vagrantfile y ansible en su lugar, usaremos el comando  
 ```
 vagrant up --provider=aws
-```
+
 
 vagrantfile
-
+```
 #-*- mode: ruby -*-
 #vi: set ft=ruby :
 
@@ -191,7 +191,7 @@ Vagrant.configure('2') do |config|
         ansible.host_key_checking = false
   end
 end
-```
+
 
 aprovisionamiento.yml
 
@@ -222,6 +222,6 @@ aprovisionamiento.yml
     command: sudo pip install -r submodulo-alberto/requirements.txt
   - name: ejecutar
     command: nohup sudo python submodulo-alberto/manage.py runserver 0.0.0.0:80
-```
+
 ![img](https://i.gyazo.com/4420591fe16dcd63d2cf25848245f6de.png)
 
