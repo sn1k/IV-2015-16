@@ -149,11 +149,11 @@ end
 ### Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
 Con el vagrantfile y ansible en su lugar, usaremos el comando  
+
 ```
 vagrant up --provider=aws
-
-
 vagrantfile
+```
 ```
 #-*- mode: ruby -*-
 #vi: set ft=ruby :
@@ -191,7 +191,7 @@ Vagrant.configure('2') do |config|
         ansible.host_key_checking = false
   end
 end
-
+```
 
 aprovisionamiento.yml
 
@@ -222,6 +222,7 @@ aprovisionamiento.yml
     command: sudo pip install -r submodulo-alberto/requirements.txt
   - name: ejecutar
     command: nohup sudo python submodulo-alberto/manage.py runserver 0.0.0.0:80
+```
 
 ![img](https://i.gyazo.com/4420591fe16dcd63d2cf25848245f6de.png)
 
